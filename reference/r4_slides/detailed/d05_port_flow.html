@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh"><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{width:1280px;min-height:720px;padding:0;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column;align-items:stretch;overflow:visible}
+.page-inner{margin:60px;min-height:600px;padding-top:0;display:flex;flex-direction:column;flex:1;gap:0;overflow:visible}
+.zh{display:revert}.en{display:none}html[data-lang=en] .zh{display:none}html[data-lang=en] .en{display:revert}
+
+/* Title area */
+.title-zone{/* compact title area */}
+.kicker{font-size:14px;line-height:17px;color:#52647b}
+.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+
+/* divider and lead */
+.rule{border-top:1px solid #152439}
+.lead{font-size:18px;line-height:1.45;margin-top:16px;color:#52647b}
+
+/* main content grid */
+.content{flex:1;display:grid;gap:24px;padding-top:24px;align-content:stretch;overflow:visible}
+.flow{grid-template-columns:repeat(5,1fr);display:grid;gap:10px}
+.block{border-top:2px solid #007f86;padding-top:8px}
+.block h2{font-size:22px;line-height:30px;margin-bottom:6px}
+.block p,.block li{font-size:18px;line-height:1.42}
+.block ul{list-style:none}
+.block li{padding:4px 0}
+.block li:before{content:"— ";color:#007f86}
+
+/* route section */
+.route{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.route>div{border-top:1px solid #152439;padding-top:8px}
+.route h3{font-size:15px;line-height:20px}
+.route p{font-size:18px;line-height:1.4;margin-top:6px}
+.good h3{color:#007f86}
+
+/* discussion & footer */
+.discussion{border-top:1px solid #152439;padding-top:12px;font-size:18px;line-height:1.4;margin-top:16px;overflow:visible}
+.foot{padding-top:16px;font-size:14px;color:#52647b;display:flex;justify-content:space-between;line-height:1.25}
+</style></head><body><div class="slide-container"><div class="page-inner"><header class="title-zone"><div class="kicker"><span class="zh">MD §D1.2.1｜问题拆解与后台协作</span><span class="en">MD §D1.2.1 | Problem decomposition and background orchestration</span></div><h1><span class="zh">工单变成无头 Agent 的执行链</span><span class="en">From ticket to headless Agent execution</span></h1></header><div class="rule"></div><p class="lead"><span class="zh">无头 Agent 由事件、工单或状态变化触发，按明确权限在后台运行；关键确认、异常与高风险动作始终有人的入口。</span><span class="en">A headless Agent is triggered by an event, ticket or state change and runs under explicit permissions; confirmation, exceptions and high-risk actions retain a human entry point.</span></p><main class="content"><div class="flow"><section class="block"><h2><span class="zh">触发</span><span class="en">Trigger</span></h2><ul><li><span class="zh">工单/状态/事件</span><span class="en">Ticket / state / event</span></li><li><span class="zh">满足条件才启动</span><span class="en">Start only when conditions match</span></li></ul></section><section class="block"><h2><span class="zh">订单</span><span class="en">Order</span></h2><ul><li><span class="zh">读取任务上下文</span><span class="en">Read task context</span></li><li><span class="zh">核对必要字段</span><span class="en">Check required fields</span></li></ul></section><section class="block"><h2><span class="zh">监控与派车</span><span class="en">Monitor & dispatch</span></h2><ul><li><span class="zh">调用必要 Connector/Tools</span><span class="en">Call required Connectors/Tools</span></li><li><span class="zh">更新运输状态</span><span class="en">Update transport state</span></li></ul></section><section class="block"><h2><span class="zh">结算</span><span class="en">Settlement</span></h2><ul><li><span class="zh">形成待确认结果</span><span class="en">Form a result for confirmation</span></li><li><span class="zh">保留上下文与日志</span><span class="en">Keep context and logs</span></li></ul></section><section class="block"><h2><span class="zh">回放</span><span class="en">Replay</span></h2><ul><li><span class="zh">看到每一步与版本</span><span class="en">See every step and version</span></li><li><span class="zh">失败进入修正</span><span class="en">Route failure to correction</span></li></ul></section></div><div class="route"><div class="good"><h3><span class="zh">正常路径｜后台执行</span><span class="en">Normal path | background execution</span></h3><p><span class="zh">输入完整、状态一致、动作在授权范围内：自动推进并更新业务状态。</span><span class="en">Complete inputs, consistent state and authorised actions: proceed and update business state.</span></p></div><div><h3><span class="zh">异常路径｜人工接管</span><span class="en">Exception path | human takeover</span></h3><p><span class="zh">数据缺失、状态冲突或高风险动作：暂停、保留上下文、交给 Owner 判断。</span><span class="en">Missing data, state conflict or high-risk action: pause, preserve context and ask the Owner to decide.</span></p></div></div></main><div class="discussion"><b class="zh">讨论焦点：</b><b class="en">Discussion:</b> <span class="zh">哪一个触发条件可以先演示？哪些 Action 必须二次确认，异常谁接管、结果如何回放？</span><span class="en">Which trigger can be demonstrated first? Which Actions need confirmation, who takes exceptions, and how will replay work?</span></div><footer class="foot"><span><span class="zh">ITEM × COO AI Team × ISS Biz（team）</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span><span>MD §D1.2.1 · R4.0 · 6/102</span></footer></div></div></body></html>

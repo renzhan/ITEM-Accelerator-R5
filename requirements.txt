@@ -1,0 +1,3 @@
+beautifulsoup4==4.15.0
+Markdown==3.11
+tinycss2==1.5.1

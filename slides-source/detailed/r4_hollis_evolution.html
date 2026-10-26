@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}
+.page-inner{margin:60px;min-height:600px;display:flex;flex-direction:column}
+.title-zone{min-height:60px}.kicker{font-size:14px;line-height:17px;color:#52647b}.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+.rule{height:1px;background:#152439}.lead{font-size:18px;line-height:26px;margin-top:16px;color:#52647b}
+.content{flex:1;display:grid;gap:20px;padding-top:22px;grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr}.content.flow{grid-template-columns:repeat(4,1fr)}
+.block{border-top:1px solid #c7d1dc;padding-top:10px}.block h2{font-size:22px;line-height:30px;margin-bottom:6px}.block p,.block li{font-size:18px;line-height:26px}.block ul,.block ol{padding-left:20px}.block li{margin-top:4px}.tag{font-size:14px;line-height:17px;color:#007f86;margin-bottom:4px;font-weight:700}.flow{font-size:18px;line-height:26px;margin:6px 0 10px;color:#007f86}.role,.mini,.small{font-size:18px;line-height:26px;margin-top:8px}
+.content table{width:100%;border-collapse:collapse;font-size:18px;line-height:26px}.content th,.content td{text-align:left;vertical-align:top;padding:6px;border-bottom:1px solid #c7d1dc}.content th{color:#007f86}
+.discussion{margin-top:16px;border-top:1px solid #c7d1dc;padding-top:12px;font-size:18px;line-height:26px}.discussion b{color:#007f86;margin-right:8px}
+.foot{padding-top:16px;font-size:14px;line-height:20px;color:#52647b;display:flex;justify-content:space-between;gap:16px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker">MD §D2.1.5–D2.1.7 · 60 min · R5</div>
+      <h1>
+        <span class="zh">从项目经验到可复制、可进化的能力</span>
+        <span class="en">From project experience to evolving capability</span>
+      </h1>
+    </header>
+    <div class="rule"></div>
+    <p class="lead">
+      <span class="zh">“可复制”不是搬运一个 Agent，而是复制证据结构，再按业务规则、数据、权限和 Owner 重新验证。</span>
+      <span class="en">“Reusable” does not mean moving an Agent; it means reusing the evidence structure and revalidating rules, data, access and ownership.</span>
+    </p>
+    <main class="content flow">
+      <section class="block">
+        <div class="num">01 · CAPTURE</div>
+        <h2><span class="zh">沉淀</span><span class="en">Capture</span></h2>
+        <ul class="zh">
+          <li>记录流程、判断、例外、失败与价值。</li>
+          <li>保留来源、版本、专家和人工边界。</li>
+        </ul>
+        <ul class="en">
+          <li>Record process, judgment, exceptions, failures and value.</li>
+          <li>Keep source, version, expert and human boundary.</li>
+        </ul>
+      </section>
+      <section class="block">
+        <div class="num">02 · REUSE</div>
+        <h2><span class="zh">复制</span><span class="en">Reuse</span></h2>
+        <ul class="zh">
+          <li>复用方法、字段、评测方式和接口契约。</li>
+          <li>不复用未经确认的业务规则或权限。</li>
+        </ul>
+        <ul class="en">
+          <li>Reuse methods, fields, evaluation and interface contracts.</li>
+          <li>Do not reuse unconfirmed rules or access.</li>
+        </ul>
+      </section>
+      <section class="block">
+        <div class="num">03 · EVOLVE</div>
+        <h2><span class="zh">进化</span><span class="en">Evolve</span></h2>
+        <ul class="zh">
+          <li>用反馈、漂移、错误和新规则触发版本。</li>
+          <li>回归样本、批准和回滚必须可追踪。</li>
+        </ul>
+        <ul class="en">
+          <li>Use feedback, drift, errors and new rules to trigger versions.</li>
+          <li>Regression samples, approval and rollback must be traceable.</li>
+        </ul>
+      </section>
+      <section class="block">
+        <div class="num">04 · PROVE</div>
+        <h2><span class="zh">证据</span><span class="en">Prove</span></h2>
+        <ul class="zh">
+          <li>输出可验证做法、前提、证据和不可外推项。</li>
+          <li>材料不足时，输出问题与依赖而非成熟度结论。</li>
+        </ul>
+        <ul class="en">
+          <li>Output validated practice, assumptions, evidence and non-transferable claims.</li>
+          <li>When material is missing, output questions and dependencies—not maturity claims.</li>
+        </ul>
+      </section>
+    </main>
+    <div class="discussion">
+      <b class="zh">现场输出</b><b class="en">Room output</b>
+      <span class="zh">形成“可复用 / 需共同开发 / 需 DT 支撑 / 待确认”清单；不承诺 ISS 已具备 Hollis 所述成果。</span>
+      <span class="en">Create a reusable / co-build / DT support / to-confirm list; do not claim ISS already has Hollis’s results.</span>
+    </div>
+    <footer class="foot">
+      <span>ITEM × COO AI Team × ISS Biz (team)</span>
+      <span>R5 · MD §D2.1.5–D2.1.7</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

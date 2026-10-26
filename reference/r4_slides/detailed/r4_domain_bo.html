@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}
+.page-inner{margin:60px;min-height:600px;display:flex;flex-direction:column}
+.title-zone{min-height:60px}.kicker{font-size:14px;line-height:17px;color:#52647b}.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+.rule{height:1px;background:#152439}.lead{font-size:18px;line-height:26px;margin-top:16px;color:#52647b}
+.content{flex:1;display:grid;gap:20px;padding-top:22px;grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr}
+.block{border-top:1px solid #c7d1dc;padding-top:10px}.block h2{font-size:22px;line-height:30px;margin-bottom:6px}.block p,.block li{font-size:18px;line-height:26px}.block ul,.block ol{padding-left:20px}.block li{margin-top:4px}.tag{font-size:14px;line-height:17px;color:#007f86;margin-bottom:4px;font-weight:700}.flow{font-size:18px;line-height:26px;margin:6px 0 10px;color:#007f86}.role,.mini,.small{font-size:18px;line-height:26px;margin-top:8px}
+.content table{width:100%;border-collapse:collapse;font-size:18px;line-height:26px}.content th,.content td{text-align:left;vertical-align:top;padding:6px;border-bottom:1px solid #c7d1dc}.content th{color:#007f86}
+.discussion{margin-top:16px;border-top:1px solid #c7d1dc;padding-top:12px;font-size:18px;line-height:26px}.discussion b{color:#007f86;margin-right:8px}
+.foot{padding-top:16px;font-size:14px;line-height:20px;color:#52647b;display:flex;justify-content:space-between;gap:16px}
+.block .tag{float:right;line-height:20px;margin:0 0 0 8px}
+.block{padding-top:8px}.content{padding-top:20px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker">MD §D2.2.3 · BO fulfillment · 25 min suggested</div>
+      <h1>
+        <span class="zh">BO fulfillment：目标、约束、例外与验收</span>
+        <span class="en">BO fulfillment: targets, constraints and acceptance</span>
+      </h1>
+    </header>
+
+    <div class="rule"></div>
+
+    <p class="lead">
+      <span class="zh">把 Back Order、Customer Promise、分配、补货和异常放在同一条证据链上；不预锁 BO 为首场景，也不把“90%”当已确认口径。</span>
+      <span class="en">Connect Back Order, Customer Promise, allocation, replenishment and exceptions in one evidence chain; do not preselect BO or treat “90%” as confirmed.</span>
+    </p>
+
+    <main class="content">
+      <section class="block">
+        <div class="tag">PROBLEM TO VERIFY</div>
+        <h2>
+          <span class="zh">目标与约束</span>
+          <span class="en">Targets & constraints</span>
+        </h2>
+        <ul class="zh">
+          <li>客户承诺、订单优先级、库存与 ETA 如何共同约束？</li>
+          <li>异常是缺货、延迟、分配冲突还是数据不同步？</li>
+        </ul>
+        <ul class="en">
+          <li>How do customer promise, order priority, inventory and ETA constrain each other?</li>
+          <li>Is the exception shortage, delay, allocation conflict or data mismatch?</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <div class="tag">MATERIALS</div>
+        <h2>
+          <span class="zh">需带到现场</span>
+          <span class="en">Bring to the room</span>
+        </h2>
+        <ul class="zh">
+          <li>订单、库存、补货、ETA、优先级、异常与处理记录。</li>
+          <li>真实基线、规则版本、人工分配与客户承诺定义。</li>
+        </ul>
+        <ul class="en">
+          <li>Orders, inventory, replenishment, ETA, priority, exceptions and handling records.</li>
+          <li>Real baseline, rule versions, human allocation and promise definitions.</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <div class="tag">VALIDATION BOUNDARY</div>
+        <h2>
+          <span class="zh">验证与人工边界</span>
+          <span class="en">Validation & human boundary</span>
+        </h2>
+        <ul class="zh">
+          <li>分开评测 ETA、优先级、分配建议与异常解释。</li>
+          <li>客户承诺、库存写回和跨组织分配须人工确认。</li>
+        </ul>
+        <ul class="en">
+          <li>Evaluate ETA, priority, allocation advice and exception explanation separately.</li>
+          <li>Human confirmation for promises, inventory writeback and cross-organization allocation.</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <div class="tag">OUTPUT / OWNER</div>
+        <h2>
+          <span class="zh">现场输出</span>
+          <span class="en">Room output</span>
+        </h2>
+        <p>
+          <span class="zh">输出一个候选问题、指标、样本和排除项；口径不明即列为待验证。ISS Biz fulfillment Owner 待确认；ITEM 记录，DT 按需确认数据与接口。</span>
+          <span class="en">Output one candidate problem, metrics, samples and exclusions; unclear definitions remain to validate. ISS Biz fulfillment Owner to confirm; ITEM records, DT checks data and interfaces as needed.</span>
+        </p>
+      </section>
+    </main>
+
+    <div class="discussion">
+      <b class="zh">讨论焦点</b><b class="en">Discussion</b>
+      <span class="zh">哪一条约束最适合先做辅助建议？验收是 ETA、周期、缺货、承诺质量还是异常处理？</span>
+      <span class="en">Which constraint is best for assisted advice first? Is acceptance about ETA, cycle time, shortage, promise quality or exception handling?</span>
+    </div>
+
+    <footer class="foot">
+      <span>ITEM × COO AI Team × ISS Biz (team)</span>
+      <span>MD §D2.2.3 · D1.2.4 · R4.0 · 80/102</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

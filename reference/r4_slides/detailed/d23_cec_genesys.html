@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="utf-8">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    .slide-container{
+      width:1280px;
+      min-height:720px;
+      background:#f6f7f9;
+      display:flex;
+      flex-direction:column;
+      align-items:stretch;
+      overflow:visible;
+      font-family:Inter,"Noto Sans SC",Arial,sans-serif;
+      color:#152439;
+    }
+    .page-inner{
+      margin:60px;
+      min-height:600px;
+      display:flex;
+      flex-direction:column;
+      overflow:visible;
+    }
+    .zh{display:revert}.en{display:none}
+    html[data-lang=en] .zh{display:none}
+    html[data-lang=en] .en{display:revert}
+
+    .title-zone{min-height:60px}
+    .kicker{font-size:14px;line-height:17px;color:#52647b}
+    .title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+    .rule{border-top:1px solid #152439}
+    .lead{font-size:18px;line-height:1.45;margin-top:16px;color:#52647b}
+
+    .content{flex:1;display:grid;gap:24px;padding-top:24px;align-content:stretch;overflow:visible}
+    .flow{grid-template-columns:repeat(6,1fr);display:grid;gap:12px}
+    .step{border-top:3px solid #007f86;padding-top:6px}
+    .step .num{font-size:12px;color:#007f86;font-weight:700}
+    .step h2{font-size:18px;line-height:25px;margin:4px 0}
+    .step p{font-size:18px;line-height:1.4;color:#152439}
+
+    .human{border-top:1px solid #152439;padding-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+    .human h3{font-size:16px;line-height:22px}
+    .human p,.human li{font-size:18px;line-height:1.4;margin-top:4px;color:#152439}
+    .human ul{list-style:none}
+    .human li:before{content:"— ";color:#007f86}
+
+    .discussion{border-top:1px solid #152439;padding-top:12px;font-size:18px;line-height:1.4;margin-top:16px}
+    .foot{padding-top:16px;font-size:14px;color:#52647b;display:flex;justify-content:space-between;line-height:1.25;margin-top:0}
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="page-inner">
+      <header class="title-zone">
+        <div class="kicker">
+            <span class="zh">MD §D1.2.6｜CEC SOP 与 Genesys 相关流程</span>
+            <span class="en">MD §D1.2.6 | CEC SOP and controlled Genesys execution</span>
+        </div>
+        <h1>
+          <span class="zh">CEC SOP 如何连接 Genesys 受控执行</span>
+          <span class="en">How CEC SOP connects to controlled Genesys execution</span>
+        </h1>
+      </header>
+
+      <div class="rule"></div>
+
+      <p class="lead">
+        <span class="zh">观察形成 SOP，SOP 进入 UKM、Ontology 或 Skill，再用 Connector/Tools 接到允许的 Genesys 相关动作；自动辅助人工，而非取消坐席。</span>
+        <span class="en">Observation forms an SOP; the SOP enters UKM, Ontology or Skill, then approved Genesys-related Actions connect through Connectors/Tools. Automation assists agents; it does not remove them.</span>
+      </p>
+
+      <main class="content">
+        <div class="flow">
+          <section class="step">
+            <div class="num">01</div>
+            <h2><span class="zh">观察</span><span class="en">Observe</span></h2>
+            <p><span class="zh">授权真实流程</span><span class="en">Authorised real work</span></p>
+          </section>
+
+          <section class="step">
+            <div class="num">02</div>
+            <h2><span class="zh">SOP</span><span class="en">SOP</span></h2>
+            <p><span class="zh">步骤与例外审核</span><span class="en">Review steps and exceptions</span></p>
+          </section>
+
+          <section class="step">
+            <div class="num">03</div>
+            <h2><span class="zh">UKM / Ontology</span><span class="en">UKM / Ontology</span></h2>
+            <p><span class="zh">形成共同语义</span><span class="en">Create shared semantics</span></p>
+          </section>
+
+          <section class="step">
+            <div class="num">04</div>
+            <h2><span class="zh">Skill</span><span class="en">Skill</span></h2>
+            <p><span class="zh">封装可复用能力</span><span class="en">Package reusable capability</span></p>
+          </section>
+
+          <section class="step">
+            <div class="num">05</div>
+            <h2><span class="zh">Connector / Tools</span><span class="en">Connector / Tools</span></h2>
+            <p><span class="zh">接入允许动作</span><span class="en">Connect allowed Actions</span></p>
+          </section>
+
+          <section class="step">
+            <div class="num">06</div>
+            <h2><span class="zh">Genesys</span><span class="en">Genesys</span></h2>
+            <p><span class="zh">回复、日志、回写</span><span class="en">Reply, log, write-back</span></p>
+          </section>
+        </div>
+
+        <div class="human">
+          <div>
+            <h3><span class="zh">可自动辅助</span><span class="en">Automate or assist</span></h3>
+            <ul>
+              <li><span class="zh">标准查询、建议回复、信息补充</span><span class="en">Standard queries, reply suggestions, information capture</span></li>
+              <li><span class="zh">记录调用、人工接管与最终结果</span><span class="en">Log calls, human takeover and final result</span></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3><span class="zh">必须保留人的责任</span><span class="en">Keep human accountability</span></h3>
+            <ul>
+              <li><span class="zh">敏感沟通、例外处理、高风险动作</span><span class="en">Sensitive communication, exceptions, high-risk Actions</span></li>
+              <li><span class="zh">接口、权限、留存范围需按实际确认</span><span class="en">Confirm interfaces, access and retention in the real scope</span></li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <div class="discussion">
+        <b class="zh">讨论焦点：</b><b class="en">Discussion:</b>
+        <span class="zh">哪个 CEC SOP 与 Genesys 相关动作可真实演示？首个接口、日志和人工接管点由谁确认？</span>
+        <span class="en">Which CEC SOP and Genesys-related Action can be demonstrated for real? Who confirms the first interface, logs and human takeover point?</span>
+      </div>
+
+      <footer class="foot">
+        <span><span class="zh">ITEM × COO AI Team × ISS Biz（team）</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span>
+        <span>MD §D1.2.6 · R4.0 · 24/102</span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

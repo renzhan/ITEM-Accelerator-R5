@@ -1,0 +1,40 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "title": "ISS Workshop"
+    },
+    {
+      "path": "/Item_ISS_PreRead_R5.html",
+      "title": "Pre-work"
+    },
+    {
+      "path": "/Item_ISS_Meeting_R5.html",
+      "title": "Meeting"
+    },
+    {
+      "path": "/brief/",
+      "title": "Pre-work redirect"
+    },
+    {
+      "path": "/meeting/",
+      "title": "Meeting redirect"
+    },
+    {
+      "path": "/forms/prework.html",
+      "title": "Pre-work input"
+    },
+    {
+      "path": "/forms/convergence.html",
+      "title": "Convergence"
+    },
+    {
+      "path": "/forms/records.html",
+      "title": "Local records"
+    },
+    {
+      "path": "/docs/reader.html",
+      "title": "Complete MD"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh"><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{width:1280px;min-height:720px;background:#f6f7f9;display:flex;flex-direction:column;overflow:visible;font-family:Inter,"Noto Sans SC",Arial,sans-serif;color:#152439}
+.page-inner{margin:60px;min-height:600px;display:flex;flex-direction:column;flex:1;overflow:visible}
+.zh{display:revert}.en{display:none}html[data-lang=en] .zh{display:none}html[data-lang=en] .en{display:revert}
+.title-zone{min-height:60px}
+.kicker{font-size:14px;line-height:17px;color:#52647b}
+.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+.rule{border-top:1px solid #152439}
+.lead{font-size:18px;line-height:1.45;margin-top:16px;color:#52647b}
+.content{flex:1;display:grid;gap:24px;padding-top:24px;min-height:0;overflow:visible}
+.flow{grid-template-columns:repeat(4,1fr);display:grid;gap:12px}
+.step{border-top:3px solid #007f86;padding-top:8px}
+.step .num{font-size:13px;color:#007f86;font-weight:700}
+.step h2{font-size:18px;line-height:24px;margin:4px 0}
+.step p{font-size:18px;line-height:1.4;margin:0}
+.check{border-top:1px solid #152439;padding-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+ .check h3{font-size:18px;line-height:24px;margin:0}
+.check p,.check li{font-size:18px;line-height:1.4;margin-top:6px}
+.check ul{list-style:none;padding:0;margin:6px 0 0 0}
+.check li:before{content:"— ";color:#007f86}
+.discussion{border-top:1px solid #152439;padding-top:12px;font-size:18px;line-height:1.4;margin-top:16px}
+.foot{padding-top:16px;font-size:14px;color:#52647b;display:flex;justify-content:space-between;line-height:1.25}
+</style></head><body><div class="slide-container"><div class="page-inner"><header class="title-zone"><div class="kicker"><span class="zh">MD §D1.2.5｜视频 → SOP → Agent → 执行</span><span class="en">MD §D1.2.5 | Video → SOP → Agent → execution</span></div><h1><span class="zh">视频到 SOP，再到 Agent 与执行</span><span class="en">From video to SOP, Agent and execution</span></h1></header><div class="rule"></div><p class="lead"><span class="zh">先提取事实和不确定点，再由业务审核决定哪些步骤能进入 Agent、Tool 或 Workflow；执行前必须经过沙盒验证。</span><span class="en">Extract facts and uncertainties first. Business review decides what enters an Agent, Tool or Workflow; sandbox validation comes before execution.</span></p><main class="content"><div class="flow"><section class="step"><div class="num">01 · EXTRACT</div><h2><span class="zh">视频观察</span><span class="en">Observe video</span></h2><p><span class="zh">提取顺序、输入、判断、系统切换、人工动作和结果。</span><span class="en">Extract sequence, inputs, judgement, system switches, human actions and result.</span></p></section><section class="step"><div class="num">02 · DRAFT</div><h2><span class="zh">SOP 草稿</span><span class="en">SOP draft</span></h2><p><span class="zh">标出不确定步骤、缺失信息和可能自动化点。</span><span class="en">Mark uncertain steps, missing information and automation candidates.</span></p></section><section class="step"><div class="num">03 · REVIEW</div><h2><span class="zh">业务审核</span><span class="en">Business review</span></h2><p><span class="zh">实际操作者与 Owner 确认规则、例外与责任。</span><span class="en">Operator and Owner confirm rules, exceptions and accountability.</span></p></section><section class="step"><div class="num">04 · VERIFY</div><h2><span class="zh">沙盒执行</span><span class="en">Sandbox run</span></h2><p><span class="zh">验证正常/异常路径，再按权限进入受控执行。</span><span class="en">Verify normal and exception paths, then execute under access control.</span></p></section></div><div class="check"><div><h3><span class="zh">演示要看到</span><span class="en">The demo should show</span></h3><ul><li><span class="zh">哪些步骤被系统明确识别为不确定</span><span class="en">Which steps are marked uncertain</span></li><li><span class="zh">业务修改如何回写 SOP 与知识</span><span class="en">How business correction writes back to SOP and knowledge</span></li></ul></div><div><h3><span class="zh">持续优化</span><span class="en">Continuous improvement</span></h3><ul><li><span class="zh">失败、人工修正与结果返回知识</span><span class="en">Failures, human corrections and results return to knowledge</span></li><li><span class="zh">不把一次视频直接当成上线流程</span><span class="en">Do not treat one video as a production workflow</span></li></ul></div></div></main><div class="discussion"><b class="zh">讨论焦点：</b><b class="en">Discussion:</b> <span class="zh">哪一段流程适合首个视频演示？谁有权把某一步从“建议”升级为可执行 Action？</span><span class="en">Which process segment is suitable for the first video demo? Who can upgrade a step from “suggestion” to executable Action?</span></div><footer class="foot"><span><span class="zh">ITEM × COO AI Team × ISS Biz（team）</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span><span>MD §D1.2.5 · R4.0 · 21/102</span></footer></div></div></body></html>

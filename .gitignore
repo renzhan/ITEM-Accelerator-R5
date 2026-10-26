@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.sqlite*
+*.db
+.env
+.env.*
+.dev.vars
+backend/data/
+node_modules/
+.wrangler/
+_pages/
+site/
+delivery/
+responses*.json
+ISS_R5_Discussion_Notes*

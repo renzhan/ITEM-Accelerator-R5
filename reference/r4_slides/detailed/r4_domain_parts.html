@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}
+.page-inner{margin:60px;min-height:600px;display:flex;flex-direction:column}
+.title-zone{min-height:60px}.kicker{font-size:14px;line-height:17px;color:#52647b}.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+.rule{height:1px;background:#152439}.lead{font-size:18px;line-height:26px;margin-top:16px;color:#52647b}
+.content{flex:1;display:grid;gap:20px;padding-top:22px;grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr}
+.block{border-top:1px solid #c7d1dc;padding-top:10px}.block h2{font-size:22px;line-height:30px;margin-bottom:6px}.block p,.block li{font-size:18px;line-height:26px}.block ul,.block ol{padding-left:20px}.block li{margin-top:4px}.tag{font-size:14px;line-height:17px;color:#007f86;margin-bottom:4px;font-weight:700}.flow{font-size:18px;line-height:26px;margin:6px 0 10px;color:#007f86}.role,.mini,.small{font-size:18px;line-height:26px;margin-top:8px}
+.content table{width:100%;border-collapse:collapse;font-size:18px;line-height:26px}.content th,.content td{text-align:left;vertical-align:top;padding:6px;border-bottom:1px solid #c7d1dc}.content th{color:#007f86}
+.discussion{margin-top:16px;border-top:1px solid #c7d1dc;padding-top:12px;font-size:18px;line-height:26px}.discussion b{color:#007f86;margin-right:8px}
+.foot{padding-top:16px;font-size:14px;line-height:20px;color:#52647b;display:flex;justify-content:space-between;gap:16px}
+.block .tag{float:right;line-height:20px;margin:0 0 0 8px}
+.block{padding-top:8px}.content{padding-top:20px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker">MD §D2.2.3 · parts supply chain · 25 min suggested</div>
+      <h1>
+        <span class="zh">parts supply chain：预测优化怎样进入实际流程</span>
+        <span class="en">parts supply chain: bringing prediction into operations</span>
+      </h1>
+    </header>
+
+    <div class="rule"></div>
+
+    <p class="lead">
+      <span class="zh">把备件需求、库存、补货、分配、运输和异常连回服务指标；预测/优化是否可用，必须与规则、数据和执行权限一起验证。</span>
+      <span class="en">Connect parts demand, inventory, replenishment, allocation, transport and exceptions back to service metrics; prediction/optimization must be validated with rules, data and execution access.</span>
+    </p>
+
+    <main class="content four">
+      <section class="block">
+        <div class="tag">PROBLEM TO VERIFY</div>
+        <h2><span class="zh">跨系统断点</span><span class="en">Cross-system breakpoint</span></h2>
+        <ul class="zh">
+          <li>需求、库存、补货、运输和异常如何跨系统运行？</li>
+          <li>服务水平、缺件、周期与成本哪个是真实约束？</li>
+        </ul>
+        <ul class="en">
+          <li>How do demand, inventory, replenishment, transport and exceptions run across systems?</li>
+          <li>Which is the real constraint: service level, shortage, cycle time or cost?</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <div class="tag">MATERIALS</div>
+        <h2><span class="zh">需带到现场</span><span class="en">Bring to the room</span></h2>
+        <ul class="zh">
+          <li>备件需求、库存、补货、运输、分配和异常样本。</li>
+          <li>规则、历史基线、预测口径、系统字段与接口清单。</li>
+        </ul>
+        <ul class="en">
+          <li>Parts demand, inventory, replenishment, transport, allocation and exception samples.</li>
+          <li>Rules, historical baseline, forecast definitions, system fields and interface list.</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <div class="tag">VALIDATION BOUNDARY</div>
+        <h2><span class="zh">预测、优化、执行分开</span><span class="en">Separate predict, optimize, execute</span></h2>
+        <ul class="zh">
+          <li>分别测预测误差、优化建议、规则冲突与异常解释。</li>
+          <li>补货、分配、运输指令和库存写回必须人工确认。</li>
+        </ul>
+        <ul class="en">
+          <li>Test forecast error, optimization advice, rule conflicts and exception explanation separately.</li>
+          <li>Human confirmation for replenishment, allocation, transport orders and inventory writeback.</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <div class="tag">OUTPUT / OWNER</div>
+        <h2><span class="zh">现场输出</span><span class="en">Room output</span></h2>
+        <p>
+          <span class="zh">输出一个可取样的预测或优化问题、指标与规则边界。ISS Biz supply-chain Owner 待确认；ITEM 记录，DT 按需确认数据、软件与接口。</span>
+          <span class="en">Output one sampleable prediction or optimization problem, metrics and rule boundary. ISS Biz supply-chain Owner to confirm; ITEM records, DT checks data, software and interfaces as needed.</span>
+        </p>
+      </section>
+    </main>
+
+    <div class="discussion">
+      <b class="zh">讨论焦点</b><b class="en">Discussion</b>
+      <span class="zh">先验证预测、规则冲突解释，还是人工辅助分配？数据互联与实际执行权限如何分开记录？</span>
+      <span class="en">Do we validate prediction, rule-conflict explanation or assisted allocation first? How do we record connectivity separately from execution authority?</span>
+    </div>
+
+    <footer class="foot">
+      <span>ITEM × COO AI Team × ISS Biz (team)</span>
+      <span>MD §D2.2.3 · R4.0 · 82/102</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

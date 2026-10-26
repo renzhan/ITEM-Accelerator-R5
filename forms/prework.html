@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISS-R5 预研采集</title>
+  <link rel="stylesheet" href="../assets/collection.css">
+</head>
+<body>
+<main>
+  <section class="collection-shell">
+    <header class="collection-header">
+      <p><a href="../index.html">返回首页 / Home</a> · <a href="../brief/index.html">Brief</a> · <a href="../meeting/index.html">Meeting</a> · <a href="records.html">本机记录 / Local records</a></p>
+      <h1><span class="lang-zh">ISS-R5 预研采集</span><span class="lang-en">ISS-R5 Pre-work collection</span></h1>
+      <p class="lede"><span class="lang-zh">先在本机保存，配置有效 API 后才会在线提交。GitHub Pages 本身不保存集中数据。</span><span class="lang-en">This form saves locally first. Online submission is available only when an API endpoint is configured; GitHub Pages does not store centralized data.</span></p>
+      <p class="privacy-note"><span class="lang-zh"><strong>隐私提醒：</strong>请勿提交客户个人资料、密码、密钥或凭证。材料请写授权后的描述，或填写受控访问链接；不会自动上传文件或会议笔记。</span><span class="lang-en"><strong>Privacy:</strong> Do not submit customer personal data, passwords, keys, or credentials. Describe authorized materials or provide a controlled-access link; files and meeting notes are never uploaded automatically.</span></p>
+    </header>
+    <form data-workshop-form="prework" novalidate>
+      <div class="field-grid">
+        <div class="field"><label for="department"><span class="lang-zh">部门 *</span><span class="lang-en">Department *</span></label><input id="department" data-field="department" maxlength="200" required></div>
+        <div class="field"><label for="person"><span class="lang-zh">人名 *</span><span class="lang-en">Person *</span></label><input id="person" data-field="person" maxlength="200" required></div>
+        <div class="field full"><label for="topic"><span class="lang-zh">主题 *</span><span class="lang-en">Topic *</span></label><input id="topic" data-field="topic" maxlength="500" required></div>
+        <div class="field full"><label for="pain"><span class="lang-zh">痛点 *</span><span class="lang-en">Pain point *</span></label><textarea id="pain" data-field="pain" maxlength="500" required></textarea></div>
+        <div class="field full"><label for="currentState"><span class="lang-zh">现状 *</span><span class="lang-en">Current state *</span></label><textarea id="currentState" data-field="currentState" maxlength="500" required></textarea></div>
+        <div class="field full"><label for="inputMaterials"><span class="lang-zh">可提供 input 资料和数据 *</span><span class="lang-en">Available input materials and data *</span></label><textarea id="inputMaterials" data-field="inputMaterials" maxlength="5000" required></textarea></div>
+        <div class="field full"><label for="desiredPractice"><span class="lang-zh">期望的最好实践 *</span><span class="lang-en">Desired best practice *</span></label><textarea id="desiredPractice" data-field="desiredPractice" maxlength="5000" required></textarea></div>
+        <div class="field full"><label for="baseline"><span class="lang-zh">基线（未知可填“待补”） *</span><span class="lang-en">Baseline (enter “TBD” if unknown) *</span></label><textarea id="baseline" data-field="baseline" maxlength="500" required></textarea></div>
+        <div class="field full"><label for="breakpoints"><span class="lang-zh">断点 *</span><span class="lang-en">Breakpoints *</span></label><textarea id="breakpoints" data-field="breakpoints" maxlength="500" required></textarea></div>
+        <div class="field"><label for="owner"><span class="lang-zh">业务 Owner *</span><span class="lang-en">Business owner *</span></label><input id="owner" data-field="owner" maxlength="200" required></div>
+        <div class="field full"><label for="materialLinks"><span class="lang-zh">授权资料链接（可选）</span><span class="lang-en">Authorized material links (optional)</span></label><textarea id="materialLinks" data-field="materialLinks" maxlength="5000"></textarea><p class="hint"><span class="lang-zh">仅填写已授权、受控访问链接；不要粘贴凭证。</span><span class="lang-en">Use only authorized, access-controlled links; never paste credentials.</span></p></div>
+      </div>
+      <label class="checkline"><input type="checkbox" data-consent required><span><span class="lang-zh">我确认以上内容不含不应收集的个人资料或凭证，并同意按本页说明提交。 *</span><span class="lang-en">I confirm that the content contains no personal data or credentials that should not be collected, and I agree to submit it as described. *</span></span></label>
+      <div class="actions"><button type="submit" data-action="submit"><span class="lang-zh">提交到已配置的 API</span><span class="lang-en">Submit to configured API</span></button><button type="button" class="secondary" data-action="export-json"><span class="lang-zh">导出当前 JSON</span><span class="lang-en">Export current JSON</span></button><button type="button" class="secondary" data-action="export-csv"><span class="lang-zh">导出当前 CSV</span><span class="lang-en">Export current CSV</span></button></div>
+      <div data-collection-notice class="collection-notice" aria-live="polite"></div>
+    </form>
+  </section>
+</main>
+<script src="../assets/site-config.js"></script>
+<script src="../assets/collection.js"></script>
+<script src="../assets/standalone-ui.js"></script>
+</body>
+</html>

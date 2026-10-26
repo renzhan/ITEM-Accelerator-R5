@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISS-R5 收敛采集</title>
+  <link rel="stylesheet" href="../assets/collection.css">
+</head>
+<body>
+<main>
+  <section class="collection-shell">
+    <header class="collection-header">
+      <p><a href="../index.html">返回首页 / Home</a> · <a href="../brief/index.html">Brief</a> · <a href="../meeting/index.html">Meeting</a> · <a href="records.html">本机记录 / Local records</a></p>
+      <h1><span class="lang-zh">ISS-R5 收敛采集</span><span class="lang-en">ISS-R5 Convergence collection</span></h1>
+      <p class="lede"><span class="lang-zh">先在本机保存，配置有效 API 后才会在线提交。GitHub Pages 本身不保存集中数据。</span><span class="lang-en">This form saves locally first. Online submission is available only when an API endpoint is configured; GitHub Pages does not store centralized data.</span></p>
+      <p class="privacy-note"><span class="lang-zh"><strong>隐私提醒：</strong>请勿提交客户个人资料、密码、密钥或凭证。材料请写授权后的描述，或填写受控访问链接；不会自动上传文件或会议笔记。</span><span class="lang-en"><strong>Privacy:</strong> Do not submit customer personal data, passwords, keys, or credentials. Describe authorized materials or provide a controlled-access link; files and meeting notes are never uploaded automatically.</span></p>
+    </header>
+    <form data-workshop-form="convergence" novalidate>
+      <div class="field-grid">
+        <div class="field full"><label for="topic"><span class="lang-zh">议题 *</span><span class="lang-en">Topic *</span></label><input id="topic" data-field="topic" maxlength="500" required></div>
+        <div class="field full"><label for="prioritizedScenario"><span class="lang-zh">优先场景 / 从哪里开始 *</span><span class="lang-en">Prioritized scenario / starting point *</span></label><textarea id="prioritizedScenario" data-field="prioritizedScenario" maxlength="5000" required></textarea></div>
+        <div class="field full"><label for="coreCapabilities"><span class="lang-zh">核心能力 / 护城河 *</span><span class="lang-en">Core capabilities / moat *</span></label><textarea id="coreCapabilities" data-field="coreCapabilities" maxlength="5000" required></textarea></div>
+        <div class="field full"><label for="coBuildMode"><span class="lang-zh">共建方式 *</span><span class="lang-en">Co-build mode *</span></label><textarea id="coBuildMode" data-field="coBuildMode" maxlength="5000" required></textarea></div>
+        <div class="field"><label for="initiator"><span class="lang-zh">发起人 *</span><span class="lang-en">Initiator *</span></label><input id="initiator" data-field="initiator" maxlength="200" required></div>
+        <div class="field full"><label for="participants"><span class="lang-zh">参与者 *</span><span class="lang-en">Participants *</span></label><textarea id="participants" data-field="participants" maxlength="5000" required></textarea></div>
+        <div class="field"><label for="decisionMaker"><span class="lang-zh">决策人 *</span><span class="lang-en">Decision maker *</span></label><input id="decisionMaker" data-field="decisionMaker" maxlength="200" required></div>
+        <div class="field full"><label for="risks"><span class="lang-zh">可能风险 *</span><span class="lang-en">Potential risks *</span></label><textarea id="risks" data-field="risks" maxlength="5000" required></textarea></div>
+        <div class="field full"><label for="acceptance"><span class="lang-zh">验收 / 基线（可选）</span><span class="lang-en">Acceptance / baseline (optional)</span></label><textarea id="acceptance" data-field="acceptance" maxlength="5000"></textarea></div>
+        <div class="field full"><label for="inputsAndBoundary"><span class="lang-zh">能力输入与执行边界（可选）</span><span class="lang-en">Capability inputs and execution boundary (optional)</span></label><textarea id="inputsAndBoundary" data-field="inputsAndBoundary" maxlength="5000"></textarea></div>
+        <div class="field full"><label for="nextGate"><span class="lang-zh">下一决策门（可选）</span><span class="lang-en">Next decision gate (optional)</span></label><textarea id="nextGate" data-field="nextGate" maxlength="5000"></textarea></div>
+        <div class="field"><label for="owner"><span class="lang-zh">推进 Owner（可选）</span><span class="lang-en">Delivery owner (optional)</span></label><input id="owner" data-field="owner" maxlength="200"></div>
+        <div class="field"><label for="deadline"><span class="lang-zh">约定日期（可选）</span><span class="lang-en">Agreed date (optional)</span></label><input id="deadline" data-field="deadline" maxlength="200"></div>
+        <div class="field"><label for="status"><span class="lang-zh">推进状态（可选）</span><span class="lang-en">Status (optional)</span></label><select id="status" data-field="status"><option value="">—</option><option>继续</option><option>有条件继续</option><option>补证缩小</option><option>暂缓转交</option></select></div>
+        <div class="field full"><label for="leaderViews"><span class="lang-zh">领导意见（可选）</span><span class="lang-en">Leader views (optional)</span></label><textarea id="leaderViews" data-field="leaderViews" maxlength="5000"></textarea></div>
+      </div>
+      <label class="checkline"><input type="checkbox" data-consent required><span><span class="lang-zh">我确认以上内容不含不应收集的个人资料或凭证，并同意按本页说明提交。 *</span><span class="lang-en">I confirm that the content contains no personal data or credentials that should not be collected, and I agree to submit it as described. *</span></span></label>
+      <div class="actions"><button type="submit" data-action="submit"><span class="lang-zh">提交到已配置的 API</span><span class="lang-en">Submit to configured API</span></button><button type="button" class="secondary" data-action="export-json"><span class="lang-zh">导出当前 JSON</span><span class="lang-en">Export current JSON</span></button><button type="button" class="secondary" data-action="export-csv"><span class="lang-zh">导出当前 CSV</span><span class="lang-en">Export current CSV</span></button></div>
+      <div data-collection-notice class="collection-notice" aria-live="polite"></div>
+    </form>
+  </section>
+</main>
+<script src="../assets/site-config.js"></script>
+<script src="../assets/collection.js"></script>
+<script src="../assets/standalone-ui.js"></script>
+</body>
+</html>

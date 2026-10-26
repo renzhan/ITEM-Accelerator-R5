@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}
+.page-inner{margin:60px;min-height:600px;display:flex;flex-direction:column}
+.title-zone{min-height:60px}.kicker{font-size:14px;line-height:17px;color:#52647b}.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+.rule{height:1px;background:#152439}.lead{font-size:18px;line-height:26px;margin-top:16px;color:#52647b}
+.content{flex:1;display:grid;gap:20px;padding-top:22px;grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr}.content.flow{grid-template-columns:repeat(4,1fr)}
+.block{border-top:1px solid #c7d1dc;padding-top:10px}.block h2{font-size:22px;line-height:30px;margin-bottom:6px}.block p,.block li{font-size:18px;line-height:26px}.block ul,.block ol{padding-left:20px}.block li{margin-top:4px}.tag{font-size:14px;line-height:17px;color:#007f86;margin-bottom:4px;font-weight:700}.flow{font-size:18px;line-height:26px;margin:6px 0 10px;color:#007f86}.role,.mini,.small{font-size:18px;line-height:26px;margin-top:8px}
+.content table{width:100%;border-collapse:collapse;font-size:18px;line-height:26px}.content th,.content td{text-align:left;vertical-align:top;padding:6px;border-bottom:1px solid #c7d1dc}.content th{color:#007f86}
+.discussion{margin-top:16px;border-top:1px solid #c7d1dc;padding-top:12px;font-size:18px;line-height:26px}.discussion b{color:#007f86;margin-right:8px}
+.foot{padding-top:16px;font-size:14px;line-height:20px;color:#52647b;display:flex;justify-content:space-between;gap:16px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker">MD §D2.2.3 · CEC · pre-work form · cross-domain discussion · R5</div>
+      <h1>
+        <span class="zh">CEC：在哪一条坐席流程验证 AI</span>
+        <span class="en">CEC: where to validate AI in the agent flow</span>
+      </h1>
+    </header>
+
+    <div class="rule"></div>
+
+    <p class="lead">
+      <span class="zh">先定位坐席任务与承诺节点，再判断知识检索、分类、分派或 Action 是否值得验证；不预设 CEC/Genesys AI 已成熟或必须替换入口。</span>
+      <span class="en">Locate the agent task and promise point first, then test retrieval, classification, routing or Action; do not assume CEC/Genesys AI is mature or must replace the entry.</span>
+    </p>
+
+    <main class="content four">
+      <section class="block">
+        <div class="tag">PROBLEM TO VERIFY</div>
+        <h2>
+          <span class="zh">流程断点</span>
+          <span class="en">Process breakpoint</span>
+        </h2>
+        <ul class="zh">
+          <li>客服、承诺、分派、知识检索中哪一步重复或失真？</li>
+          <li>现有入口、SOP、文本与处理结果如何记录？</li>
+        </ul>
+        <ul class="en">
+          <li>Which step in service, promise, routing or retrieval repeats or fails?</li>
+          <li>How are current entry, SOP, text and outcome recorded?</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <div class="tag">MATERIALS</div>
+        <h2>
+          <span class="zh">需带到现场</span>
+          <span class="en">Bring to the room</span>
+        </h2>
+        <ul class="zh">
+          <li>脱敏通话/工单文本、SOP、意图与分派规则。</li>
+          <li>坐席、主管、客户承诺和权限定义。</li>
+        </ul>
+        <ul class="en">
+          <li>Redacted call/ticket text, SOPs, intent and routing rules.</li>
+          <li>Agent, supervisor, customer promise and access definitions.</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <div class="tag">VALIDATION BOUNDARY</div>
+        <h2>
+          <span class="zh">验证与人工边界</span>
+          <span class="en">Validation & human boundary</span>
+        </h2>
+        <ul class="zh">
+          <li>用正常/异常/边界样本测准确性、周期、转人工率。</li>
+          <li>承诺、敏感查询和外呼 Action 先人工确认。</li>
+        </ul>
+        <ul class="en">
+          <li>Test accuracy, cycle time and handoff rate on normal, abnormal and boundary samples.</li>
+          <li>Human confirmation first for promises, sensitive queries and outbound Actions.</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <div class="tag">OUTPUT / OWNER</div>
+        <h2>
+          <span class="zh">现场输出</span>
+          <span class="en">Room output</span>
+        </h2>
+        <p>
+          <span class="zh">输出一个待验证坐席任务、基线与拒答/升级条件。ISS Biz 坐席/运营 Owner 待确认；ITEM 记录，COO AI Team 提供方法，DT 按需查接口。</span>
+          <span class="en">Output one agent task, baseline and refusal/escalation rules to validate. ISS Biz agent/operations Owner to confirm; ITEM records, COO AI provides method, DT checks interfaces as needed.</span>
+        </p>
+      </section>
+    </main>
+
+    <div class="discussion">
+      <b class="zh">讨论焦点</b><b class="en">Discussion</b>
+          <span class="zh">材料会前采集；会中比较跨域断点。首个任务是知识检索、意图分类、分派还是承诺辅助？证据与人工接管点是什么？</span>
+          <span class="en">Collect material before the workshop and compare cross-domain breaks. Is the first task retrieval, classification, routing or promise assistance? What evidence and takeover point apply?</span>
+    </div>
+
+    <footer class="foot">
+      <span>ITEM × COO AI Team × ISS Biz (team)</span>
+          <span>R5 · MD §D2.2.3 · D1.2.6</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

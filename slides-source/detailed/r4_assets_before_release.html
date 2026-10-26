@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}
+.page-inner{margin:60px;min-height:600px;display:flex;flex-direction:column}
+.title-zone{min-height:60px}.kicker{font-size:14px;line-height:17px;color:#52647b}.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+.rule{height:1px;background:#152439}.lead{font-size:18px;line-height:26px;margin-top:16px;color:#52647b}
+.content{flex:1;display:grid;gap:20px;padding-top:22px;grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr}.flow{grid-template-columns:repeat(4,1fr)}
+.block{border-top:1px solid #c7d1dc;padding-top:10px}.block h2{font-size:22px;line-height:30px;margin-bottom:6px}.block p,.block li{font-size:18px;line-height:26px}.block ul,.block ol{padding-left:20px}.block li{margin-top:4px}.tag{font-size:14px;line-height:17px;color:#007f86;margin-bottom:4px;font-weight:700}.flow{font-size:18px;line-height:26px;margin:6px 0 10px;color:#007f86}.role,.mini,.small{font-size:18px;line-height:26px;margin-top:8px}
+.content table{width:100%;border-collapse:collapse;font-size:18px;line-height:26px}.content th,.content td{text-align:left;vertical-align:top;padding:6px;border-bottom:1px solid #c7d1dc}.content th{color:#007f86}
+.num{font-size:14px;line-height:17px;color:#007f86;font-weight:700}.status{font-size:18px;line-height:26px;color:#007f86;font-weight:700;margin-bottom:6px}.note{font-size:18px!important;line-height:26px!important;color:#52647b}
+.discussion{margin-top:16px;border-top:1px solid #c7d1dc;padding-top:12px;font-size:18px;line-height:26px}.discussion b{color:#007f86;margin-right:8px}
+.foot{padding-top:16px;font-size:14px;line-height:20px;color:#52647b;display:flex;justify-content:space-between;gap:16px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker">MD §D2.3.5 · 能力资产生命周期 I · R5</div>
+      <h1><span class="zh">能力生命周期 I：草稿 → 审核 → 样本 → 认证</span><span class="en">Capability lifecycle I: draft to certification</span></h1>
+    </header>
+    <div class="rule"></div>
+    <p class="lead"><span class="zh">合成资产来自真实流程和审核，不等同于七阶段项目路径；本页只覆盖发布前四状态，后四状态由下一页继续。</span><span class="en">Synthesized assets come from real process and review, separate from the seven-stage project path; this page covers only the four pre-release states.</span></p>
+    <main class="content flow">
+      <section class="block">
+        <div class="num">01 · CANDIDATE</div>
+        <div class="status"><span class="zh">候选 / 草稿</span><span class="en">Candidate / draft</span></div>
+        <ul class="zh">
+          <li>问题、来源、范围、初步 Owner、排除项与风险。</li>
+          <li>交付：候选卡；推测与合成样本须标记。</li>
+        </ul>
+        <ul class="en">
+          <li>Problem, source, scope, initial Owner, exclusions and risks.</li>
+          <li>Output: candidate card; mark inferred and synthetic samples.</li>
+        </ul>
+      </section>
+      <section class="block">
+        <div class="num">02 · EXPERT REVIEW</div>
+        <div class="status"><span class="zh">专家审核</span><span class="en">Expert review</span></div>
+        <ul class="zh">
+          <li>核对知识、流程、规则、例外、有效期与边界。</li>
+          <li>交付：审核意见、版本与 Owner。</li>
+        </ul>
+        <ul class="en">
+          <li>Check knowledge, process, rules, exceptions, validity and boundary.</li>
+          <li>Output: review comments, version and Owner.</li>
+        </ul>
+      </section>
+      <section class="block">
+        <div class="num">03 · SAMPLE VALIDATION</div>
+        <div class="status"><span class="zh">样本验证</span><span class="en">Sample validation</span></div>
+        <ul class="zh">
+          <li>用正常/异常/边界样本区分回答、分类、预测、优化、执行。</li>
+          <li>交付：指标、错误、判定与人工接管记录。</li>
+        </ul>
+        <ul class="en">
+          <li>Use normal, abnormal and boundary samples across answer, classify, predict, optimize and execute.</li>
+          <li>Output: metrics, errors, decisions and takeover record.</li>
+        </ul>
+      </section>
+      <section class="block">
+        <div class="num">04 · REGISTERED</div>
+        <div class="status"><span class="zh">登记认证</span><span class="en">Registration & certification</span></div>
+        <ul class="zh">
+          <li>补齐权限、接口、成本、部署、日志、版本、责任与回滚。</li>
+          <li>交付：能力卡与认证结论；未满足项保持待确认。</li>
+        </ul>
+        <ul class="en">
+          <li>Complete access, interfaces, cost, deployment, logs, version, accountability and rollback.</li>
+          <li>Output: capability card and certification conclusion; open items stay to confirm.</li>
+        </ul>
+      </section>
+    </main>
+    <div class="discussion"><b class="zh">讨论焦点</b><b class="en">Discussion</b><span class="zh">选择一个 D2.2 候选能力，现场确定进入哪一状态、缺什么证据、谁批准；不把“演示”写成“认证”。</span><span class="en">Choose one D2.2 candidate: decide its state, missing evidence and approver; do not turn a demo into certification.</span></div>
+    <footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>R5 · MD §D2.3.5</span></footer>
+  </div>
+</div>
+</body>
+</html>

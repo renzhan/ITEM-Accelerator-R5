@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280,initial-scale=1">
+<style>
+/* Reset & base */
+*{margin:0;padding:0;box-sizing:border-box}
+/* no document-level layout rules */
+.slide-container{
+  width:1280px;
+  min-height:720px;
+  background:#f6f7f9;
+  display:flex;
+  flex-direction:column;
+  overflow:visible;
+  font-family:Inter,"Noto Sans SC",Arial,sans-serif;
+  color:#152439;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.page-inner{
+  margin:60px;
+  min-height:600px;
+  display:flex;
+  flex-direction:column;
+  overflow:visible;
+}
+
+/* Language toggles */
+.zh{display:revert}.en{display:none}
+html[data-lang=en] .zh{display:none}
+html[data-lang=en] .en{display:revert}
+
+/* Header */
+.title-zone{min-height:60px;display:flex;flex-direction:column;justify-content:flex-start}
+.kicker{font-size:14px;line-height:17px;color:#52647b}
+.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700;color:#152439}
+
+/* Separators & lead */
+.rule{border-top:1px solid #152439}
+.lead{font-size:18px;line-height:1.45;margin-top:16px;color:#52647b}
+
+/* Main content */
+.content{
+  flex:1;
+  display:grid;
+  grid-auto-rows:min-content;
+  gap:12px;
+  padding-top:10px;
+  overflow:visible;
+}
+.three{grid-template-columns:repeat(3,1fr);gap:8px}
+.block{border-top:2px solid #007f86;padding-top:4px}
+.block h2{font-size:15px;line-height:18px;margin-bottom:6px}
+.block p,.block li{font-size:14px;line-height:1.3;color:#152439}
+.block ul{list-style:none}
+.block li{padding:3px 0;border-bottom:1px solid #d5dbe2}
+.block li:last-child{border-bottom:0}
+
+/* Route */
+.route{border-top:1px solid #152439;padding-top:8px;margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.route h3{font-size:14px;line-height:18px}
+.route p{font-size:13px;line-height:1.35;margin-top:4px;color:#52647b}
+
+/* Discussion & footer */
+.discussion{border-top:1px solid #152439;padding-top:8px;font-size:14px;line-height:1.35;margin-top:10px;color:#152439}
+.discussion b{font-weight:700}
+.note{font-size:11px!important;color:#52647b;line-height:1.2!important;margin-top:6px}
+.foot{padding-top:6px;font-size:11px;color:#52647b;display:flex;justify-content:space-between;line-height:1.25}
+
+/* Ensure text fits and avoids overflow */
+h1,h2,h3,p,li,span{word-break:keep-all}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker">
+        <span class="zh">MD §D1.2.6｜ISS CEC 流程分析 · 20 分钟</span>
+        <span class="en">MD §D1.2.6 | ISS CEC process analysis · 20 min</span>
+      </div>
+      <h1>
+        <span class="zh">CEC：业务和坐席共同发现自动化机会</span>
+        <span class="en">CEC: business and agents find opportunities together</span>
+      </h1>
+    </header>
+
+    <div class="rule"></div>
+
+    <p class="lead">
+      <span class="zh">不只依赖 IT 判断价值：观察真实坐席如何跨知识库、订单、服务与沟通系统操作，再由业务与坐席共同分类。</span>
+      <span class="en">Do not rely on IT alone: observe how agents work across knowledge, order, service and communication systems, then classify tasks with business and agents.</span>
+    </p>
+
+    <main class="content">
+      <div class="three">
+        <section class="block">
+          <h2><span class="zh">观察真实工作</span><span class="en">Observe real work</span></h2>
+          <ul>
+            <li><span class="zh">高频查询与重复切换</span><span class="en">Frequent queries and repeated switching</span></li>
+            <li><span class="zh">标准回复与信息补充</span><span class="en">Standard replies and information capture</span></li>
+            <li><span class="zh">升级步骤与隐性判断</span><span class="en">Escalation and hidden judgement</span></li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2><span class="zh">共同分类</span><span class="en">Classify together</span></h2>
+          <ul>
+            <li><span class="zh">可以自动</span><span class="en">Can automate</span></li>
+            <li><span class="zh">需要辅助</span><span class="en">Needs assistance</span></li>
+            <li><span class="zh">必须由人决定</span><span class="en">Must remain human-decided</span></li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2><span class="zh">授权观察</span><span class="en">Authorised observation</span></h2>
+          <ul>
+            <li><span class="zh">录屏范围与个人信息</span><span class="en">Recording scope and personal data</span></li>
+            <li><span class="zh">电话/屏幕授权与日志</span><span class="en">Call/screen consent and logs</span></li>
+            <li><span class="zh">原材料留存与停止条件</span><span class="en">Raw material retention and stop condition</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="route">
+        <div>
+          <h3><span class="zh">后台自动</span><span class="en">Background automation</span></h3>
+          <p><span class="zh">标准、低风险、可回放的查询或任务。</span><span class="en">Standard, low-risk, replayable queries or tasks.</span></p>
+        </div>
+        <div>
+          <h3><span class="zh">坐席辅助</span><span class="en">Agent assistance</span></h3>
+          <p><span class="zh">敏感沟通、例外处理和高风险动作保留坐席责任。</span><span class="en">Keep agent responsibility for sensitive communication, exceptions and high-risk actions.</span></p>
+        </div>
+      </div>
+    </main>
+
+    <div class="discussion">
+      <b class="zh">讨论焦点：</b><b class="en">Discussion:</b>
+      <span class="zh">第一批观察哪三个坐席任务？谁能代表业务和坐席共同确认“自动/辅助/人工”？</span>
+      <span class="en">Which three agent tasks should be observed first? Who represents business and agents to classify automate/assist/human?</span>
+    </div>
+
+    <footer class="foot">
+      <span><span class="zh">ITEM × COO AI Team × ISS Biz（team）</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span>
+      <span>MD §D1.2.6 · R4.0 · 23/102</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

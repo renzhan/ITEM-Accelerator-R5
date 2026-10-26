@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh"><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{width:1280px;min-height:720px;padding:0;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column;align-items:stretch;overflow:visible}
+.page-inner{margin:60px;min-height:600px;padding-top:0;display:flex;flex-direction:column;overflow:visible}
+.zh{display:revert}.en{display:none}
+html[data-lang=en] .zh{display:none}html[data-lang=en] .en{display:revert}
+
+/* Header */
+.title-zone{min-height:60px}
+.kicker{font-size:14px;line-height:17px;color:#52647b}
+.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+
+/* Divider and lead */
+.rule{border-top:1px solid #152439;margin-top:8px}
+.lead{font-size:18px;line-height:1.45;margin-top:16px;color:#52647b}
+
+/* Main content */
+.content{flex:1;display:grid;gap:24px;padding-top:24px;overflow:visible}
+.pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.step{border-top:2px solid #007f86;padding-top:8px;min-height:64px}
+.num{font-size:12px;color:#007f86;font-weight:700}
+.step h2{font-size:20px;line-height:27px;margin:4px 0}
+.step p{font-size:18px;line-height:1.4;color:#152439}
+
+/* Demo area */
+.demo{border-top:1px solid #152439;padding-top:10px;display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:start}
+.demo h3{font-size:18px;line-height:22px;margin:0}
+.demo p,.demo li{font-size:18px;line-height:1.4;color:#152439}
+.demo ul{list-style:none;margin-top:6px;padding-left:0}
+.demo li{padding:3px 0}
+.demo li:before{content:"— ";color:#007f86}
+
+/* Discussion and footer */
+.discussion{border-top:1px solid #152439;padding-top:12px;font-size:18px;line-height:1.4;margin-top:16px;color:#152439;overflow:visible}
+.foot{padding-top:16px;font-size:14px;color:#52647b;display:flex;justify-content:space-between;line-height:1.25}
+</style></head><body><div class="slide-container"><div class="page-inner"><header class="title-zone"><div class="kicker"><span class="zh">MD §D1.2.2｜解决路径与演示</span><span class="en">MD §D1.2.2 | Solution path and demo</span></div><h1><span class="zh">代码到本地运行，再到自定义页面</span><span class="en">From code to local runtime to custom page</span></h1></header><div class="rule"></div><p class="lead"><span class="zh">生成只是中间动作；完整链路要证明页面理解既有 WMS，并能被校验、测试、审核后受控发布。</span><span class="en">Generation is only an intermediate step; the full chain must prove that the page understands WMS and can be validated, tested, reviewed and released with control.</span></p><main class="content"><div class="pipeline"><section class="step"><div class="num">01 · CONTEXT</div><h2><span class="zh">WMS 代码</span><span class="en">WMS code</span></h2><p><span class="zh">读取结构、字段、组件、权限与接口约定。</span><span class="en">Read structure, fields, components, permissions and interface conventions.</span></p></section><section class="step"><div class="num">02 · RUN</div><h2><span class="zh">本地环境</span><span class="en">Local environment</span></h2><p><span class="zh">用可复现流程和样例数据运行。</span><span class="en">Run a reproducible flow with sample data.</span></p></section><section class="step"><div class="num">03 · GENERATE</div><h2><span class="zh">自然语言需求</span><span class="en">Natural-language need</span></h2><p><span class="zh">生成一致的页面、字段与交互。</span><span class="en">Generate aligned page, fields and interaction.</span></p></section><section class="step"><div class="num">04 · CHECK</div><h2><span class="zh">校验 Action</span><span class="en">Validate Actions</span></h2><p><span class="zh">补字段校验、权限、错误处理与状态更新。</span><span class="en">Add validation, access, error handling and state updates.</span></p></section><section class="step"><div class="num">05 · RELEASE</div><h2><span class="zh">审核发布</span><span class="en">Review and release</span></h2><p><span class="zh">代码审核、构建、功能/接口测试后发布。</span><span class="en">Release after code review, build, functional and interface tests.</span></p></section></div><div class="demo"><div><h3><span class="zh">建议现场演示</span><span class="en">Suggested live demo</span></h3><p style="margin-top:6px"><span class="zh">从仓库异常需求开始，展示一次完整的需求描述、代码生成、本地运行、业务修改、测试与状态回写。</span><span class="en">Start with a warehouse exception need; show the full sequence of requirement, generation, local run, business change, test and state write-back.</span></p></div><div><h3><span class="zh">检查问题</span><span class="en">Check points</span></h3><ul><li><span class="zh">生成是否选对字段和权限？</span><span class="en">Did generation choose the right fields and access?</span></li><li><span class="zh">“成功生成”是否被误当成上线？</span><span class="en">Is “generated successfully” being mistaken for production?</span></li></ul></div></div></main><div class="discussion"><b class="zh">讨论焦点：</b><b class="en">Discussion:</b> <span class="zh">ISS 想先验证哪一类页面？谁负责代码审核、业务验收、发布和维护回滚？</span><span class="en">Which page type should ISS validate first? Who owns code review, business acceptance, release and rollback?</span></div><footer class="foot"><span><span class="zh">ITEM × COO AI Team × ISS Biz（team）</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span><span>MD §D1.2.2 · R4.0 · 9/102</span></footer></div></div></body></html>

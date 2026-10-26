@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}
+.page-inner{margin:60px;min-height:600px;display:flex;flex-direction:column}
+.title-zone{min-height:60px}.kicker{font-size:14px;line-height:17px;color:#52647b}.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+.rule{height:1px;background:#152439}.lead{font-size:18px;line-height:26px;margin-top:16px;color:#52647b}
+.content{flex:1;display:grid;gap:20px;padding-top:22px;grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr}.content.flow{grid-template-columns:repeat(4,1fr)}
+.block{border-top:1px solid #c7d1dc;padding-top:10px}.block h2{font-size:22px;line-height:30px;margin-bottom:6px}.block p,.block li{font-size:18px;line-height:26px}.block ul,.block ol{padding-left:20px}.block li{margin-top:4px}.tag{font-size:14px;line-height:17px;color:#007f86;margin-bottom:4px;font-weight:700}.flow{font-size:18px;line-height:26px;margin:6px 0 10px;color:#007f86}.role,.mini,.small{font-size:18px;line-height:26px;margin-top:8px}
+.content table{width:100%;border-collapse:collapse;font-size:18px;line-height:26px}.content th,.content td{text-align:left;vertical-align:top;padding:6px;border-bottom:1px solid #c7d1dc}.content th{color:#007f86}
+.discussion{margin-top:16px;border-top:1px solid #c7d1dc;padding-top:12px;font-size:18px;line-height:26px}.discussion b{color:#007f86;margin-right:8px}
+.foot{padding-top:16px;font-size:14px;line-height:20px;color:#52647b;display:flex;justify-content:space-between;gap:16px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker">MD §D2.2.2 · 六域共同模板</div>
+      <h1><span class="zh">六个业务域使用同一套事实与价值模板</span><span class="en">One fact-and-value template for six domains</span></h1>
+    </header>
+
+    <div class="rule"></div>
+
+    <p class="lead"><span class="zh">共同模板约束讨论顺序；每域必须用真实材料回答，不能用工具名称替代业务事实，也不能把待确认写成现状。</span><span class="en">The common template constrains the order of inquiry; every domain uses real material, not tool names or assumptions.</span></p>
+
+    <main class="content four">
+      <section class="block">
+        <div class="tag">01 · FACT</div>
+        <h2><span class="zh">目标 / 用户 / 现状</span><span class="en">Goal / user / current state</span></h2>
+        <p><span class="zh">谁在什么节点遇到什么问题？流程、工单、SOP、页面和已有处理如何工作？输出基线与断点。</span><span class="en">Who has what problem at which step? How do process, tickets, SOPs, pages and current handling work? Output baseline and breakpoints.</span></p>
+      </section>
+
+      <section class="block">
+        <div class="tag">02 · RULE</div>
+        <h2><span class="zh">知识 / 规则</span><span class="en">Knowledge / rules</span></h2>
+        <p><span class="zh">定义、版本、有效期、例外和专家判断来自哪里？输出候选知识、审核人和缺口。</span><span class="en">Where do definitions, versions, validity, exceptions and expert judgment come from? Output candidates, reviewer and gaps.</span></p>
+      </section>
+
+      <section class="block">
+        <div class="tag">03 · CAPABILITY</div>
+        <h2><span class="zh">数据 / 执行边界</span><span class="en">Data / execution boundary</span></h2>
+        <p><span class="zh">所需数据、代码、模型、接口、Tools、Skill、Action 是什么？质量、权限和人工点如何确认？</span><span class="en">What data, code, models, interfaces, Tools, Skills and Actions are needed? How are quality, access and human points confirmed?</span></p>
+      </section>
+
+      <section class="block">
+        <div class="tag">04 · VALUE</div>
+        <h2><span class="zh">价值 / 评测 / 决策</span><span class="en">Value / evaluation / decision</span></h2>
+        <p><span class="zh">用基线、独立样本、质量/周期/成本/风险/采用指标和接管点，形成 Owner、依赖与下一门。</span><span class="en">Use baseline, independent samples, quality/cycle/cost/risk/adoption metrics and takeover points to form Owner, dependencies and next gate.</span></p>
+      </section>
+    </main>
+
+    <div class="discussion"><b class="zh">现场输出</b><b class="en">Room output</b><span class="zh">每域记录：已知事实 / 待验证事实 / 缺口与依赖；六域各 25 分钟为建议分配，包含讨论。</span><span class="en">For each domain record known / to-validate / gaps and dependencies; six 25-minute blocks are suggested and include discussion.</span></div>
+
+    <footer class="foot">
+      <span>ITEM × COO AI Team × ISS Biz (team)</span>
+      <span>MD §D2.2.2 · R4.0 · 77/102</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

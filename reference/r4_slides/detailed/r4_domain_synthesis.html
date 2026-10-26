@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}
+.page-inner{margin:60px;min-height:600px;display:flex;flex-direction:column}
+.title-zone{min-height:60px}.kicker{font-size:14px;line-height:17px;color:#52647b}.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+.rule{height:1px;background:#152439}.lead{font-size:18px;line-height:26px;margin-top:16px;color:#52647b}
+.content{flex:1;display:grid;gap:20px;padding-top:22px;grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr}.block{border-top:1px solid #c7d1dc;padding-top:10px}.block h2{font-size:22px;line-height:30px;margin-bottom:6px}.block p,.block li{font-size:18px;line-height:26px}.block ul,.block ol{padding-left:20px}.block li{margin-top:4px}.tag{font-size:14px;line-height:17px;color:#007f86;margin-bottom:4px;font-weight:700}.flow{font-size:18px;line-height:26px;margin:6px 0 10px;color:#007f86}.role,.mini,.small{font-size:18px;line-height:26px;margin-top:8px}
+.content table{width:100%;border-collapse:collapse;font-size:18px;line-height:26px}.content th,.content td{text-align:left;vertical-align:top;padding:6px;border-bottom:1px solid #c7d1dc}.content th{color:#007f86}
+.discussion{margin-top:16px;border-top:1px solid #c7d1dc;padding-top:12px;font-size:18px;line-height:26px}.discussion b{color:#007f86;margin-right:8px}
+.foot{padding-top:16px;font-size:14px;line-height:20px;color:#52647b;display:flex;justify-content:space-between;gap:16px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker">MD §D2.2.4–D2.2.6 · 六域收敛</div>
+      <h1>
+        <span class="zh">跨域复用：已知事实、待验证事实与依赖</span>
+        <span class="en">Cross-domain reuse: facts, unknowns and dependencies</span>
+      </h1>
+    </header>
+
+    <div class="rule"></div>
+
+    <p class="lead">
+      <span class="zh">收敛不是把六页拼成一个产品；只抽取经多域材料支持的共用输入、输出、Owner、权限与评测，其余保留为域内特有。</span>
+      <span class="en">Convergence is not merging six pages into one product; extract only cross-domain inputs, outputs, ownership, access and evaluation supported by evidence.</span>
+    </p>
+
+    <main class="content cols">
+      <section class="block">
+        <h2><span class="zh">复用候选</span><span class="en">Reuse candidates</span></h2>
+
+        <table class="table zh">
+          <tr><th>可比较项</th><th>现场要确认</th></tr>
+          <tr><td>输入/输出</td><td>知识、数据、规则、建议或状态回写。</td></tr>
+          <tr><td>治理</td><td>Owner、权限、版本、日志、成本与退出。</td></tr>
+          <tr><td>评测</td><td>样本、指标、人工接管与失败边界。</td></tr>
+        </table>
+
+        <table class="table en">
+          <tr><th>Compare</th><th>Confirm in the room</th></tr>
+          <tr><td>Input/output</td><td>Knowledge, data, rules, advice or state writeback.</td></tr>
+          <tr><td>Governance</td><td>Owner, access, version, logs, cost and exit.</td></tr>
+          <tr><td>Evaluation</td><td>Samples, metrics, human takeover and failure boundary.</td></tr>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2><span class="zh">分层记录</span><span class="en">Layered record</span></h2>
+
+        <ul class="zh">
+          <li><b>已知事实：</b>来源、版本、责任人和材料可追溯。</li>
+          <li><b>待验证事实：</b>需样本、专家、授权或接口确认。</li>
+          <li><b>缺口与依赖：</b>数据/代码/软件/接口、正式审批、资源或决策。</li>
+          <li><b>场景比较：</b>首场景、备选与排除项只凭证据排序。</li>
+        </ul>
+
+        <ul class="en">
+          <li><b>Known:</b> source, version, Owner and material are traceable.</li>
+          <li><b>To validate:</b> needs samples, experts, authorization or interfaces.</li>
+          <li><b>Gaps/dependencies:</b> data/code/software/interfaces, formal approval, resources or decisions.</li>
+          <li><b>Compare scenes:</b> rank first, backup and exclusions by evidence only.</li>
+        </ul>
+      </section>
+    </main>
+
+    <div class="discussion">
+      <b class="zh">现场输出</b><b class="en">Room output</b>
+      <span class="zh">六域事实表、跨域能力复用候选表、首场景/备选比较依据；未确认项明确写“待确认”。</span>
+      <span class="en">Six-domain fact log, cross-domain capability candidates and first/backup comparison basis; label every unknown “to confirm.”</span>
+    </div>
+
+    <footer class="foot">
+      <span>ITEM × COO AI Team × ISS Biz (team)</span>
+      <span>MD §D2.2.4–D2.2.6 · R4.0 · 84/102</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{width:1280px;min-height:720px;padding:0;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column;overflow:visible}
+.page-inner{margin:60px;min-height:600px;padding-top:0;display:flex;flex-direction:column;gap:0;overflow:visible}
+.zh{display:revert}.en{display:none}html[data-lang=en] .zh{display:none}html[data-lang=en] .en{display:revert}
+
+/* Header */
+.title-zone{min-height:60px;display:flex;flex-direction:column;justify-content:center}
+.kicker{font-size:14px;line-height:17px;color:#52647b}
+.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+
+/* Divider */
+.rule{border-top:1px solid #152439;margin-top:6px}
+
+/* Lead */
+.lead{font-size:18px;line-height:1.45;margin-top:16px;color:#52647b}
+
+/* Main content */
+.content{flex:1;display:flex;flex-direction:column;gap:24px;padding-top:24px;overflow:visible}
+
+/* Four blocks row */
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.block{border-top:2px solid #007f86;padding-top:8px;min-height:76px;display:flex;flex-direction:column}
+.block h2{font-size:21px;line-height:28px;margin-bottom:6px}
+.block p,.block li{font-size:18px;line-height:1.4;color:#152439}
+.block ul{list-style:none}
+.block li{padding:4px 0;border-bottom:1px solid #d5dbe2;font-size:18px}
+.block li:last-child{border-bottom:0}
+
+/* Bridge area */
+.bridge{margin-top:8px;border-top:1px solid #152439;padding-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bridge h3{font-size:16px;line-height:20px}
+.bridge p{font-size:18px;line-height:1.4;margin-top:6px;color:#52647b}
+
+/* Discussion and footer */
+.discussion{border-top:1px solid #152439;padding-top:12px;font-size:18px;line-height:1.4;margin-top:16px;color:#152439}
+.foot{padding-top:16px;font-size:14px;color:#52647b;display:flex;justify-content:space-between;line-height:1.25;margin-top:0}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker"><span class="zh">MD §D1.2.3｜数据 → 本体 → 专家校准</span><span class="en">MD §D1.2.3 | Data → ontology → expert calibration</span></div>
+      <h1><span class="zh">从数据提出本体，再由专家校准</span><span class="en">Propose an ontology from data, then calibrate with experts</span></h1>
+    </header>
+
+    <div class="rule"></div>
+
+    <p class="lead"><span class="zh">本体不是数据库结构或字段说明；它把对象、关系、条件、计算规则和行动组织成共同语言，候选必须经过业务确认。</span><span class="en">An ontology is more than schema or field definitions. It organises objects, relations, conditions, calculations and Actions into shared language, then requires business confirmation.</span></p>
+
+    <main class="content">
+      <div class="four">
+        <section class="block">
+          <h2><span class="zh">对象</span><span class="en">Objects</span></h2>
+          <ul>
+            <li><span class="zh">客户、服务、运输</span><span class="en">Customer, service, transport</span></li>
+            <li><span class="zh">费率、报价</span><span class="en">Rate, quote</span></li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2><span class="zh">关系</span><span class="en">Relations</span></h2>
+          <ul>
+            <li><span class="zh">服务适用哪些条件</span><span class="en">Which conditions apply to a service</span></li>
+            <li><span class="zh">报价关联哪条运输</span><span class="en">Which transport a quote relates to</span></li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2><span class="zh">状态与规则</span><span class="en">States and rules</span></h2>
+          <ul>
+            <li><span class="zh">有效期、例外、计算</span><span class="en">Validity, exceptions, calculation</span></li>
+            <li><span class="zh">缺失条件如何处理</span><span class="en">What missing conditions mean</span></li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2><span class="zh">行动与审批</span><span class="en">Actions and approval</span></h2>
+          <ul>
+            <li><span class="zh">建议与正式报价分开</span><span class="en">Separate suggestion from formal quote</span></li>
+            <li><span class="zh">权限与责任清楚</span><span class="en">Make access and accountability clear</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="bridge">
+        <div>
+          <h3><span class="zh">数据提出候选</span><span class="en">Data proposes candidates</span></h3>
+          <p><span class="zh">从授权数据看出字段共现、关联与状态线索；不把线索当作已确认语义。</span><span class="en">Authorised data reveals co-occurrence, relations and state clues; clues are not confirmed semantics.</span></p>
+        </div>
+        <div>
+          <h3><span class="zh">专家确认与审批</span><span class="en">Experts confirm and approve</span></h3>
+          <p><span class="zh">业务专家补充定义、例外、决策边界与正式行动权限，形成可追溯版本。</span><span class="en">Business experts add definitions, exceptions, decision boundaries and formal-action access in a traceable version.</span></p>
+        </div>
+      </div>
+    </main>
+
+    <div class="discussion"><b class="zh">讨论焦点：</b><b class="en">Discussion:</b> <span class="zh">哪些候选可由数据观察，哪些必须问专家？谁有权确认例外与正式报价边界？</span><span class="en">Which candidates can data reveal, and which require experts? Who can approve exceptions and the boundary of formal quoting?</span></div>
+
+    <footer class="foot"><span><span class="zh">ITEM × COO AI Team × ISS Biz（team）</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span><span>MD §D1.2.3 · R4.0 · 12/102</span></footer>
+  </div>
+</div>
+</body>
+</html>

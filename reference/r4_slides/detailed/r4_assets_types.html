@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}
+.page-inner{margin:60px;min-height:600px;display:flex;flex-direction:column}
+.title-zone{min-height:60px}.kicker{font-size:14px;line-height:17px;color:#52647b}.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+.rule{height:1px;background:#152439}.lead{font-size:18px;line-height:26px;margin-top:16px;color:#52647b}
+.content{flex:1;display:grid;gap:20px;padding-top:22px;grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr}
+.block{border-top:1px solid #c7d1dc;padding-top:10px}.block h2{font-size:22px;line-height:30px;margin-bottom:6px}.block p,.block li{font-size:18px;line-height:26px}.block ul,.block ol{padding-left:20px}.block li{margin-top:4px}.tag{font-size:14px;line-height:17px;color:#007f86;margin-bottom:4px;font-weight:700}.flow{font-size:18px;line-height:26px;margin:6px 0 10px;color:#007f86}.role,.mini,.small{font-size:18px;line-height:26px;margin-top:8px}
+.content table{width:100%;border-collapse:collapse;font-size:18px;line-height:26px}.content th,.content td{text-align:left;vertical-align:top;padding:6px;border-bottom:1px solid #c7d1dc}.content th{color:#007f86}
+.discussion{margin-top:16px;border-top:1px solid #c7d1dc;padding-top:12px;font-size:18px;line-height:26px}.discussion b{color:#007f86;margin-right:8px}
+.foot{padding-top:16px;font-size:14px;line-height:20px;color:#52647b;display:flex;justify-content:space-between;gap:16px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker">MD §D2.3.1 · 能力资产</div>
+      <h1><span class="zh">将经验沉淀为知识、流程、数据、模型与评测资产</span><span class="en">Turn experience into governed capability assets</span></h1>
+    </header>
+    <div class="rule"></div>
+    <p class="lead"><span class="zh">资产来自真实流程和审核；技术 Marketplace 服务发现、接口、元数据、版本、权限与认证，Dashboard 面向人员和管理者呈现运行与价值。</span><span class="en">Assets come from real process and review; the technical Marketplace serves discovery, interfaces, metadata, versions, access and certification, while Dashboard serves people and managers.</span></p>
+    <main class="content four">
+      <section class="block">
+        <div class="tag">KNOWLEDGE / PROCESS</div>
+        <h2><span class="zh">知识与流程</span><span class="en">Knowledge & process</span></h2>
+        <p><span class="zh">定义、SOP、规则、例外、版本、审核意见和可执行步骤；保留来源与适用范围。</span><span class="en">Definitions, SOPs, rules, exceptions, versions, review and executable steps; retain source and scope.</span></p>
+      </section>
+      <section class="block">
+        <div class="tag">DATA / MODEL</div>
+        <h2><span class="zh">数据与模型</span><span class="en">Data & model</span></h2>
+        <p><span class="zh">数据字典、样本、权限、质量、模型/参数、输入输出和错误边界；不把模型名称当成果。</span><span class="en">Data dictionaries, samples, access, quality, model/parameters, I/O and error boundaries; a model name is not an outcome.</span></p>
+      </section>
+      <section class="block">
+        <div class="tag">SKILL / AGENT / WORKFLOW</div>
+        <h2><span class="zh">可执行能力</span><span class="en">Executable capability</span></h2>
+        <p><span class="zh">Skill、Agent、Workflow 或应用能力须有触发、权限、Action、人工接管、日志与回滚边界。</span><span class="en">Skills, Agents, Workflows or applications need triggers, access, Actions, human takeover, logs and rollback boundaries.</span></p>
+      </section>
+      <section class="block">
+        <div class="tag">MARKETPLACE / DASHBOARD</div>
+        <h2><span class="zh">两种工作面</span><span class="en">Two working surfaces</span></h2>
+        <p><span class="zh">Marketplace 是技术能力层；Dashboard 是人员业务层。两者都依赖版本、Owner、评测、成本和风险证据。</span><span class="en">Marketplace is the technical capability layer; Dashboard is the people/business layer. Both depend on evidence for version, Owner, evaluation, cost and risk.</span></p>
+      </section>
+    </main>
+    <div class="discussion"><b class="zh">现场输出</b><b class="en">Room output</b><span class="zh">选一个 D2.2 候选能力，填写最小资产卡：来源、Owner、权限、测评、成本、版本、接口、依赖、日志与退出条件。</span><span class="en">Pick one D2.2 candidate and fill the minimum asset card: source, Owner, access, evaluation, cost, version, interface, dependencies, logs and exit.</span></div>
+    <footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>MD §D2.3.1 · R4.0 · 85/102</span></footer>
+  </div>
+</div>
+</body>
+</html>

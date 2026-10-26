@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISS-R5 本机记录</title>
+  <link rel="stylesheet" href="../assets/collection.css">
+</head>
+<body>
+<main>
+  <section class="records-shell">
+    <p><a href="../index.html">返回首页 / Home</a> · <a href="../brief/index.html">Brief</a> · <a href="../meeting/index.html">Meeting</a></p>
+    <h1><span class="lang-zh">本机记录管理</span><span class="lang-en">Local record management</span></h1>
+    <p class="privacy-note"><span class="lang-zh"><strong>这不是组织集中汇总：</strong>以下数据只来自当前浏览器的本机存储。管理员服务端导出请使用 backend README 中的 CLI 示例和 Bearer token；本页面不会在公网展示全部服务器数据。</span><span class="lang-en"><strong>This is not an organizational roll-up:</strong> these records are stored only in this browser. Administrators should use the CLI examples and Bearer token in the backend README; this public page never lists all server data.</span></p>
+    <div class="actions"><button type="button" data-action="export-records-json"><span class="lang-zh">导出汇总 JSON</span><span class="lang-en">Export summary JSON</span></button><button type="button" data-action="export-records-csv"><span class="lang-zh">导出汇总 CSV</span><span class="lang-en">Export summary CSV</span></button><label class="button secondary" for="import-records"><span class="lang-zh">导入 JSON</span><span class="lang-en">Import JSON</span></label><input id="import-records" type="file" accept="application/json,.json" data-action="import-records" hidden><button type="button" class="secondary" data-action="clear-records"><span class="lang-zh">清除本机记录</span><span class="lang-en">Clear local records</span></button></div>
+    <div data-record-list aria-live="polite"></div>
+  </section>
+</main>
+<script src="../assets/site-config.js"></script>
+<script src="../assets/collection.js"></script>
+<script src="../assets/standalone-ui.js"></script>
+</body>
+</html>

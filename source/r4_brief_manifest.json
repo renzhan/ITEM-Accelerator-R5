@@ -1,0 +1,277 @@
+{
+  "version": "2026-10-23-R4",
+  "kind": "brief",
+  "title": "AI Accelerator 的业务价值实现探讨｜会前简版 · Tom",
+  "project_id": "ai-accelerator-tom-mvkewqdh-dd4c3535",
+  "project_dir": "/home/ubuntu/manus-slides/ai-accelerator-tom-mvkewqdh-dd4c3535",
+  "source_md": "Item_ISS_AI_Accelerator_Agenda_R3_1_Review.md",
+  "host": "Tom",
+  "chapters": [
+    {
+      "id": 0,
+      "label": "00",
+      "zh": "两天总览",
+      "en": "Two-day overview",
+      "day": 0
+    },
+    {
+      "id": 1,
+      "label": "D1.1",
+      "zh": "定位与节奏",
+      "en": "Company & Day 1",
+      "day": 1
+    },
+    {
+      "id": 2,
+      "label": "D1.2",
+      "zh": "实践与教训",
+      "en": "Cases & lessons",
+      "day": 1
+    },
+    {
+      "id": 3,
+      "label": "D1.3",
+      "zh": "平台与知识",
+      "en": "Platform & knowledge",
+      "day": 1
+    },
+    {
+      "id": 4,
+      "label": "D1.4–5",
+      "zh": "风险与实施",
+      "en": "Risks & implementation",
+      "day": 1
+    },
+    {
+      "id": 5,
+      "label": "D2.1–2",
+      "zh": "企业实践与业务域",
+      "en": "Enterprise & domains",
+      "day": 2
+    },
+    {
+      "id": 6,
+      "label": "D2.3–4",
+      "zh": "资产与组织",
+      "en": "Assets & organization",
+      "day": 2
+    },
+    {
+      "id": 7,
+      "label": "D2.5–6",
+      "zh": "收敛与决策",
+      "en": "Synthesis & decisions",
+      "day": 2
+    },
+    {
+      "id": 8,
+      "label": "APP",
+      "zh": "会前准备",
+      "en": "Preparation",
+      "day": 0
+    }
+  ],
+  "pages": [
+    {
+      "id": "b4_00_cover",
+      "title": "AI Accelerator 的业务价值实现探讨｜两天会议",
+      "en": "",
+      "chapter": 0,
+      "day": 0,
+      "refs": [
+        "overview"
+      ],
+      "md": "overview",
+      "number": 1,
+      "total": 14
+    },
+    {
+      "id": "b4_01_day1",
+      "title": "Day 1：先实践、工具与风险，再思考 ISS 实施",
+      "en": "",
+      "chapter": 1,
+      "day": 1,
+      "refs": [
+        "day1"
+      ],
+      "md": "day1",
+      "number": 2,
+      "total": 14
+    },
+    {
+      "id": "b4_02_day2",
+      "title": "Day 2：企业实践、能力资产与联合实施",
+      "en": "",
+      "chapter": 5,
+      "day": 2,
+      "refs": [
+        "day2"
+      ],
+      "md": "day2",
+      "number": 3,
+      "total": 14
+    },
+    {
+      "id": "b4_03_partnership",
+      "title": "ITEM、COO AI 与 ISS Biz 的互补合作",
+      "en": "",
+      "chapter": 1,
+      "day": 1,
+      "refs": [
+        "D1.1"
+      ],
+      "md": "D1.1",
+      "number": 4,
+      "total": 14
+    },
+    {
+      "id": "b4_04_ticket_code",
+      "title": "从工单与代码起步：港口、WMS",
+      "en": "",
+      "chapter": 2,
+      "day": 1,
+      "refs": [
+        "D1.2.1",
+        "D1.2.2"
+      ],
+      "md": "D1.2.1",
+      "number": 5,
+      "total": 14
+    },
+    {
+      "id": "b4_05_data_rules",
+      "title": "从数据与规则起步：Rate & Quote、BO",
+      "en": "",
+      "chapter": 2,
+      "day": 1,
+      "refs": [
+        "D1.2.3",
+        "D1.2.4"
+      ],
+      "md": "D1.2.3",
+      "number": 6,
+      "total": 14
+    },
+    {
+      "id": "b4_06_knowledge_flow",
+      "title": "从观察到执行：Record & Reply、CEC、CFS/Depot",
+      "en": "",
+      "chapter": 2,
+      "day": 1,
+      "refs": [
+        "D1.2.5",
+        "D1.2.6",
+        "D1.2.7"
+      ],
+      "md": "D1.2.5",
+      "number": 7,
+      "total": 14
+    },
+    {
+      "id": "b4_07_failures",
+      "title": "失败经验：知道该缩小、停止或转交什么",
+      "en": "",
+      "chapter": 2,
+      "day": 1,
+      "refs": [
+        "D1.2.8",
+        "D1.2.9"
+      ],
+      "md": "D1.2.8",
+      "number": 8,
+      "total": 14
+    },
+    {
+      "id": "b4_08_platform",
+      "title": "共享底座、两套工具与知识闭环",
+      "en": "",
+      "chapter": 3,
+      "day": 1,
+      "refs": [
+        "D1.3.1",
+        "D1.3.2",
+        "D1.3.3",
+        "D1.3.4"
+      ],
+      "md": "D1.3.1",
+      "number": 9,
+      "total": 14
+    },
+    {
+      "id": "b4_09_day1_implementation",
+      "title": "先对齐风险，再形成 ISS 实施初步判断",
+      "en": "",
+      "chapter": 4,
+      "day": 1,
+      "refs": [
+        "D1.4",
+        "D1.5"
+      ],
+      "md": "D1.4",
+      "number": 10,
+      "total": 14
+    },
+    {
+      "id": "b4_10_enterprise_domains",
+      "title": "Hollis 企业实践与六个 ISS 业务域",
+      "en": "",
+      "chapter": 5,
+      "day": 2,
+      "refs": [
+        "D2.1",
+        "D2.2"
+      ],
+      "md": "D2.1",
+      "number": 11,
+      "total": 14
+    },
+    {
+      "id": "b4_11_assets_organization",
+      "title": "沉淀能力资产，连接业务与组织",
+      "en": "",
+      "chapter": 6,
+      "day": 2,
+      "refs": [
+        "D2.3",
+        "D2.4"
+      ],
+      "md": "D2.3",
+      "number": 12,
+      "total": 14
+    },
+    {
+      "id": "b4_12_converge_gate",
+      "title": "先形成统一建议，再确认决策门",
+      "en": "",
+      "chapter": 7,
+      "day": 2,
+      "refs": [
+        "D2.5",
+        "D2.6"
+      ],
+      "md": "D2.5",
+      "number": 13,
+      "total": 14
+    },
+    {
+      "id": "b4_13_preparation",
+      "title": "参会准备：带着真实材料、权限与 Owner",
+      "en": "",
+      "chapter": 8,
+      "day": 0,
+      "refs": [
+        "appendix-a",
+        "D2.6.5"
+      ],
+      "md": "appendix-a",
+      "number": 14,
+      "total": 14
+    }
+  ],
+  "schedule": {
+    "day1_minutes": 485,
+    "day2_minutes": 450,
+    "case_minutes": 240
+  },
+  "source": "Item_ISS_AI_Accelerator_Two_Day_R4_Review.md"
+}

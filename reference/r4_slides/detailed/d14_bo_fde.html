@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{
+  width:1280px;
+  min-height:720px;
+  padding:0;
+  background:#f6f7f9;
+  color:#152439;
+  font-family:Inter,"Noto Sans SC",Arial,sans-serif;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  overflow:visible;
+}
+/* tightened outer spacing to fit 720px */
+.page-inner{
+  margin:60px;
+  min-height:600px;
+  padding-top:0;
+  display:flex;
+  flex-direction:column;
+  overflow:visible;
+}
+.zh{display:revert}
+.en{display:none}
+html[data-lang=en] .zh{display:none}
+html[data-lang=en] .en{display:revert}
+
+/* title area */
+.title-zone{min-height:60px; display:flex; flex-direction:column; justify-content:center}
+.kicker{font-size:14px;line-height:17px;color:#52647b}
+.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+
+/* divider and lead */
+.rule{border-top:1px solid #152439;margin-top:6px}
+.lead{font-size:18px;line-height:1.45;margin-top:16px;color:#52647b}
+
+/* main content layout tightened spacing */
+.content{flex:1;display:grid;gap:16px;padding-top:24px;align-content:start;overflow:visible}
+.three{grid-template-columns:repeat(3,1fr);display:grid;gap:12px}
+.block{border-top:3px solid #007f86;padding-top:8px}
+.block h2{font-size:22px;line-height:30px;margin-bottom:6px}
+.block p,.block li{font-size:18px;line-height:1.5}
+.block ul{list-style:none}
+.block li{padding:6px 0;border-bottom:1px solid #d5dbe2}
+.block li:last-child{border-bottom:0}
+
+/* two-column strip */
+.strip{border-top:1px solid #152439;padding-top:8px;margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.strip h3{font-size:14px;line-height:18px}
+.strip p{font-size:18px;line-height:1.5;margin-top:6px}
+
+/* discussion and footer tightened */
+.discussion{border-top:1px solid #152439;padding-top:12px;font-size:18px;line-height:1.4;margin-top:16px}
+.foot{padding-top:16px;font-size:14px;color:#52647b;display:flex;justify-content:space-between;line-height:1.25}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker"><span class="zh">MD §D1.2.4｜ISS BO · 40 分钟</span><span class="en">MD §D1.2.4 | ISS BO · 40 min</span></div>
+      <h1><span class="zh">ISS BO：FDE 如何落地多样业务规则</span><span class="en">ISS BO: how FDE grounds varied rules</span></h1>
+    </header>
+
+    <div class="rule"></div>
+
+    <p class="lead"><span class="zh">FDE 贴近业务现场，把知识、例外、样本、系统能力与可运行应用连接起来；ISS Biz 专家仍对业务规则与验收负责。</span><span class="en">The FDE connects knowledge, exceptions, samples, system capability and runnable apps close to the business; ISS Biz experts still own rules and acceptance.</span></p>
+
+    <main class="content">
+      <div class="three">
+        <section class="block">
+          <h2><span class="zh">规则为什么多样</span><span class="en">Why rules vary</span></h2>
+          <ul>
+            <li><span class="zh">业务线、地区和服务承诺不同</span><span class="en">Business line, region and promise differ</span></li>
+            <li><span class="zh">料件、库存、运输状态不断变化</span><span class="en">Part, inventory and transport states change</span></li>
+            <li><span class="zh">单一 Prompt 难覆盖合理例外</span><span class="en">One prompt cannot cover valid exceptions</span></li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2><span class="zh">FDE 的工程连接</span><span class="en">FDE engineering bridge</span></h2>
+          <ul>
+            <li><span class="zh">把 WIKI、事实、样本和规则整理成可运行输入</span><span class="en">Turn WIKI, facts, samples and rules into runnable inputs</span></li>
+            <li><span class="zh">建立测试、调试、评测和回写路径</span><span class="en">Establish testing, debugging, evaluation and write-back</span></li>
+            <li><span class="zh">把异常与缺失保留给专家</span><span class="en">Keep exceptions and gaps with experts</span></li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2><span class="zh">专家验收边界</span><span class="en">Expert acceptance boundary</span></h2>
+          <ul>
+            <li><span class="zh">确认概念、规则、结果和可接受 Action</span><span class="en">Confirm concepts, rules, results and acceptable Actions</span></li>
+            <li><span class="zh">区分建议、预测与正式业务动作</span><span class="en">Separate suggestion, prediction and formal action</span></li>
+            <li><span class="zh">高风险错误不能被平均分掩盖</span><span class="en">Average scores cannot hide high-risk errors</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="strip">
+        <div>
+          <h3><span class="zh">共同交付</span><span class="en">Joint delivery</span></h3>
+          <p><span class="zh">FDE + 业务专家 + 事实/数据 Owner，共同定义边界。</span><span class="en">FDE + business expert + fact/data Owner define the boundary together.</span></p>
+        </div>
+        <div>
+          <h3><span class="zh">不是单纯模型调用</span><span class="en">Not a model call alone</span></h3>
+          <p><span class="zh">知识、规则、样本、权限、Action 与运营必须连起来。</span><span class="en">Knowledge, rules, samples, access, Actions and operations must connect.</span></p>
+        </div>
+      </div>
+    </main>
+
+    <div class="discussion"><b class="zh">讨论焦点：</b><b class="en">Discussion:</b> <span class="zh">哪个 BO 规则边界值得先做小范围？FDE、业务专家、事实 Owner 的共同交付节奏如何安排？</span><span class="en">Which BO rule boundary merits a small start? How should FDE, business experts and fact Owners deliver together?</span></div>
+
+    <footer class="foot">
+      <span><span class="zh">ITEM × COO AI Team × ISS Biz（team）</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span>
+      <span>MD §D1.2.4 · R4.0 · 15/102</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

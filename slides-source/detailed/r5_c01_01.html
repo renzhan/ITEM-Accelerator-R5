@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{
+  width:1280px;
+  min-height:720px;
+  background:#f6f7f9;
+  color:#152439;
+  font-family:Inter,"Noto Sans SC",Arial,sans-serif;
+  display:flex;
+  flex-direction:column;
+}
+.page-inner{
+  margin:52px 60px 0;
+  min-height:616px;
+  display:flex;
+  flex-direction:column;
+}
+.kicker{font-size:13px;line-height:16px;color:#52647b}
+.title-zone h1{
+  font-size:28px;
+  line-height:1.12;
+  margin-top:6px;
+  font-weight:700;
+  letter-spacing: -0.01em;
+}
+.rule{border-top:1px solid #152439;margin-top:10px}
+.lead{font-size:18px;line-height:1.45;margin-top:16px;color:#52647b}
+.content{
+  flex:1;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  padding-top:14px;
+  align-items:start;
+}
+.block{border-top:3px solid #007f86;padding-top:8px}
+.block h2{font-size:22px;line-height:1.3;margin-bottom:8px}
+.block p,.block li{font-size:18px;line-height:1.45}
+.block ul{padding-left:18px;margin-top:6px}
+.block li{margin-bottom:5px}
+.tag{font-size:13px;color:#007f86;font-weight:700;letter-spacing:.04em;margin-bottom:6px}
+.video-slot{border:2px dashed #007f86;min-height:180px;padding:12px;display:flex;flex-direction:column;justify-content:center}
+.video-slot h2{margin-bottom:8px;font-size:22px;line-height:1.3}
+.video-slot p{font-size:18px;line-height:1.45;margin-top:8px}
+.note{font-size:18px!important;line-height:1.4!important;color:#52647b;margin-top:12px}
+.discussion{border-top:1px solid #152439;padding-top:12px;margin-top:16px;font-size:18px;line-height:1.4}
+.discussion b{color:#007f86;margin-right:8px;font-weight:700}
+.foot{padding-top:12px;font-size:13px;line-height:18px;color:#52647b;display:flex;justify-content:space-between}
+/* English compact layout: retain text; no clipping; body stays 18px. */
+html[data-lang=en] .page-inner, html[data-lang=en] .cover-inner { margin:0 48px!important; min-height:660px!important; padding-top:26px!important; width:auto!important; }
+html[data-lang=en] .title-zone, html[data-lang=en] header { min-height:0!important; padding:0!important; }
+html[data-lang=en] h1 { font-size:32px!important; line-height:1.1!important; }
+html[data-lang=en] h2 { font-size:20px!important; line-height:1.18!important; margin-top:0!important; margin-bottom:6px!important; }
+html[data-lang=en] .lead { font-size:18px!important; line-height:1.25!important; margin-top:10px!important; padding-top:0!important; }
+html[data-lang=en] .content { display:grid!important; grid-template-columns:repeat(3,minmax(0,1fr))!important; gap:14px!important; padding-top:14px!important; min-height:0!important; align-items:stretch!important; }
+html[data-lang=en] .block, html[data-lang=en] .panel { padding-top:10px!important; min-height:0!important; }
+html[data-lang=en] .content p, html[data-lang=en] .content li, html[data-lang=en] td, html[data-lang=en] th { font-size:18px!important; line-height:1.25!important; }
+html[data-lang=en] .content li { margin-top:2px!important; margin-bottom:2px!important; }
+html[data-lang=en] .content p { margin-top:4px!important; }
+html[data-lang=en] .video-slot { padding:12px 14px 0!important; min-height:250px!important; gap:8px!important; }
+html[data-lang=en] .callout, html[data-lang=en] .discussion { margin-top:10px!important; padding-top:8px!important; font-size:18px!important; line-height:1.25!important; }
+html[data-lang=en] .foot { padding-top:8px!important; line-height:18px!important; font-size:14px!important; }
+html[data-lang=en] td, html[data-lang=en] th { padding:4px 6px 0!important; }
+</style>
+</head>
+<body>
+<div class="slide-container"><div class="page-inner">
+<header class="title-zone"><div class="kicker"><span class="zh">DAY 1 · MD §D1.2.1.1</span><span class="en">DAY 1 · MD §D1.2.1.1</span></div><h1><span class="zh">先从业务结果与改造前流程入手</span><span class="en">Start with the outcome and current flow</span></h1></header>
+<div class="rule"></div>
+<p class="lead"><span class="zh">不要先假设“需要一个 Agent”：先把重复问题、交接和可验收结果说清楚，再选择可控切入点。</span><span class="en">Do not assume “we need an Agent” first: clarify repeated work, handoffs and acceptance before choosing a controlled entry point.</span></p>
+<main class="content">
+<section class="block"><div class="tag">01 · OUTCOME</div><h2><span class="zh">痛点与期望结果</span><span class="en">Pain and intended outcome</span></h2><ul class="zh"><li>重复工作多，但优先级、责任和触发条件不清。</li><li>建议结果：用经授权的 CSR ticket 找到可审核的问题分类。</li><li>再形成一个有输入、输出、Action、升级和 Owner 的候选 Agent。</li><li>不预先承诺节省、排名、模型能力或运营收益。</li></ul><ul class="en"><li>Repetition is high, but priority, ownership and triggers are unclear.</li><li>Intended outcome: build a reviewable issue taxonomy from authorised CSR tickets.</li><li>Then define an Agent candidate with inputs, outputs, Actions, escalation and Owner.</li><li>No pre-commitment to savings, rankings, model capability or operating gains.</li></ul></section>
+<section class="block"><div class="tag">02 · CURRENT FLOW</div><h2><span class="zh">改造前流程（待用真实流程核对）</span><span class="en">Current flow (to verify with reality)</span></h2><ul class="zh"><li>CSR 提交或状态变化</li><li>人员查找订单、监控、派车、状态、结算信息</li><li>多角色交接、补问并人工更新状态</li><li>异常继续追踪或升级，结果留在工单与业务记录</li></ul><ul class="en"><li>CSR submission or status change</li><li>People look up order, monitoring, dispatch, status and settlement data</li><li>Handoffs, follow-up questions and manual status updates</li><li>Exceptions are tracked or escalated; results stay in tickets and records</li></ul><p class="note"><span class="zh">建议用一张真实流程图逐项确认系统边界、交接和状态真值。</span><span class="en">Use one real process map to verify system boundaries, handoffs and the source of truth.</span></p></section>
+<section class="block video-slot" data-case-id="c01"><h2><span class="zh">预录视频｜待Tom放置</span><span class="en">Pre-recorded video | Tom to place</span></h2><p><span class="zh">建议录制：一组已脱敏 CSR ticket → 问题合并 → 一条运输任务的触发、交接、异常接管与回放。</span><span class="en">Suggested recording: redacted CSR tickets → issue merging → one transport task through trigger, handoff, exception takeover and replay.</span></p><p><span class="zh">请明确标注：真实 / 脱敏 / 模拟；不写假 src，不嵌外链播放器。</span><span class="en">Label clearly: real / redacted / simulated. No fake src and no external player.</span></p></section>
+</main>
+<div class="discussion"><b class="zh">讨论</b><b class="en">Discussion</b><span class="zh">哪一批 CSR ticket 可授权、可脱敏？这条原流程里，哪一步最适合作为首个小范围验证？</span><span class="en">Which CSR ticket batch can be authorised and redacted? Which step is the best narrow first validation?</span></div>
+<footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>R5 · MD §D1.2.1.1</span></footer>
+</div></div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh"><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{
+  font-family:Inter,"Noto Sans SC",Arial,sans-serif;
+  color:#152439;
+  width:1280px;
+  min-height:720px;
+  background:#f6f7f9;
+  display:flex;
+  flex-direction:column;
+  overflow:visible;
+}
+.page-inner{
+  display:flex;
+  flex-direction:column;
+  margin:60px;
+  min-height:600px;
+  gap:0;
+  overflow:visible;
+}
+.zh{display:revert}.en{display:none}
+html[data-lang=en] .zh{display:none}html[data-lang=en] .en{display:revert}
+
+.title-zone{
+  min-height:60px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.kicker{
+  font-size:14px;
+  line-height:17px;
+  color:#52647b;
+}
+.title-zone h1{
+  font-size:32px;
+  line-height:36px;
+  margin-top:5px;
+  font-weight:700;
+  letter-spacing:0.2px;
+}
+
+/* rule under header */
+.rule{border-top:1px solid #152439}
+
+/* lead paragraph */
+.lead{
+  font-size:18px;
+  line-height:1.45;
+  margin-top:16px;
+  color:#52647b;
+}
+
+/* main content area */
+.content{
+  flex:1;
+  display:grid;
+  grid-auto-rows:auto;
+  gap:24px;
+  padding-top:24px;
+}
+
+/* timeline grid */
+.timeline{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+/* phases */
+.phase{
+  border-top:3px solid #007f86;
+  padding-top:8px;
+  padding-right:6px;
+  padding-left:6px;
+}
+.phase .num{
+  font-size:12px;
+  color:#007f86;
+  font-weight:700;
+}
+.phase h2{
+  font-size:22px;
+  line-height:30px;
+  margin:4px 0;
+}
+.phase p,.phase li{
+  font-size:18px;
+  line-height:1.35;
+}
+.phase ul{list-style:none}
+.phase li{padding:3px 0}
+.phase li:before{content:"— ";color:#007f86}
+
+/* value section */
+.value{
+  border-top:1px solid #152439;
+  padding-top:9px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.value h3{
+  font-size:18px;
+  line-height:24px;
+}
+.value p{
+  font-size:18px;
+  line-height:1.35;
+  margin-top:6px;
+}
+
+/* discussion */
+.discussion{
+  border-top:1px solid #152439;
+  padding-top:8px;
+  font-size:18px;
+  line-height:1.35;
+  margin-top:8px;
+}
+
+/* footer */
+.foot{
+  padding-top:8px;
+  font-size:13px;
+  color:#52647b;
+  display:flex;
+  justify-content:space-between;
+  line-height:1.25;
+  margin-top:auto;
+}
+
+/* compact adjustments for very tight vertical space */
+header.title-zone, .lead, .timeline, .value, .discussion, .foot{width:100%}
+</style></head><body><div class="slide-container"><div class="page-inner"><header class="title-zone"><div class="kicker"><span class="zh">MD §D1.2.4｜持续优化与泛化</span><span class="en">MD §D1.2.4 | Continuous improvement and generalisation</span></div><h1><span class="zh">从小范围 BO 到泛化与业务价值</span><span class="en">From bounded BO to generalisation and value</span></h1></header><div class="rule"></div><p class="lead"><span class="zh">先证明一个规则边界，再扩展地区、服务和例外；每次扩展都要重新测试，不能把小本体结果外推到全部 BO。</span><span class="en">Prove one rule boundary first, then expand region, service and exceptions; retest every expansion instead of generalising from a small ontology to all BO.</span></p><main class="content"><div class="timeline"><section class="phase"><div class="num">01 · PROVE</div><h2><span class="zh">小范围验证</span><span class="en">Bounded proof</span></h2><ul><li><span class="zh">WIKI、样本、规则、专家</span><span class="en">WIKI, samples, rules, experts</span></li><li><span class="zh">回答/判断/Action 分开</span><span class="en">Separate answer, judgement and Action</span></li></ul></section><section class="phase"><div class="num">02 · EXPAND</div><h2><span class="zh">扩充条件</span><span class="en">Expand conditions</span></h2><ul><li><span class="zh">地区、服务、例外</span><span class="en">Region, service, exceptions</span></li><li><span class="zh">补样本并做回归</span><span class="en">Add samples and regress</span></li></ul></section><section class="phase"><div class="num">03 · OPERATE</div><h2><span class="zh">进入业务回路</span><span class="en">Enter the business loop</span></h2><ul><li><span class="zh">预测、方案、审批、回写</span><span class="en">Prediction, options, approval, write-back</span></li><li><span class="zh">保留人工接管</span><span class="en">Keep human takeover</span></li></ul></section><section class="phase"><div class="num">04 · RE-TEST</div><h2><span class="zh">泛化重测</span><span class="en">Retest generalisation</span></h2><ul><li><span class="zh">重新确认质量与风险</span><span class="en">Reconfirm quality and risk</span></li><li><span class="zh">继续、收缩或停止</span><span class="en">Continue, narrow or stop</span></li></ul></section></div><div class="value"><div><h3><span class="zh">可观察的业务价值</span><span class="en">Observable business value</span></h3><p><span class="zh">查询响应时间、重复查询、跨团队确认、Customer Promise、关闭周期、替换建议采纳与人工介入。</span><span class="en">Response time, repeat queries, cross-team confirmation, Customer Promise, closure cycle, substitute adoption and human intervention.</span></p></div><div><h3><span class="zh">不锁唯一 Hero Case</span><span class="en">Do not lock one Hero Case</span></h3><p><span class="zh">先用现场证据选择边界，再决定哪条 BO/Customer Promise 主线值得扩大。</span><span class="en">Use live evidence to choose the boundary, then decide which BO/Customer Promise path merits expansion.</span></p></div></div></main><div class="discussion"><b class="zh">讨论焦点：</b><b class="en">Discussion:</b> <span class="zh">首个 BO 边界怎样证明泛化？扩展时谁批准重测，哪些高风险错误触发收缩或停止？</span><span class="en">How will the first BO boundary prove generalisation? Who approves retesting, and which high-risk errors trigger narrowing or stopping?</span></div><footer class="foot"><span><span class="zh">ITEM × COO AI Team × ISS Biz（team）</span><span class="en">ITEM × COO AI Team × ISS Biz (team)</span></span><span>MD §D1.2.4 · R4.0 · 19/102</span></footer></div></div></body></html>

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "c01",
+    "name": "D1.2.1 UNIS 港口拖柜｜20 分钟",
+    "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c01.md",
+    "md": "D1.2.1"
+  },
+  {
+    "id": "c02",
+    "name": "D1.2.2 ITEM WMS Dynamic Form｜40 分钟",
+    "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c02.md",
+    "md": "D1.2.2"
+  },
+  {
+    "id": "c03",
+    "name": "D1.2.3 UNIS Rate & Quote｜60 分钟",
+    "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c03.md",
+    "md": "D1.2.3"
+  },
+  {
+    "id": "c04",
+    "name": "D1.2.4 ISS BO｜40 分钟",
+    "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c04.md",
+    "md": "D1.2.4"
+  },
+  {
+    "id": "c05",
+    "name": "D1.2.5 General：Record & Reply｜20 分钟",
+    "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c05.md",
+    "md": "D1.2.5"
+  },
+  {
+    "id": "c06",
+    "name": "D1.2.6 ISS CEC 流程分析＋Genesys 集成｜20 分钟",
+    "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c06.md",
+    "md": "D1.2.6"
+  },
+  {
+    "id": "c07",
+    "name": "D1.2.7 ISS CFS＋Depot｜20 分钟",
+    "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c07.md",
+    "md": "D1.2.7"
+  },
+  {
+    "id": "c08",
+    "name": "D1.2.8 失败案例：iCEO｜10 分钟",
+    "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c08.md",
+    "md": "D1.2.8"
+  },
+  {
+    "id": "c09",
+    "name": "D1.2.9 其他踩过的坑｜10 分钟",
+    "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c09.md",
+    "md": "D1.2.9"
+  }
+]

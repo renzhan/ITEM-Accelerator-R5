@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html[data-lang=en] .zh{display:none}
+html[data-lang=en] .en{display:revert}
+.slide-container{
+  width:1280px;
+  height:720px;
+  background:#f6f7f9;
+  display:flex;
+  flex-direction:column;
+  font-family:Inter,"Noto Sans SC",Arial,sans-serif;
+  color:#152439;
+  background-image:linear-gradient(#e7ebef 1px,transparent 1px),linear-gradient(90deg,#e7ebef 1px,transparent 1px);
+  background-size:32px 32px;
+  overflow:hidden;
+}
+.page-inner{
+  padding:26px;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.title-zone{
+  min-height:46px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.kicker{
+  font-size:12px;
+  line-height:14px;
+  color:#52647b;
+}
+.title-zone h1{
+  font-size:22px;
+  line-height:26px;
+  margin-top:6px;
+  font-weight:700;
+  letter-spacing:0;
+}
+.rule{height:1px;background:#152439;margin-top:6px}
+.lead{
+  font-size:15px;
+  line-height:1.4;
+  margin-top:10px;
+  color:#52647b;
+  max-width:1228px;
+}
+.content{
+  flex:1;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  padding-top:12px;
+  overflow:visible;
+}
+.block{
+  border-top:1px solid #52647b;
+  padding-top:8px;
+  padding-right:6px;
+  padding-left:6px;
+}
+.block h2{
+  font-size:16px;
+  line-height:22px;
+  margin-bottom:6px;
+}
+.block p,.block li{
+  font-size:14px;
+  line-height:1.4;
+}
+.block ul{padding-left:18px}
+.block li{margin-bottom:6px}
+.gate{color:#007f86;font-weight:700}
+.discussion{
+  margin-top:10px;
+  border-top:1px solid #152439;
+  padding-top:10px;
+  font-size:14px;
+  line-height:1.4;
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+.discussion b{margin-right:6px}
+.foot{
+  padding-top:10px;
+  font-size:13px;
+  line-height:16px;
+  color:#52647b;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.foot span:last-child{color:#152439}
+@media (max-height:720px){
+  .title-zone h1{font-size:20px}
+  .lead{font-size:14px}
+  .block h2{font-size:15px}
+  .block p,.block li{font-size:13px}
+}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker">MD §appendix-a · Day 0 / preparation</div>
+      <h1><span class="zh">两日准备：真实业务、能力清单与确认责任</span><span class="en">Two-day preparation: real business, capability inventory and confirmation ownership</span></h1>
+    </header>
+    <div class="rule"></div>
+    <p class="lead"><span class="zh">会前只准备能支撑讨论的四组材料；正文保留完整清单，会议现场标注已知、待确认与缺口。</span><span class="en">Prepare four evidence groups that support discussion; the full checklist stays in the MD, while the meeting marks known, pending and missing items.</span></p>
+    <main class="content">
+      <section class="block">
+        <h2><span class="zh">A｜案例授权与运行范围</span><span class="en">A | Case authorization and run scope</span></h2>
+        <ul class="zh">
+          <li>确认可展示、可运行、可模拟或仅可讨论的范围。</li>
+          <li>明确数据/IP、录屏/视频、系统和环境的授权与留存边界。</li>
+        </ul>
+        <ul class="en">
+          <li>Mark what may be shown, run, simulated or discussion-only.</li>
+          <li>Confirm data/IP, recording/video, system and environment access and retention.</li>
+        </ul>
+      </section>
+      <section class="block">
+        <h2><span class="zh">B｜案例证据包</span><span class="en">B | Case evidence pack</span></h2>
+        <ul class="zh">
+          <li>工单样本、WMS 代码/BO 样本、经授权视频或录屏。</li>
+          <li>附来源、脱敏、版本、专家审核人和可验证输出。</li>
+        </ul>
+        <ul class="en">
+          <li>Ticket samples, WMS code/BO samples, and authorized videos or recordings.</li>
+          <li>Attach provenance, redaction, version, expert reviewer and testable output.</li>
+        </ul>
+      </section>
+      <section class="block">
+        <h2><span class="zh">C｜Hollis 成果与六业务域</span><span class="en">C | Hollis results and six business domains</span></h2>
+        <ul class="zh">
+          <li>Hollis 可分享的框架、治理样例与真实证据，范围待确认。</li>
+          <li>CEC、e-service、BO fulfillment、procurement、parts supply chain、UKM：各域 Owner、流程/规则/材料待确认。</li>
+        </ul>
+        <ul class="en">
+          <li>Hollis-shared frameworks, governance examples and real evidence, subject to scope confirmation.</li>
+          <li>CEC, e-service, BO fulfillment, procurement, parts supply chain and UKM: confirm each Owner, process, rules and materials.</li>
+        </ul>
+      </section>
+      <section class="block">
+        <h2><span class="zh">D｜四字段、依赖与确认权限</span><span class="en">D | Four fields, dependencies and authority</span></h2>
+        <ul class="zh">
+          <li>首个共建场景/验收；联合团队/Owner；能力输入/执行边界；推进方式/下一决策门。</li>
+          <li>同时登记数据、代码、接口、环境、权限、安全、预算与正式审批依赖。</li>
+          <li>确认谁能提供、审核、批准、停止或转交。</li>
+        </ul>
+        <ul class="en">
+          <li>First scene/acceptance; joint team/owners; inputs/execution boundary; path/next gate.</li>
+          <li>Register dependencies for data, code, interfaces, environment, access, security, budget and formal approval.</li>
+          <li>Confirm who may provide, review, approve, stop or hand off.</li>
+        </ul>
+      </section>
+    </main>
+    <div class="discussion"><b class="zh">会前关注</b><b class="en">Pre-read focus</b><span class="zh">哪组材料已能授权共享？谁对缺口、确认权限和下一步补件负责？</span><span class="en">Which group is authorized to share now, and who owns gaps, confirmation authority and follow-up materials?</span></div>
+    <footer class="foot">
+      <span>ITEM × COO AI Team × ISS Biz (team)</span>
+      <span>MD §appendix-a · R4.0 · 101/102</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

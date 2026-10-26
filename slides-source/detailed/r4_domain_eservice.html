@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}
+.page-inner{margin:60px;min-height:600px;display:flex;flex-direction:column}
+.title-zone{min-height:60px}.kicker{font-size:14px;line-height:17px;color:#52647b}.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+.rule{height:1px;background:#152439}.lead{font-size:18px;line-height:26px;margin-top:16px;color:#52647b}
+.content{flex:1;display:grid;gap:20px;padding-top:22px;grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr}.content.flow{grid-template-columns:repeat(4,1fr)}
+.block{border-top:1px solid #c7d1dc;padding-top:10px}.block h2{font-size:22px;line-height:30px;margin-bottom:6px}.block p,.block li{font-size:18px;line-height:26px}.block ul,.block ol{padding-left:20px}.block li{margin-top:4px}.tag{font-size:14px;line-height:17px;color:#007f86;margin-bottom:4px;font-weight:700}.flow{font-size:18px;line-height:26px;margin:6px 0 10px;color:#007f86}.role,.mini,.small{font-size:18px;line-height:26px;margin-top:8px}
+.content table{width:100%;border-collapse:collapse;font-size:18px;line-height:26px}.content th,.content td{text-align:left;vertical-align:top;padding:6px;border-bottom:1px solid #c7d1dc}.content th{color:#007f86}
+.discussion{margin-top:16px;border-top:1px solid #c7d1dc;padding-top:12px;font-size:18px;line-height:26px}.discussion b{color:#007f86;margin-right:8px}
+.foot{padding-top:16px;font-size:14px;line-height:20px;color:#52647b;display:flex;justify-content:space-between;gap:16px}
+.block .tag{float:right;line-height:20px;margin:0 0 0 8px}
+.block{padding-top:8px}.content{padding-top:20px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker">MD §D2.2.3 · e-service · pre-work form · cross-domain discussion · R5</div>
+      <h1>
+        <span class="zh">e-service：定位重复判断、现场责任与服务结果</span>
+        <span class="en">e-service: repeated judgment, ownership and outcomes</span>
+      </h1>
+    </header>
+
+    <div class="rule"></div>
+
+    <p class="lead">
+      <span class="zh">从服务请求到维修/诊断、派工或反馈，找出重复判断与状态断点；不假定模型、数字化成果或流程可直接接入。</span>
+      <span class="en">From service request through repair/diagnosis, dispatch or feedback, locate repeated judgment and status breaks; do not assume models or digital results are directly integrable.</span>
+    </p>
+
+    <main class="content four">
+      <section class="block">
+        <div class="tag">PROBLEM TO VERIFY</div>
+        <h2>
+          <span class="zh">哪一步反复判断</span>
+          <span class="en">Where judgment repeats</span>
+        </h2>
+        <ul class="zh">
+          <li>请求分流、诊断、派工、反馈哪个节点耗费最多？</li>
+          <li>重复判断是否来自设备、工单、知识或状态不一致？</li>
+        </ul>
+        <ul class="en">
+          <li>Which node consumes effort: intake, diagnosis, dispatch or feedback?</li>
+          <li>Does repetition come from inconsistent device, ticket, knowledge or status data?</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <div class="tag">MATERIALS</div>
+        <h2>
+          <span class="zh">需带到现场</span>
+          <span class="en">Bring to the room</span>
+        </h2>
+        <ul class="zh">
+          <li>设备/工单字段、维修知识、诊断路径、状态流转。</li>
+          <li>脱敏历史样本、人工处理记录和例外规则。</li>
+        </ul>
+        <ul class="en">
+          <li>Device/ticket fields, repair knowledge, diagnostic paths and status transitions.</li>
+          <li>Redacted history, human handling records and exception rules.</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <div class="tag">VALIDATION BOUNDARY</div>
+        <h2>
+          <span class="zh">验证与人工边界</span>
+          <span class="en">Validation & human boundary</span>
+        </h2>
+        <ul class="zh">
+          <li>分别测分类、诊断建议、派工建议与状态反馈。</li>
+          <li>维修安全、客户承诺和实际派工必须人工确认。</li>
+        </ul>
+        <ul class="en">
+          <li>Test classification, diagnostic advice, dispatch advice and status feedback separately.</li>
+          <li>Human confirmation is required for safety, promises and actual dispatch.</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <div class="tag">OUTPUT / OWNER</div>
+        <h2>
+          <span class="zh">现场输出</span>
+          <span class="en">Room output</span>
+        </h2>
+        <p>
+          <span class="zh">输出一个可取样的重复判断、输入字段与验收指标。ISS Biz 服务/维修 Owner 待确认；ITEM 画边界，DT 按需确认系统与接口。</span>
+          <span class="en">Output one sampleable repeated judgment, input fields and acceptance metrics. ISS Biz service/repair Owner to confirm; ITEM draws the boundary, DT confirms systems and interfaces as needed.</span>
+        </p>
+      </section>
+    </main>
+
+    <div class="discussion">
+      <b class="zh">讨论焦点</b><b class="en">Discussion</b>
+      <span class="zh">材料会前采集；会中比较跨域断点。哪个节点可以先做建议而不直接执行？必须保留哪些状态、证据和人工接管？</span>
+      <span class="en">Collect material before the workshop and compare cross-domain breaks. Which node can start with advice without execution? Which states, evidence and takeover must remain?</span>
+    </div>
+
+    <footer class="foot">
+      <span>ITEM × COO AI Team × ISS Biz (team)</span>
+      <span>R5 · MD §D2.2.3 · D1.2.7</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:#f6f7f9;color:#152439;font-family:Inter,"Noto Sans SC",Arial,sans-serif;display:flex;flex-direction:column}
+.page-inner{margin:60px;min-height:600px;display:flex;flex-direction:column}
+.title-zone{min-height:60px}.kicker{font-size:14px;line-height:17px;color:#52647b}.title-zone h1{font-size:32px;line-height:36px;margin-top:5px;font-weight:700}
+.rule{height:1px;background:#152439}.lead{font-size:18px;line-height:26px;margin-top:16px;color:#52647b}
+.content{flex:1;display:grid;gap:20px;padding-top:22px;grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr}
+.block{border-top:1px solid #c7d1dc;padding-top:10px}.block h2{font-size:22px;line-height:30px;margin-bottom:6px}.block p,.block li{font-size:18px;line-height:26px}.block ul,.block ol{padding-left:20px}.block li{margin-top:4px}.tag{font-size:14px;line-height:17px;color:#007f86;margin-bottom:4px;font-weight:700}.flow{font-size:18px;line-height:26px;margin:6px 0 10px;color:#007f86}.role,.mini,.small{font-size:18px;line-height:26px;margin-top:8px}
+.content table{width:100%;border-collapse:collapse;font-size:18px;line-height:26px}.content th,.content td{text-align:left;vertical-align:top;padding:6px;border-bottom:1px solid #c7d1dc}.content th{color:#007f86}
+.discussion{margin-top:16px;border-top:1px solid #c7d1dc;padding-top:12px;font-size:18px;line-height:26px}.discussion b{color:#007f86;margin-right:8px}
+.foot{padding-top:16px;font-size:14px;line-height:20px;color:#52647b;display:flex;justify-content:space-between;gap:16px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="page-inner">
+    <header class="title-zone">
+      <div class="kicker">MD §D2.2.3 · procurement · pre-work form · cross-domain discussion · R5</div>
+      <h1><span class="zh">procurement：流程建议不替代正式审批</span><span class="en">procurement: advice does not replace approval</span></h1>
+    </header>
+    <div class="rule"></div>
+    <p class="lead"><span class="zh">采购场景先拆清申请、供应商、审批、交期、价格/条款和例外；任何建议、摘要或预测都不能写成批准。</span><span class="en">First separate request, supplier, approval, lead time, price/terms and exceptions; advice, summaries or forecasts never become approval.</span></p>
+    <main class="content four">
+      <section class="block">
+        <div class="tag">PROBLEM TO VERIFY</div>
+        <h2><span class="zh">流转与例外</span><span class="en">Flow & exceptions</span></h2>
+        <ul class="zh">
+          <li>哪一段依赖重复检索、比对或人工催办？</li>
+          <li>价格、条款、供应商和交期异常如何升级？</li>
+        </ul>
+        <ul class="en">
+          <li>Which step repeats retrieval, comparison or manual chasing?</li>
+          <li>How are price, terms, supplier and lead-time exceptions escalated?</li>
+        </ul>
+      </section>
+      <section class="block">
+        <div class="tag">MATERIALS</div>
+        <h2><span class="zh">需带到现场</span><span class="en">Bring to the room</span></h2>
+        <ul class="zh">
+          <li>申请、供应商、合同/条款、审批流、交期和例外样本。</li>
+          <li>角色权限、正式审批路径与可脱敏字段。</li>
+        </ul>
+        <ul class="en">
+          <li>Requests, suppliers, contracts/terms, approval flows, lead time and exception samples.</li>
+          <li>Role access, formal approval path and redactable fields.</li>
+        </ul>
+      </section>
+      <section class="block">
+        <div class="tag">VALIDATION BOUNDARY</div>
+        <h2><span class="zh">建议与审批分离</span><span class="en">Separate advice from approval</span></h2>
+        <ul class="zh">
+          <li>可先测摘要、比对、风险提示或交期预测。</li>
+          <li>供应商选择、金额、条款与提交审批始终人工确认。</li>
+        </ul>
+        <ul class="en">
+          <li>Start with summaries, comparison, risk flags or lead-time prediction.</li>
+          <li>Human confirmation for supplier, amount, terms and approval submission.</li>
+        </ul>
+      </section>
+      <section class="block">
+        <div class="tag">OUTPUT / OWNER</div>
+        <h2><span class="zh">现场输出</span><span class="en">Room output</span></h2>
+        <p><span class="zh">输出一个低风险建议任务、材料与拒答边界。ISS Biz procurement Owner 与审批 Owner 待确认；DT 按需确认权限/接口，正式审批另行办理。</span><span class="en">Output one low-risk advice task, materials and refusal boundary. ISS Biz procurement and approval Owners to confirm; DT checks access/interfaces as needed, with formal approval separate.</span></p>
+      </section>
+    </main>
+    <div class="discussion"><b class="zh">讨论焦点</b><b class="en">Discussion</b><span class="zh">材料会前采集；会中比较跨域断点。哪个建议可以在不改变审批权的前提下先验证？正式审批、敏感权限和审计日志的证据是什么？</span><span class="en">Collect material before the workshop and compare cross-domain breaks. Which advice can be validated without changing approval authority? What evidence covers formal approval, sensitive access and audit logs?</span></div>
+    <footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>R5 · MD §D2.2.3</span></footer>
+  </div>
+</div>
+</body>
+</html>

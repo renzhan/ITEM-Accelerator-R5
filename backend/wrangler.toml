@@ -1,0 +1,15 @@
+name = "iss-r5-collection-api"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "iss-r5-submissions"
+database_id = "REPLACE_WITH_CLOUDFLARE_D1_DATABASE_ID"
+
+# Set secrets separately; do not commit values:
+# wrangler secret put ADMIN_TOKEN
+# Set ALLOWED_ORIGINS as a Worker variable/secret containing comma-separated exact origins,
+# for example: https://example.github.io/iss-r5-package
+[vars]
+ALLOWED_ORIGINS = "REPLACE_WITH_EXACT_ALLOWED_ORIGINS"
