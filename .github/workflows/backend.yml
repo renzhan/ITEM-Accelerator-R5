@@ -1,0 +1,70 @@
+name: Deploy ISS collection API to Cloudflare
+
+# 需要在仓库 Settings → Secrets and variables → Actions 中设置：
+#   CLOUDFLARE_API_TOKEN   （权限：Workers Scripts Edit、D1 Edit、Account Settings Read）
+#   CLOUDFLARE_ACCOUNT_ID
+#   ADMIN_TOKEN            （管理员导出口令，自己保管）
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: backend
+  cancel-in-progress: false
+
+env:
+  DB_NAME: iss-r5-submissions
+  ALLOWED_ORIGINS: https://tommyyula.github.io
+  WRANGLER: npx -y wrangler@4
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check secrets
+        run: |
+          for name in CLOUDFLARE_API_TOKEN CLOUDFLARE_ACCOUNT_ID ADMIN_TOKEN; do
+            if [ -z "${!name}" ]; then echo "::error::Missing repository secret $name"; exit 1; fi
+          done
+      - name: Ensure D1 database and fill wrangler.toml
+        run: |
+          find_id() { $WRANGLER d1 list --json | jq -r --arg n "$DB_NAME" '.[] | select(.name == $n) | .uuid'; }
+          id=$(find_id)
+          if [ -z "$id" ]; then $WRANGLER d1 create "$DB_NAME"; id=$(find_id); fi
+          if [ -z "$id" ]; then echo "::error::Could not find or create D1 database $DB_NAME"; exit 1; fi
+          sed -i "s/REPLACE_WITH_CLOUDFLARE_D1_DATABASE_ID/$id/" wrangler.toml
+          sed -i "s#REPLACE_WITH_EXACT_ALLOWED_ORIGINS#$ALLOWED_ORIGINS#" wrangler.toml
+      - name: Apply schema
+        run: $WRANGLER d1 execute "$DB_NAME" --remote --file=schema.sql
+      - name: Deploy Worker
+        run: $WRANGLER deploy 2>&1 | tee deploy.log
+      - name: Set ADMIN_TOKEN secret
+        run: printf '%s' "$ADMIN_TOKEN" | $WRANGLER secret put ADMIN_TOKEN
+      - name: Smoke test
+        run: |
+          url=$(grep -oE 'https://[A-Za-z0-9.-]+\.workers\.dev' deploy.log | head -1)
+          if [ -z "$url" ]; then echo "::error::No workers.dev URL in deploy output (is a workers.dev subdomain registered?)"; exit 1; fi
+          echo "WORKER_URL=$url"
+          echo "formsEndpoint: $url/api/submissions" >> "$GITHUB_STEP_SUMMARY"
+          sleep 5
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$url/api/submissions")
+          echo "GET without token -> $code (expect 401)"
+          [ "$code" = 401 ]
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X OPTIONS -H "Origin: $ALLOWED_ORIGINS" "$url/api/submissions")
+          echo "CORS preflight from Pages origin -> $code (expect 204)"
+          [ "$code" = 204 ]
