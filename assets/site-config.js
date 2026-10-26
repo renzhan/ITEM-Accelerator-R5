@@ -5,7 +5,7 @@
   window.ISS_CONFIG = {
     version: 'R5.0',
     siteBase: base,
-    formsEndpoint: '', // 例如 https://你的收集服务/api/submissions；为空时不假装提交。
+    formsEndpoint: 'https://iss-r5-collection-api.tommyyula.workers.dev/api/submissions', // 例如 https://你的收集服务/api/submissions；为空时不假装提交。
     media: {
       c01: { src: '', poster: '', title: 'UNIS 港口拖柜', captions: '' },
       c02: { src: '', poster: '', title: 'ITEM WMS Dynamic Form', captions: '' },
