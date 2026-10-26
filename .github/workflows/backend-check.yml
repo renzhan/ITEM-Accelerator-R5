@@ -1,0 +1,27 @@
+name: Check ISS collection API
+
+# 手动运行：用 ADMIN_TOKEN 调用导出接口，只输出各表单的记录数（公开仓库日志任何人可见，不打印内容）。
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      API: https://iss-r5-collection-api.tommyyula.workers.dev/api/submissions
+      ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+    steps:
+      - name: Count submissions
+        run: |
+          token=$(printf '%s' "$ADMIN_TOKEN" | tr -d '\r\n')
+          code=$(curl -s -o out.json -w '%{http_code}' -H "Authorization: Bearer $token" "$API.json")
+          echo "export with ADMIN_TOKEN -> $code (expect 200)"
+          [ "$code" = 200 ]
+          jq -r '"total: \(.submissions | length)", (.submissions | group_by(.kind)[] | "\(.[0].kind): \(length)")' out.json | tee -a "$GITHUB_STEP_SUMMARY"
+          code=$(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $token" "$API.csv")
+          echo "CSV export -> $code (expect 200)"
+          [ "$code" = 200 ]
+          rm -f out.json
