@@ -86,8 +86,12 @@ jobs:
           if [ -z "$url" ]; then echo "::error::No workers.dev URL in deploy output (is a workers.dev subdomain registered?)"; exit 1; fi
           echo "WORKER_URL=$url"
           echo "formsEndpoint: $url/api/submissions" >> "$GITHUB_STEP_SUMMARY"
-          sleep 5
-          code=$(curl -s -o /dev/null -w '%{http_code}' "$url/api/submissions")
+          # 新注册的 workers.dev 子域名证书需要几分钟生效，先重试等待
+          for i in $(seq 1 30); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$url/api/submissions" || true)
+            [ "$code" = 401 ] && break
+            sleep 20
+          done
           echo "GET without token -> $code (expect 401)"
           [ "$code" = 401 ]
           code=$(curl -s -o /dev/null -w '%{http_code}' -X OPTIONS -H "Origin: $ALLOWED_ORIGINS" "$url/api/submissions")
