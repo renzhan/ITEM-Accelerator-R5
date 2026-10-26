@@ -18,6 +18,7 @@ env:
   DB_NAME: iss-r5-submissions
   ALLOWED_ORIGINS: https://tommyyula.github.io
   WRANGLER: npx -y wrangler@4
+  WORKERS_SUBDOMAIN: tommyyula
 
 jobs:
   deploy:
@@ -62,8 +63,21 @@ jobs:
           sed -i "s#REPLACE_WITH_EXACT_ALLOWED_ORIGINS#$ALLOWED_ORIGINS#" wrangler.toml
       - name: Apply schema
         run: $WRANGLER d1 execute "$DB_NAME" --remote --file=schema.sql
+      - name: Ensure workers.dev subdomain
+        run: |
+          api="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/subdomain"
+          current=$(curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "$api" | jq -r '.result.subdomain // empty')
+          if [ -z "$current" ]; then
+            res=$(curl -s -X PUT -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H 'Content-Type: application/json' \
+              --data "{\"subdomain\":\"$WORKERS_SUBDOMAIN\"}" "$api")
+            echo "$res" | jq -e '.success' >/dev/null || { echo "::error::Could not register workers.dev subdomain: $(echo "$res" | jq -c '.errors')"; exit 1; }
+            current=$WORKERS_SUBDOMAIN
+          fi
+          echo "workers.dev subdomain: $current"
       - name: Deploy Worker
-        run: $WRANGLER deploy 2>&1 | tee deploy.log
+        run: |
+          set -o pipefail
+          $WRANGLER deploy 2>&1 | tee deploy.log
       - name: Set ADMIN_TOKEN secret
         run: printf '%s' "$ADMIN_TOKEN" | $WRANGLER secret put ADMIN_TOKEN
       - name: Smoke test
