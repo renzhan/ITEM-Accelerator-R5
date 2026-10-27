@@ -39,7 +39,10 @@ new.append(p('r5_case_overview','九组案例：从切入点到组织、流程�
 case_items=json.loads((S/'case_items.json').read_text())
 stages=['结果、改造前与视频','改造后业务闭环','实施过程与采用','组织与价值证据','ISS对标','变更与长期资产','重复交付与动手']
 for item in case_items:
-    for i,label in enumerate(stages,1):new.append(p('r5_'+item['id']+'_'+str(i).zfill(2),item['name']+'｜'+label,item['md']+'.'+str(i),2,1,case=item['id']))
+    for i,label in enumerate(stages,1):
+        new.append(p('r5_'+item['id']+'_'+str(i).zfill(2),item['name']+'｜'+label,item['md']+'.'+str(i),2,1,case=item['id']))
+        if item['id']=='c09' and i==2:
+            new.append(p('r5_c09_02b',item['name']+'｜知识生成流程',item['md']+'.2',2,1,case=item['id']))
 more=[('r5_platform_evolution','平台持续演进','D1.3.5',3,1),('r5_d2_blueprint','未来两到三年目标蓝图','D2.1.1',6,2),('r5_d2_future_work','目标工作方式与组织运行','D2.1.2',6,2),('r5_d2_gap_map','知识、数据、接口与组织差距','D2.2.8',7,2),('r5_d2_breakthroughs','从差距到突破主线','D2.2.9',7,2),('r5_d2_four_lanes','四条实施泳道','D2.3.1',8,2),('r5_d2_hands_on','动手共建与最小交付','D2.3.2',8,2),('r5_d2_ip','自主IP与权利边界','D2.4.1',9,2),('r5_d2_product','可重复交付的候选产品','D2.4.2',9,2),('r5_d2_december','十二月后启动条件','D2.4.3',9,2),('r5_d2_outputs','战略四成果与执行四字段','D2.5.1',10,2),('r5_convergence_form','会末议题收敛采集','D2.5.3',10,2)]
 for a in more:new.append(p(*a))
 by={**keepby,**{x['id']:x for x in new}}

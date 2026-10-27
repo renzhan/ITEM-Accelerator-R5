@@ -43,6 +43,27 @@
       const src = safeMediaUrl(cfg.src); if (src) { const poster = safeMediaUrl(cfg.poster); if (poster) player.poster = poster; const captions = safeMediaUrl(cfg.captions); if (captions) { const track = document.createElement('track'); track.kind = 'captions'; track.src = captions; track.srclang = 'zh'; track.label = '中文字幕'; player.appendChild(track); } load(src, false); }
     }
   }
+  function mountKnowledgeComparisons() {
+    for (const root of document.querySelectorAll('[data-knowledge-compare]')) {
+      const slider = root.querySelector('.compare-range');
+      if (!slider || slider.dataset.compareReady === 'true') continue;
+      const compactQuery = window.matchMedia('(max-width: 700px)');
+      const setCompact = () => root.classList.toggle('is-compact', compactQuery.matches);
+      const update = () => {
+        const value = Math.max(0, Math.min(100, Number(slider.value) || 0));
+        const before = Math.round(value), after = 100 - before;
+        root.style.setProperty('--split', `${value}%`);
+        slider.setAttribute('aria-valuetext', `抽取前 ${before}%，抽取后 ${after}% / Before ${before}%, after ${after}%`);
+      };
+      slider.dataset.compareReady = 'true';
+      slider.addEventListener('input', update);
+      slider.addEventListener('change', update);
+      if (compactQuery.addEventListener) compactQuery.addEventListener('change', setCompact);
+      else compactQuery.addListener(setCompact);
+      setCompact();
+      update();
+    }
+  }
   function importNotes(file) { if (!file || file.size > 5 * 1024 * 1024) { alert('请选择5MB以内的笔记JSON / Choose a note JSON under 5MB'); return; } file.text().then(text => { const data = JSON.parse(text); if (data.type !== 'iss-r5-notes' || !data.notes || typeof data.notes !== 'object' || Array.isArray(data.notes)) throw Error('Invalid notes'); const next = getNotes(); for (const p of meta.pages) { const n = data.notes[p.id]; if (!n || typeof n !== 'object') continue; const value = { md: p.md, title: p.title }; for (const key of ['leaderViews', 'conclusion', 'actions']) { if (n[key] !== undefined && typeof n[key] !== 'string') throw Error('Invalid note'); value[key] = String(n[key] || '').slice(0, 10000); } next[p.id] = value; } saveNotes(next); document.querySelectorAll('textarea[data-note-page]').forEach(el => el.value = next[el.dataset.notePage] && next[el.dataset.notePage][el.dataset.noteField] || ''); alert('笔记已导入本机，未提交 / Imported locally, not submitted'); }).catch(() => alert('笔记文件无效 / Invalid note file')); }
   const exportBtn = document.getElementById('export-meeting-notes'); if (exportBtn) exportBtn.onclick = () => exportNotes('json'); const importInput = document.getElementById('import-meeting-notes'); if (importInput) importInput.onchange = () => { importNotes(importInput.files[0]); importInput.value = ''; };
   for (const link of document.querySelectorAll('a[href$=".zip"]')) {
@@ -50,6 +71,6 @@
     if (url) link.href = url;
     else { link.removeAttribute('href'); link.removeAttribute('download'); link.setAttribute('aria-disabled', 'true'); link.replaceChildren(...bi('span', '完整Git安装包由组织者另行分享', 'The organizer shares the Git installation package separately').childNodes); }
   }
-  mountMedia(); mountNotes();
+  mountKnowledgeComparisons(); mountMedia(); mountNotes();
   window.ISSNotes = { exportNotes, getNotes, key: NOTE_KEY };
 }());
