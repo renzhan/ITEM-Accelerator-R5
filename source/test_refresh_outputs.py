@@ -142,6 +142,13 @@ class DeckAssemblyTests(unittest.TestCase):
         self.assertIn('ItemGPT', reader.text_content())
         self.assertEqual(len(document.xpath('//section[@class="scene"]')), 142)
 
+    def test_reader_refresh_preserves_assurance_and_is_repeatable(self):
+        reader = (ROOT / 'docs/reader.html').read_text()
+        updated = refresh.append_model_failure_reader_sections(reader)
+        self.assertEqual(updated, refresh.append_model_failure_reader_sections(updated))
+        self.assertIn('Evaluation Agent', updated)
+        self.assertIn('ItemGPT', updated)
+
     def test_css_injection_handles_explicit_and_omitted_head_end(self):
         for head_end in ("</head>", "", "</HEAD>"):
             with self.subTest(head_end=head_end):

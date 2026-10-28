@@ -331,7 +331,8 @@ def append_model_failure_reader_sections(text):
         raise ValueError("Missing D1.3 reader marker")
     overview = MODEL_FAILURE_OVERVIEW_READER + (overview_details.group(1) if overview_details else "")
     text = text.replace('<h5 id="md-D1-2-8-1">', overview + '<h5 id="md-D1-2-8-1">', 1)
-    return text.replace(marker, MODEL_FAILURE_READER + HIRING_READER + marker, 1)
+    text = text.replace(marker, MODEL_FAILURE_READER + HIRING_READER + marker, 1)
+    return re.sub(r'\n+(?=<h5 id="md-D1-2-8-(?:0|3)">)', '\n\n', text)
 
 
 def inject_model_failure_css(text):
