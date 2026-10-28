@@ -2,6 +2,7 @@
 import importlib.util
 from copy import deepcopy
 import json
+import re
 from pathlib import Path
 import unittest
 from tempfile import TemporaryDirectory
@@ -51,6 +52,14 @@ class DeckAssemblyTests(unittest.TestCase):
                     self.assertEqual(scene.xpath('./div[@class="scene-tools"]//button/@data-md'), [ref])
                     self.assertIn(ref, scene.xpath('.//footer')[0].text_content())
 
+    def test_failure_overview_uses_the_case_list_as_its_only_subdirectory(self):
+        document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
+        scene = document.get_element_by_id('r5_c09_00')
+        content = scene.xpath('.//main[@class="content"]')[0]
+        self.assertEqual([node.get('class') for node in content], ['case-column', 'root-column'])
+        self.assertEqual(len(content.xpath('.//*[@class="route"]')), 0)
+        self.assertIn('共同根因', content.xpath('./section[@class="root-column"]//h2')[0].text_content())
+
     def test_remote_updates_and_local_cases_are_present_together(self):
         document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
         manifest = json.loads((ROOT / 'source/detailed_manifest.json').read_text())
@@ -74,6 +83,23 @@ class DeckAssemblyTests(unittest.TestCase):
         hiring = document.get_element_by_id('r5_c09_hiring')
         self.assertEqual(hiring.get('data-md'), 'D1.2.8.4')
         self.assertTrue(hiring.xpath('.//img')[0].get('src').startswith('data:image/png;base64,'))
+
+    def test_new_failure_pages_localize_all_visible_chinese_content(self):
+        document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
+        page_ids = ('r5_c09_08', 'r5_c09_09', 'r5_c09_10', 'r5_c09_hiring')
+        for page_id in page_ids:
+            with self.subTest(page_id=page_id):
+                scene = document.get_element_by_id(page_id)
+                self.assertGreaterEqual(len(scene.xpath('.//span[contains(concat(" ", normalize-space(@class), " "), " zh ")]')), 2)
+                self.assertGreaterEqual(len(scene.xpath('.//span[contains(concat(" ", normalize-space(@class), " "), " en ")]')), 2)
+                unlocalized = []
+                for node in scene.xpath('.//text()[normalize-space()]'):
+                    if re.search(r'[\u4e00-\u9fff]', node):
+                        ancestors = node.getparent().xpath('ancestor-or-self::*[@class]')
+                        classes = {' '.join((ancestor.get('class') or '').split()) for ancestor in ancestors}
+                        if not any('zh' in class_names.split() or 'en' in class_names.split() for class_names in classes):
+                            unlocalized.append(node.strip())
+                self.assertEqual(unlocalized, [], f'unlocalized Chinese text: {unlocalized}')
 
     def test_css_injection_handles_explicit_and_omitted_head_end(self):
         for head_end in ("</head>", "", "</HEAD>"):
