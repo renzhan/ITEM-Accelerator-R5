@@ -256,8 +256,8 @@
     },
     {
       "id": "r5_c02_01",
-      "title": "WMS 动态表单：先证明业务结果，再谈生成速度",
-      "en": "WMS Dynamic Form: prove the business result before speed",
+      "title": "WMS 动态表单：需求不再层层转述，现场说出来就能试用",
+      "en": "WMS Dynamic Forms: say it on the floor, try it right away",
       "md": "D1.2.2.1",
       "refs": [
         "D1.2.2.1"
@@ -272,8 +272,8 @@
     },
     {
       "id": "r5_c02_02",
-      "title": "改造后闭环：正常任务、接管与状态回写",
-      "en": "After: normal task, takeover and state write-back",
+      "title": "改造后：需求方直接对 Agent 说，当场拿到能用的应用",
+      "en": "After: requesters talk to the Agent directly and get a working app on the spot",
       "md": "D1.2.2.2",
       "refs": [
         "D1.2.2.2"
@@ -288,8 +288,8 @@
     },
     {
       "id": "r5_c02_03",
-      "title": "实施过程：把生成嵌入工程与采用反馈",
-      "en": "Implementation: embed generation in engineering and adoption feedback",
+      "title": "实施过程：让 Agent 懂 WMS，只用标准积木搭应用",
+      "en": "Implementation: know WMS, build only from standard blocks",
       "md": "D1.2.2.3",
       "refs": [
         "D1.2.2.3"
@@ -304,8 +304,8 @@
     },
     {
       "id": "r5_c02_04",
-      "title": "组织与价值证据：没有基线，就没有收益结论",
-      "en": "Organisation and value evidence: no baseline, no value claim",
+      "title": "组织与价值证据：需求方直面 Agent，权限与证据由 WMS 守住",
+      "en": "Organisation and evidence: requesters work with the Agent directly; WMS guards access",
       "md": "D1.2.2.4",
       "refs": [
         "D1.2.2.4"
@@ -320,8 +320,8 @@
     },
     {
       "id": "r5_c02_05",
-      "title": "ISS 对标：先填差距，再决定迁移",
-      "en": "ISS benchmark: map gaps before deciding migration",
+      "title": "ISS 对标：要做到“现场说出来就能用”，ISS 还缺什么",
+      "en": "ISS benchmark: what ISS still lacks for “say it, use it”",
       "md": "D1.2.2.5",
       "refs": [
         "D1.2.2.5"
@@ -336,8 +336,8 @@
     },
     {
       "id": "r5_c02_06",
-      "title": "思考：业务规则变更，要留下可复用的证据链",
-      "en": "Reflection: business-rule change needs a reusable evidence chain",
+      "title": "思考：需求一直在变——改动走版本发布，积木越攒越多",
+      "en": "Reflection: needs keep changing—version every change, grow the blocks",
       "md": "D1.2.2.6",
       "refs": [
         "D1.2.2.6"
@@ -352,8 +352,8 @@
     },
     {
       "id": "r5_c02_07",
-      "title": "可重复交付＋动手：小范围草稿也要可验收",
-      "en": "Repeatable delivery + hands-on: even a small draft needs acceptance",
+      "title": "可重复交付＋动手：现场说一个改动，走完草稿到发布",
+      "en": "Repeatable delivery + hands-on: state one change live, take it from draft to release",
       "md": "D1.2.2.7",
       "refs": [
         "D1.2.2.7"
