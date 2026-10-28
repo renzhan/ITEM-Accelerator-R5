@@ -86,7 +86,7 @@ class DeckAssemblyTests(unittest.TestCase):
 
     def test_new_failure_pages_localize_all_visible_chinese_content(self):
         document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
-        page_ids = ('r5_c09_08', 'r5_c09_09', 'r5_c09_10', 'r5_c09_hiring')
+        page_ids = ('r5_c09_08', 'r5_c09_09', 'r5_c09_10', 'r5_c09_hiring', 'r5_agent_assurance')
         page_ids += tuple(f'r5_c02_{i:02d}' for i in range(1, 8))
         page_ids += tuple(f'r5_c05_{i:02d}' for i in range(1, 7))
         for page_id in page_ids:
@@ -95,7 +95,7 @@ class DeckAssemblyTests(unittest.TestCase):
                 self.assertGreaterEqual(len(scene.xpath('.//span[contains(concat(" ", normalize-space(@class), " "), " zh ")]')), 2)
                 self.assertGreaterEqual(len(scene.xpath('.//span[contains(concat(" ", normalize-space(@class), " "), " en ")]')), 2)
                 unlocalized = []
-                for node in scene.xpath('.//text()[normalize-space()]'):
+                for node in scene.xpath('.//text()[normalize-space() and not(ancestor::title or ancestor::desc or ancestor::script or ancestor::style)]'):
                     if re.search(r'[\u4e00-\u9fff]', node):
                         parent = node.getparent().getparent() if node.is_tail else node.getparent()
                         ancestors = parent.xpath('ancestor-or-self::*[@class]')
@@ -120,6 +120,34 @@ class DeckAssemblyTests(unittest.TestCase):
         config = (ROOT / 'assets/site-config.js').read_text()
         self.assertIn('media/c02-dynamic-forms/index.html', config)
         self.assertTrue((ROOT / 'media/c02-dynamic-forms/index.html').is_file())
+
+    def test_assurance_page_order_assets_and_reader_are_preserved(self):
+        text = (ROOT / 'Item_ISS_Meeting_R5.html').read_text()
+        document = html.fromstring(text)
+        scene = document.get_element_by_id('r5_agent_assurance')
+        self.assertEqual(scene.getprevious().get('id'), 'r5_c09_00')
+        self.assertEqual(scene.getnext().get('id'), 'r5_c09_01')
+        self.assertEqual(len(scene.xpath('.//*[@data-trust-step]')), 4)
+        self.assertEqual(scene.get('data-md'), 'D1.2.8.0')
+        link = scene.xpath('.//a[@data-trust-attachment]')[0].get('href')
+        self.assertTrue((ROOT / link).is_file())
+        video = scene.xpath('.//video[@data-trust-video]')[0]
+        for attr in ('data-video-file', 'data-poster-file'):
+            self.assertTrue((ROOT / 'media/attachments' / video.get(attr)).is_file())
+        for filename in ('assurance.js', 'workshop.js'):
+            self.assertIn((ROOT / 'assets' / filename).read_text().strip(), text)
+        self.assertEqual(len(document.xpath('//*[@id="md-D1-2-8-0"]')), 1)
+        reader = html.fromstring((ROOT / 'docs/reader.html').read_text())
+        self.assertIn('Evaluation Agent', reader.text_content())
+        self.assertIn('ItemGPT', reader.text_content())
+        self.assertEqual(len(document.xpath('//section[@class="scene"]')), 142)
+
+    def test_reader_refresh_preserves_assurance_and_is_repeatable(self):
+        reader = (ROOT / 'docs/reader.html').read_text()
+        updated = refresh.append_model_failure_reader_sections(reader)
+        self.assertEqual(updated, refresh.append_model_failure_reader_sections(updated))
+        self.assertIn('Evaluation Agent', updated)
+        self.assertIn('ItemGPT', updated)
 
     def test_css_injection_handles_explicit_and_omitted_head_end(self):
         for head_end in ("</head>", "", "</HEAD>"):

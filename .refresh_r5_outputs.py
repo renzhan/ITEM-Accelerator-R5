@@ -293,6 +293,7 @@ HIRING_READER = """
 
 def append_model_failure_reader_sections(text):
     """Keep the new slide notes addressable without colliding with legacy D1.2.8.x IDs."""
+    overview_details = re.search(r'<h5 id="md-D1-2-8-0">.*?(<h6\b.*?)(?=<h5 id="md-D1-2-8-1">)', text, flags=re.S)
     text = re.sub(r'<h5 id="md-D1-2-8-0">.*?(?=<h5 id="md-D1-2-8-1">)', "", text, flags=re.S)
     text = re.sub(
         r'<h5 id="md-D1-2-8-model-(?:experiment|limitations|architecture)">.*?(?=<h3 id="md-D1-3")',
@@ -328,8 +329,10 @@ def append_model_failure_reader_sections(text):
     marker = '<h3 id="md-D1-3">'
     if marker not in text:
         raise ValueError("Missing D1.3 reader marker")
-    text = text.replace('<h5 id="md-D1-2-8-1">', MODEL_FAILURE_OVERVIEW_READER + '<h5 id="md-D1-2-8-1">', 1)
-    return text.replace(marker, MODEL_FAILURE_READER + HIRING_READER + marker, 1)
+    overview = MODEL_FAILURE_OVERVIEW_READER + (overview_details.group(1) if overview_details else "")
+    text = text.replace('<h5 id="md-D1-2-8-1">', overview + '<h5 id="md-D1-2-8-1">', 1)
+    text = text.replace(marker, MODEL_FAILURE_READER + HIRING_READER + marker, 1)
+    return re.sub(r'\n+(?=<h5 id="md-D1-2-8-(?:0|3)">)', '\n\n', text)
 
 
 def inject_model_failure_css(text):
@@ -370,9 +373,11 @@ def rebuild_scenes(text, manifest):
     blocks = []
     for page in manifest["pages"]:
         source = (deck / f'{page["id"]}.html').read_text(encoding="utf-8")
-        slide_start = source.find('<div class="slide-container">')
+        slide_start = source.find('<div class="slide-container"')
         slide_end = matching_div_end(source, slide_start)
         slide = source[slide_start:slide_end]
+        if page["id"] == "r5_agent_assurance":
+            slide = re.sub(r'''(\bhref\s*=\s*["'])\.\./\.\./media/attachments/''', r'\1media/attachments/', slide)
         chapter = next(item for item in manifest["chapters"] if item["id"] == page["chapter"])
         refs = page.get("refs", [page["md"]])
         links = "".join(
