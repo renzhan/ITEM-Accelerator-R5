@@ -370,9 +370,11 @@ def rebuild_scenes(text, manifest):
     blocks = []
     for page in manifest["pages"]:
         source = (deck / f'{page["id"]}.html').read_text(encoding="utf-8")
-        slide_start = source.find('<div class="slide-container">')
+        slide_start = source.find('<div class="slide-container"')
         slide_end = matching_div_end(source, slide_start)
         slide = source[slide_start:slide_end]
+        if page["id"] == "r5_agent_assurance":
+            slide = re.sub(r'''(\bhref\s*=\s*["'])\.\./\.\./media/attachments/''', r'\1media/attachments/', slide)
         chapter = next(item for item in manifest["chapters"] if item["id"] == page["chapter"])
         refs = page.get("refs", [page["md"]])
         links = "".join(

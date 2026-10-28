@@ -89,6 +89,8 @@ def build(kind):
         if not f.is_file():raise ValueError('Missing native page: '+str(f))
         doc=BeautifulSoup(f.read_text(),'html.parser');slide=doc.select_one('.slide-container')
         if not slide or slide.select('script,iframe'):raise ValueError('Invalid native slide: '+p['id'])
+        for link in slide.select('a[data-trust-attachment]'):
+            link['href']=link['href'].removeprefix('../../')
         zh=doc.select_one('h1 .zh');en=doc.select_one('h1 .en')
         if not zh or not en:raise ValueError('Missing bilingual title: '+p['id'])
         p['title']=zh.get_text(' ',strip=True);p['en']=en.get_text(' ',strip=True);p['index']=i
@@ -114,9 +116,13 @@ def build(kind):
         scenes.append(f'<section class="scene" id="{p["id"]}" data-index="{i}" data-day="{p["day"]}" data-chapter="{p["chapter"]}" data-md="{p["md"]}">{tools}{slide}</section>')
         styles.append(scope_css('\n'.join(x.get_text() for x in doc.select('style')),p['id']))
     css=collection_embed_css((SITE/'assets'/'collection.css').read_text())+'\n'+(SITE/'assets'/'workshop.css').read_text()
+    scripts=['collection.js','workshop.js']
+    if any(p['id']=='r5_agent_assurance' for p in meta['pages']):
+        css+='\n'+(SITE/'assets'/'assurance.css').read_text()
+        scripts.append('assurance.js')
     # 配置作为独立文件便于部署后编辑；离线单文件有空配置fallback，能使用本机记录与视频。
     head='<script src="assets/site-config.js"></script><script>if(!window.ISS_CONFIG)window.ISS_CONFIG={version:"R5.0",formsEndpoint:"",siteBase:new URL("./",document.baseURI).href,media:{}};</script><style>'+css+'</style>'
-    js='\n'.join((SITE/'assets'/f).read_text() for f in ['collection.js','workshop.js']).replace('</script','<\\/script')
+    js='\n'.join((SITE/'assets'/f).read_text() for f in scripts).replace('</script','<\\/script')
     buttons=''.join(f'<button class="chapter-button" data-chapter="{c["id"]}" data-day="{c["day"]}"><span class="num">{c["label"]}</span><span><span class="zh">{c["zh"]}</span><span class="en">{c["en"]}</span></span></button>' for c in meta['chapters'])
     other='detailed' if kind=='brief' else 'brief'
     repl={'__SCOPED_STYLES__':'<style>'+ '\n'.join(styles)+'</style>','__INTERACTION_HEAD__':head,'__INTERACTION_SCRIPTS__':'<script>'+js+'</script>','__CHAPTER_BUTTONS__':buttons,'__SCENES__':'\n'.join(scenes),'__READER_CONTENT__':reader,'__PAGE_DATA__':json.dumps(meta,ensure_ascii=False).replace('</','<\\/'),'__MD_SOURCE__':json.dumps(md,ensure_ascii=False).replace('</','<\\/'),'__EDITION_ZH__':'会前共享版' if kind=='brief' else '会中讨论版','__EDITION_EN__':'Pre-work sharing' if kind=='brief' else 'Workshop presentation','__OTHER_EDITION__':'打开会中版 / Meeting' if kind=='brief' else '打开会前版 / Pre-work','__OTHER_HTML__':NAMES[other],'__MD_NAME__':MD_NAME,'__HTML_NAME__':NAMES[kind],'__ZIP_NAME__':'Item_ISS_R5_Git_Installation.zip','__VISIBILITY_NAME__':'ISS_R5_'+kind+'_Visibility.json','__PAGE_COUNT__':str(len(meta['pages'])),'__VERSION__':meta['version'],'__STORE_PREFIX__':'iss-r5-'+kind+'-'}
@@ -180,6 +186,9 @@ def package():
 def bootstrap():
     # 可在解压目录中重建，不依赖sandbox绝对路径或本机后台。
     if (ROOT/'slides-source').is_dir() and (ROOT/'assets').is_dir():
+        SITE.mkdir(exist_ok=True)
+        for name in ['index.html','.nojekyll','manus-routes.json']:
+            if (ROOT/name).is_file():shutil.copy2(ROOT/name,SITE/name)
         shutil.copytree(ROOT/'assets',SITE/'assets',dirs_exist_ok=True)
         shutil.copytree(ROOT/'forms',SITE/'forms',dirs_exist_ok=True)
         if (ROOT/'media').is_dir():shutil.copytree(ROOT/'media',SITE/'media',dirs_exist_ok=True)
