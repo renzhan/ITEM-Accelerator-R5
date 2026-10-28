@@ -28,9 +28,20 @@
     }
   }
   function safeMediaUrl(value) { if (!value || typeof value !== 'string') return ''; try { const u = new URL(value, window.ISS_CONFIG && window.ISS_CONFIG.siteBase || document.baseURI); return ['http:', 'https:', 'file:'].includes(u.protocol) && !u.username && !u.password ? u.href : ''; } catch { return ''; } }
+  // HTML播放器（场景动画＋旁白）以iframe嵌入；外框按16:9画面加60px控制栏留高。
+  function mountPlayer(slot, id, cfg, url) {
+    slot.classList.add('has-player');
+    const frame = document.createElement('div'); frame.className = 'player-frame';
+    const iframe = document.createElement('iframe'); iframe.src = url; iframe.title = cfg.title || id; iframe.loading = 'lazy'; iframe.allow = 'autoplay; fullscreen'; iframe.allowFullscreen = true; iframe.dataset.casePlayer = id; frame.appendChild(iframe); slot.appendChild(frame);
+    slot.appendChild(bi('p', '演示播放器：HTML 场景动画＋旁白，不是录屏；每个画面右上角标注真实机制或示意画面。空格播放，[ / ] 切换场景。', 'Demo player: HTML scene animation with narration, not a screen recording; each scene is labelled real mechanism or illustration. Space plays, [ / ] switches scenes.', 'video-status'));
+    const actions = document.createElement('div'); actions.className = 'video-actions';
+    if (frame.requestFullscreen) { const full = bi('button', '全屏播放', 'Full screen', 'ctrl'); full.type = 'button'; full.onclick = () => frame.requestFullscreen(); actions.appendChild(full); }
+    const open = bi('a', '新窗口打开', 'Open in new window', 'ctrl'); open.href = url; open.target = '_blank'; open.rel = 'noopener'; actions.appendChild(open); slot.appendChild(actions);
+  }
   function mountMedia() {
     for (const slot of document.querySelectorAll('.video-slot[data-case-id]')) {
       const id = slot.dataset.caseId, cfg = window.ISS_CONFIG && window.ISS_CONFIG.media && window.ISS_CONFIG.media[id] || {};
+      const playerUrl = safeMediaUrl(cfg.player); if (playerUrl) { mountPlayer(slot, id, cfg, playerUrl); continue; }
       const player = document.createElement('video'); player.controls = true; player.preload = 'metadata'; player.playsInline = true; player.hidden = true; player.dataset.caseVideo = id; slot.appendChild(player);
       const status = bi('p', '尚未配置预录视频。可选择本机文件预览；部署视频请编辑 assets/site-config.js。', 'No recording configured. Preview a local file, or configure assets/site-config.js for deployment.', 'video-status'); slot.appendChild(status);
       let blobUrl = '';

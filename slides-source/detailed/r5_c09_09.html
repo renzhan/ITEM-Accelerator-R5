@@ -47,49 +47,49 @@
 </style></head><body>
 <div class="slide-container"><div class="page-inner failure-page">
 <header><div class="kicker">DAY 1 / MD §D1.2.8.3 / <span class="zh">自建模型实验复盘</span><span class="en">Self-built model experiment review</span></div>
-<h1><span class="zh">自建私有模型的 14 个技术限制</span><span class="en">14 technical limits of the private model</span></h1><p class="lead">本次实验的断点分为四层，需结合具体业务任务逐项判断适用边界。</p></header>
+<h1><span class="zh">自建私有模型的 14 个技术限制</span><span class="en">14 technical limits of the private model</span></h1><p class="lead"><span class="zh">本次实验的断点分为四层，需结合具体业务任务逐项判断适用边界。</span><span class="en">The experiment's breakpoints fall into four layers; assess the boundary for each business task.</span></p></header>
 <main class="failure-body"><div class="quad-grid">
 
       <!-- A: 训练数据层 -->
       <div class="quad">
         <div class="quad-hdr qd-amber">
-          <div class="qh-name">A · 训练数据层</div>
-          <div class="qh-count">5 项</div>
+          <div class="qh-name"><span class="zh">A · 训练数据层</span><span class="en">A · Training data</span></div>
+          <div class="qh-count"><span class="zh">5 项</span><span class="en">5 items</span></div>
         </div>
         <div class="quad-items">
           <div class="qi">
             <div class="qi-badge qib-amber">A1</div>
             <div>
-              <div class="qi-title">样本覆盖不足</div>
-              <div class="qi-desc">每类约 100 条样本，难覆盖训练分布外表达。</div>
+              <div class="qi-title"><span class="zh">样本覆盖不足</span><span class="en">Insufficient sample coverage</span></div>
+              <div class="qi-desc"><span class="zh">每类约 100 条样本，难覆盖训练分布外表达。</span><span class="en">About 100 samples per class cannot cover out-of-distribution phrasing.</span></div>
             </div>
           </div>
           <div class="qi">
             <div class="qi-badge qib-amber">A2</div>
             <div>
-              <div class="qi-title">新类别干扰旧类别</div>
-              <div class="qi-desc">小样本类别加入全局训练，可能降低已有类别准确率。</div>
+              <div class="qi-title"><span class="zh">新类别干扰旧类别</span><span class="en">New classes interfere with old ones</span></div>
+              <div class="qi-desc"><span class="zh">小样本类别加入全局训练，可能降低已有类别准确率。</span><span class="en">Adding a small class to global training may reduce existing-class accuracy.</span></div>
             </div>
           </div>
           <div class="qi">
             <div class="qi-badge qib-amber">A3</div>
             <div>
-              <div class="qi-title">标注边界不统一</div>
-              <div class="qi-desc">各方分类口径不一致，产生矛盾标签。</div>
+              <div class="qi-title"><span class="zh">标注边界不统一</span><span class="en">Inconsistent label boundaries</span></div>
+              <div class="qi-desc"><span class="zh">各方分类口径不一致，产生矛盾标签。</span><span class="en">Different classification rules create conflicting labels.</span></div>
             </div>
           </div>
           <div class="qi">
             <div class="qi-badge qib-amber">A4</div>
             <div>
-              <div class="qi-title">邮件上下文丢失</div>
-              <div class="qi-desc">孤立标注和回复链切割，丢失语义或混入历史。</div>
+              <div class="qi-title"><span class="zh">邮件上下文丢失</span><span class="en">Email context is lost</span></div>
+              <div class="qi-desc"><span class="zh">孤立标注和回复链切割，丢失语义或混入历史。</span><span class="en">Isolated labels and split reply chains lose meaning or mix in history.</span></div>
             </div>
           </div>
           <div class="qi">
             <div class="qi-badge qib-amber">A5</div>
             <div>
-              <div class="qi-title">隐性业务知识缺失</div>
-              <div class="qi-desc">BillTo、客户身份等判断依据不在邮件正文中。</div>
+              <div class="qi-title"><span class="zh">隐性业务知识缺失</span><span class="en">Implicit business knowledge is missing</span></div>
+              <div class="qi-desc"><span class="zh">BillTo、客户身份等判断依据不在邮件正文中。</span><span class="en">BillTo and customer identity are not stated in the email body.</span></div>
             </div>
           </div>
         </div>
@@ -98,36 +98,36 @@
       <!-- B: 模型架构层 -->
       <div class="quad">
         <div class="quad-hdr qd-indigo">
-          <div class="qh-name">B · 模型架构层</div>
-          <div class="qh-count">4 项</div>
+          <div class="qh-name"><span class="zh">B · 模型架构层</span><span class="en">B · Model architecture</span></div>
+          <div class="qh-count"><span class="zh">4 项</span><span class="en">4 items</span></div>
         </div>
         <div class="quad-items">
           <div class="qi">
             <div class="qi-badge qib-indigo">B1</div>
             <div>
-              <div class="qi-title">识别与执行断层</div>
-              <div class="qi-desc">槽位、API 编排、状态和回复需另建执行系统。</div>
+              <div class="qi-title"><span class="zh">识别与执行断层</span><span class="en">Gap between recognition and execution</span></div>
+              <div class="qi-desc"><span class="zh">槽位、API 编排、状态和回复需另建执行系统。</span><span class="en">Slots, API orchestration, state and replies require a separate execution system.</span></div>
             </div>
           </div>
           <div class="qi">
             <div class="qi-badge qib-indigo">B2</div>
             <div>
-              <div class="qi-title">分布外泛化不足</div>
-              <div class="qi-desc">新表达容易识别失败，运行错误不会自动修正。</div>
+              <div class="qi-title"><span class="zh">分布外泛化不足</span><span class="en">Weak out-of-distribution generalisation</span></div>
+              <div class="qi-desc"><span class="zh">新表达容易识别失败，运行错误不会自动修正。</span><span class="en">New phrasing fails easily, and runtime errors do not self-correct.</span></div>
             </div>
           </div>
           <div class="qi">
             <div class="qi-badge qib-indigo">B3</div>
             <div>
-              <div class="qi-title">意图与系统错位</div>
-              <div class="qi-desc">客户语言分类与内部系统功能边界不同。</div>
+              <div class="qi-title"><span class="zh">意图与系统错位</span><span class="en">Intent and system boundaries diverge</span></div>
+              <div class="qi-desc"><span class="zh">客户语言分类与内部系统功能边界不同。</span><span class="en">Customer-language categories differ from internal system functions.</span></div>
             </div>
           </div>
           <div class="qi">
             <div class="qi-badge qib-indigo">B4</div>
             <div>
-              <div class="qi-title">语言与字段脱节</div>
-              <div class="qi-desc">“standard pallet”到尺寸字段需要领域映射。</div>
+              <div class="qi-title"><span class="zh">语言与字段脱节</span><span class="en">Language and fields are disconnected</span></div>
+              <div class="qi-desc"><span class="zh">“standard pallet”到尺寸字段需要领域映射。</span><span class="en">Mapping “standard pallet” to size fields needs domain knowledge.</span></div>
             </div>
           </div>
         </div>
@@ -136,29 +136,29 @@
       <!-- C: 训练工程层 -->
       <div class="quad">
         <div class="quad-hdr qd-blue">
-          <div class="qh-name">C · 训练工程层</div>
-          <div class="qh-count">3 项</div>
+          <div class="qh-name"><span class="zh">C · 训练工程层</span><span class="en">C · Training engineering</span></div>
+          <div class="qh-count"><span class="zh">3 项</span><span class="en">3 items</span></div>
         </div>
         <div class="quad-items">
           <div class="qi">
             <div class="qi-badge qib-blue">C1</div>
             <div>
-              <div class="qi-title">标注能力难规模化</div>
-              <div class="qi-desc">人员需同时理解业务逻辑与统一的数据定义。</div>
+              <div class="qi-title"><span class="zh">标注能力难规模化</span><span class="en">Annotation expertise is hard to scale</span></div>
+              <div class="qi-desc"><span class="zh">人员需同时理解业务逻辑与统一的数据定义。</span><span class="en">People must understand both business logic and shared data definitions.</span></div>
             </div>
           </div>
           <div class="qi">
             <div class="qi-badge qib-blue">C2</div>
             <div>
-              <div class="qi-title">数据反馈链中断</div>
-              <div class="qi-desc">生产宕机影响邮件处理，也切断后续训练数据。</div>
+              <div class="qi-title"><span class="zh">数据反馈链中断</span><span class="en">The data feedback loop breaks</span></div>
+              <div class="qi-desc"><span class="zh">生产宕机影响邮件处理，也切断后续训练数据。</span><span class="en">Production outages affect email handling and cut off future training data.</span></div>
             </div>
           </div>
           <div class="qi">
             <div class="qi-badge qib-blue">C3</div>
             <div>
-              <div class="qi-title">维护成本持续上升</div>
-              <div class="qi-desc">新场景需重新采集、标注、训练，并回归旧场景。</div>
+              <div class="qi-title"><span class="zh">维护成本持续上升</span><span class="en">Maintenance cost keeps rising</span></div>
+              <div class="qi-desc"><span class="zh">新场景需重新采集、标注、训练，并回归旧场景。</span><span class="en">New scenarios require collection, annotation, training and regression.</span></div>
             </div>
           </div>
         </div>
@@ -167,22 +167,22 @@
       <!-- D: 业务集成层 -->
       <div class="quad">
         <div class="quad-hdr qd-rose">
-          <div class="qh-name">D · 业务集成层</div>
-          <div class="qh-count">2 项</div>
+          <div class="qh-name"><span class="zh">D · 业务集成层</span><span class="en">D · Business integration</span></div>
+          <div class="qh-count"><span class="zh">2 项</span><span class="en">2 items</span></div>
         </div>
         <div class="quad-items">
           <div class="qi">
             <div class="qi-badge qib-rose">D1</div>
             <div>
-              <div class="qi-title">接口调用方式不匹配</div>
-              <div class="qi-desc">面向人工表单的接口，需要参数与容错适配。</div>
+              <div class="qi-title"><span class="zh">接口调用方式不匹配</span><span class="en">Interface invocation does not fit</span></div>
+              <div class="qi-desc"><span class="zh">面向人工表单的接口，需要参数与容错适配。</span><span class="en">Human-form interfaces need parameter and fault-tolerance adaptation.</span></div>
             </div>
           </div>
           <div class="qi">
             <div class="qi-badge qib-rose">D2</div>
             <div>
-              <div class="qi-title">执行层缺位</div>
-              <div class="qi-desc">识别后无接口可执行，只能返回预设数据或固定回复。</div>
+              <div class="qi-title"><span class="zh">执行层缺位</span><span class="en">Execution layer is absent</span></div>
+              <div class="qi-desc"><span class="zh">识别后无接口可执行，只能返回预设数据或固定回复。</span><span class="en">Without executable interfaces, the system can only return preset data or fixed replies.</span></div>
             </div>
           </div>
         </div>

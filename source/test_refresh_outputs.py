@@ -2,6 +2,7 @@
 import importlib.util
 from copy import deepcopy
 import json
+import re
 from pathlib import Path
 import unittest
 from tempfile import TemporaryDirectory
@@ -51,6 +52,14 @@ class DeckAssemblyTests(unittest.TestCase):
                     self.assertEqual(scene.xpath('./div[@class="scene-tools"]//button/@data-md'), [ref])
                     self.assertIn(ref, scene.xpath('.//footer')[0].text_content())
 
+    def test_failure_overview_uses_the_case_list_as_its_only_subdirectory(self):
+        document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
+        scene = document.get_element_by_id('r5_c09_00')
+        content = scene.xpath('.//main[@class="content"]')[0]
+        self.assertEqual([node.get('class') for node in content], ['case-column', 'root-column'])
+        self.assertEqual(len(content.xpath('.//*[@class="route"]')), 0)
+        self.assertIn('共同根因', content.xpath('./section[@class="root-column"]//h2')[0].text_content())
+
     def test_remote_updates_and_local_cases_are_present_together(self):
         document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
         manifest = json.loads((ROOT / 'source/detailed_manifest.json').read_text())
@@ -74,6 +83,64 @@ class DeckAssemblyTests(unittest.TestCase):
         hiring = document.get_element_by_id('r5_c09_hiring')
         self.assertEqual(hiring.get('data-md'), 'D1.2.8.4')
         self.assertTrue(hiring.xpath('.//img')[0].get('src').startswith('data:image/png;base64,'))
+
+    def test_new_failure_pages_localize_all_visible_chinese_content(self):
+        document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
+        page_ids = ('r5_c09_08', 'r5_c09_09', 'r5_c09_10', 'r5_c09_hiring', 'r5_agent_assurance')
+        page_ids += tuple(f'r5_c02_{i:02d}' for i in range(1, 8))
+        page_ids += tuple(f'r5_c05_{i:02d}' for i in range(1, 7))
+        for page_id in page_ids:
+            with self.subTest(page_id=page_id):
+                scene = document.get_element_by_id(page_id)
+                self.assertGreaterEqual(len(scene.xpath('.//span[contains(concat(" ", normalize-space(@class), " "), " zh ")]')), 2)
+                self.assertGreaterEqual(len(scene.xpath('.//span[contains(concat(" ", normalize-space(@class), " "), " en ")]')), 2)
+                unlocalized = []
+                for node in scene.xpath('.//text()[normalize-space() and not(ancestor::title or ancestor::desc or ancestor::script or ancestor::style)]'):
+                    if re.search(r'[\u4e00-\u9fff]', node):
+                        parent = node.getparent().getparent() if node.is_tail else node.getparent()
+                        ancestors = parent.xpath('ancestor-or-self::*[@class]')
+                        classes = {' '.join((ancestor.get('class') or '').split()) for ancestor in ancestors}
+                        if not any('zh' in class_names.split() or 'en' in class_names.split() for class_names in classes):
+                            unlocalized.append(node.strip())
+                self.assertEqual(unlocalized, [], f'unlocalized Chinese text: {unlocalized}')
+
+    def test_integrated_case_sources_and_media_are_preserved(self):
+        document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
+        for case, count in [('c02', 7), ('c05', 6)]:
+            for number in range(1, count + 1):
+                page_id = f'r5_{case}_{number:02d}'
+                with self.subTest(page_id=page_id):
+                    native = html.fromstring((ROOT / f'slides-source/detailed/{page_id}.html').read_text())
+                    source = native.xpath('//div[@class="slide-container"]')[0]
+                    scene = document.get_element_by_id(page_id)
+                    built = scene.xpath('./div[@class="slide-container"]')[0]
+                    self.assertEqual(source.text_content(), built.text_content())
+        self.assertFalse(document.xpath('//*[@id="r5_c05_07"]'))
+        self.assertTrue(document.get_element_by_id('r5_c05_01').xpath('.//a[@href="https://youtu.be/5mhN76BEO8M"]'))
+        config = (ROOT / 'assets/site-config.js').read_text()
+        self.assertIn('media/c02-dynamic-forms/index.html', config)
+        self.assertTrue((ROOT / 'media/c02-dynamic-forms/index.html').is_file())
+
+    def test_assurance_page_order_assets_and_reader_are_preserved(self):
+        text = (ROOT / 'Item_ISS_Meeting_R5.html').read_text()
+        document = html.fromstring(text)
+        scene = document.get_element_by_id('r5_agent_assurance')
+        self.assertEqual(scene.getprevious().get('id'), 'r5_c09_00')
+        self.assertEqual(scene.getnext().get('id'), 'r5_c09_01')
+        self.assertEqual(len(scene.xpath('.//*[@data-trust-step]')), 4)
+        self.assertEqual(scene.get('data-md'), 'D1.2.8.0')
+        link = scene.xpath('.//a[@data-trust-attachment]')[0].get('href')
+        self.assertTrue((ROOT / link).is_file())
+        video = scene.xpath('.//video[@data-trust-video]')[0]
+        for attr in ('data-video-file', 'data-poster-file'):
+            self.assertTrue((ROOT / 'media/attachments' / video.get(attr)).is_file())
+        for filename in ('assurance.js', 'workshop.js'):
+            self.assertIn((ROOT / 'assets' / filename).read_text().strip(), text)
+        self.assertEqual(len(document.xpath('//*[@id="md-D1-2-8-0"]')), 1)
+        reader = html.fromstring((ROOT / 'docs/reader.html').read_text())
+        self.assertIn('Evaluation Agent', reader.text_content())
+        self.assertIn('ItemGPT', reader.text_content())
+        self.assertEqual(len(document.xpath('//section[@class="scene"]')), 142)
 
     def test_css_injection_handles_explicit_and_omitted_head_end(self):
         for head_end in ("</head>", "", "</HEAD>"):

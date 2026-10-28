@@ -249,7 +249,7 @@ def model_failure_css():
     for page_id in ("r5_c09_08", "r5_c09_09", "r5_c09_10"):
         scoped.append(re.sub(r"([^{}]+)\{([^{}]*)\}", lambda m: scope_rule(m, page_id), css))
     overview = (ROOT / "slides-source/detailed/r5_c09_00.html").read_text(encoding="utf-8")
-    overview_css = re.search(r"<style>(.*?)</style>", overview, flags=re.S).group(1)
+    overview_css = "\n".join(re.findall(r"<style>(.*?)</style>", overview, flags=re.S))
     scoped.append(re.sub(r"([^{}]+)\{([^{}]*)\}", lambda m: scope_rule(m, "r5_c09_00"), overview_css))
     hiring = ROOT / "slides-source/detailed/r5_c09_hiring.html"
     if hiring.is_file():
