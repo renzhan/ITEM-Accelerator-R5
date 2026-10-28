@@ -1,0 +1,151 @@
+"""Regression checks for deck assembly after removing or inserting cases."""
+import importlib.util
+from copy import deepcopy
+import json
+from pathlib import Path
+import unittest
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
+
+from lxml import html
+
+ROOT = Path(__file__).resolve().parents[1]
+SPEC = importlib.util.spec_from_file_location("refresh", ROOT / ".refresh_r5_outputs.py")
+refresh = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(refresh)
+
+
+class DeckAssemblyTests(unittest.TestCase):
+    def test_manifest_can_rebuild_after_current_version_is_committed(self):
+        current = json.loads((ROOT / 'source/detailed_manifest.json').read_text())
+        with TemporaryDirectory() as directory:
+            temporary = Path(directory)
+            (temporary / 'source').mkdir()
+            with patch.object(refresh, 'ROOT', temporary), patch.object(refresh, 'git_json', return_value=deepcopy(current)):
+                rebuilt = refresh.merge_detailed_manifest()
+        self.assertEqual(rebuilt, current)
+
+    def test_failure_topics_share_section_numbers_and_reader_targets(self):
+        groups = (
+            ('D1.2.8.1', '知识抽取与知识生成', ['r5_c09_01', 'r5_c09_02', 'r5_c09_02b']),
+            ('D1.2.8.2', 'WMS Agent：业务本体连接规则与动作', ['r5_c09_wms']),
+            ('D1.2.8.3', '自建模型实验复盘', ['r5_c09_08', 'r5_c09_09', 'r5_c09_10']),
+            ('D1.2.8.4', 'AI 招聘的跨国本地化', ['r5_c09_hiring']),
+        )
+        document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
+        reader = html.fromstring((ROOT / 'docs/reader.html').read_text())
+        markdown = (ROOT / 'Item_ISS_AI_Native_Workshop_R5.md').read_text()
+        for ref, topic, ids in groups:
+            anchor = 'md-' + ref.replace('.', '-')
+            self.assertEqual(len(reader.xpath(f'//*[@id="{anchor}"]')), 1)
+            self.assertEqual(reader.get_element_by_id(anchor).text_content(), f'{ref} {topic}')
+            self.assertEqual(markdown.count(f'##### {ref} {topic}\n'), 1)
+            for page_id in ids:
+                with self.subTest(page_id=page_id):
+                    scene = document.get_element_by_id(page_id)
+                    self.assertEqual(scene.get('data-md'), ref)
+                    kicker = scene.xpath('.//div[@class="kicker"]')[0]
+                    self.assertEqual(kicker.xpath('./span[@class="zh"]')[0].text_content(), topic)
+                    self.assertIn(f'MD §{ref}', kicker.text_content())
+                    self.assertIn(topic, scene.xpath('./div[@class="scene-tools"]')[0].text_content())
+                    self.assertEqual(scene.xpath('./div[@class="scene-tools"]//button/@data-md'), [ref])
+                    self.assertIn(ref, scene.xpath('.//footer')[0].text_content())
+
+    def test_remote_updates_and_local_cases_are_present_together(self):
+        document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
+        manifest = json.loads((ROOT / 'source/detailed_manifest.json').read_text())
+        embedded = json.loads(document.get_element_by_id('page-data').text)
+        self.assertEqual(manifest, embedded)
+        ids = {page['id'] for page in manifest['pages']}
+        self.assertFalse(any(page_id.startswith('r5_c07_') for page_id in ids))
+        self.assertFalse({'r5_c01_06', 'r5_c01_07', 'r5_c09_03', 'r5_c09_04', 'r5_c09_05', 'r5_c09_06', 'r5_c09_07'} & ids)
+        updated = [f'r5_c01_{i:02d}' for i in range(1, 6)] + [f'r5_c06_{i:02d}' for i in range(1, 8)]
+        updated += ['r5_c09_hiring', 'r5_c09_00', 'r5_c09_08', 'r5_c09_09', 'r5_c09_10']
+        for page_id in updated:
+            with self.subTest(page_id=page_id):
+                self.assertIn(page_id, ids)
+                native = html.fromstring((ROOT / f'slides-source/detailed/{page_id}.html').read_text())
+                source_slide = native.xpath('//div[@class="slide-container"]')[0]
+                scene = document.get_element_by_id(page_id)
+                rendered_slide = scene.xpath('./div[@class="slide-container"]')[0]
+                self.assertEqual(source_slide.text_content(), rendered_slide.text_content())
+                for button in scene.xpath('./div[@class="scene-tools"]//button'):
+                    self.assertIsNotNone(document.get_element_by_id('md-' + button.get('data-md').replace('.', '-')))
+        hiring = document.get_element_by_id('r5_c09_hiring')
+        self.assertEqual(hiring.get('data-md'), 'D1.2.8.4')
+        self.assertTrue(hiring.xpath('.//img')[0].get('src').startswith('data:image/png;base64,'))
+
+    def test_css_injection_handles_explicit_and_omitted_head_end(self):
+        for head_end in ("</head>", "", "</HEAD>"):
+            with self.subTest(head_end=head_end):
+                source = '<html><head><!-- </head><body> --><title>Deck</title>' + head_end + '<body><p>Keep me</p></body></html>'
+                styled = refresh.inject_model_failure_css(source)
+                document = html.fromstring(styled)
+                styles = document.xpath('//head/style[@id="model-failure-css"]')
+                self.assertEqual(len(styles), 1)
+                self.assertEqual(len(document.xpath('//style')), 1)
+                self.assertEqual(document.xpath('//body/p/text()'), ['Keep me'])
+                self.assertEqual(styled, refresh.inject_model_failure_css(styled))
+
+    def test_css_injection_requires_a_boundary(self):
+        with self.assertRaisesRegex(ValueError, 'head/body boundary'):
+            refresh.inject_model_failure_css('<html><head><title>Incomplete</title>')
+
+    def test_delivered_deck_contains_scoped_model_styles(self):
+        document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
+        styles = document.xpath('//head/style[@id="model-failure-css"]')
+        self.assertEqual(len(styles), 1)
+        css = styles[0].text
+        for page_id, class_name, declaration in (
+            ('r5_c09_08', 'pano', 'grid-template-columns:repeat(5,minmax(0,1fr))'),
+            ('r5_c09_09', 'quad-grid', 'grid-template-columns:repeat(4,minmax(0,1fr))'),
+            ('r5_c09_10', 'route-table', 'table-layout:fixed'),
+        ):
+            with self.subTest(page_id=page_id):
+                self.assertIn(f'#{page_id} .failure-page .{class_name}', css)
+                self.assertIn(declaration, css)
+                self.assertTrue(document.get_element_by_id(page_id).xpath(
+                    './/*[contains(concat(" ", normalize-space(@class), " "), $name)]', name=f' {class_name} '))
+
+    def test_container_parser_preserves_nested_main_and_ignores_comments(self):
+        slide = '<div class="slide-container"><!-- </div> --><main><div>x</div></main><footer>y</footer></div>'
+        self.assertEqual(refresh.matching_div_end(slide + '<div>next</div>', 0), len(slide))
+
+    def test_generated_structure_and_metadata(self):
+        for kind, filename in (("detailed", "Item_ISS_Meeting_R5.html"), ("brief", "Item_ISS_PreRead_R5.html")):
+            with self.subTest(kind=kind):
+                manifest = json.loads((ROOT / f"source/{kind}_manifest.json").read_text())
+                document = html.fromstring((ROOT / filename).read_text())
+                story = document.get_element_by_id("story")
+                scenes = document.xpath('//section[@class="scene"]')
+                self.assertEqual([s.get("id") for s in scenes], [p["id"] for p in manifest["pages"]])
+                self.assertEqual(list(story), scenes)
+                self.assertFalse(document.xpath('//*[@class="discussion" or @class="foot"][not(ancestor::section[@class="scene"])]'))
+                for index, (scene, page) in enumerate(zip(scenes, manifest["pages"])):
+                    self.assertEqual(scene.get("data-index"), str(index))
+                    self.assertEqual(scene.get("data-md"), page["md"])
+                    self.assertEqual(len(document.xpath(f'//*[@id="{page["id"]}"]')), 1)
+                    tools = scene.find('div')
+                    self.assertEqual(tools.get("class"), "scene-tools")
+                    self.assertTrue(tools.text_content().startswith(f'{index + 1:03d} · MD §' + ' / '.join(page['refs'])))
+                    for button in tools.xpath('.//button'):
+                        self.assertEqual(button.get("data-index"), str(index))
+                        self.assertIn(button.get("data-md"), [page["reader_md"]] if page.get("reader_md") else page["refs"])
+                if kind == "detailed":
+                    self.assertEqual(document.get_element_by_id("r5_c06_07").getnext().get("id"), "r5_c08_01")
+                    self.assertEqual(document.get_element_by_id("r5_c08_01").get("data-md"), "D1.2.7.1")
+                    self.assertIn("其他踩过的坑：", document.get_element_by_id("r5_c09_00").text_content())
+
+    def test_rebuild_removes_orphaned_tails_and_is_repeatable(self):
+        manifest = json.loads((ROOT / 'source/detailed_manifest.json').read_text())
+        text = (ROOT / 'Item_ISS_Meeting_R5.html').read_text()
+        damaged = text.replace('<footer class="bottom-bar">', '</main><div class="discussion">retired case</div></section><footer class="bottom-bar">', 1)
+        rebuilt = refresh.rebuild_scenes(damaged, manifest)
+        self.assertNotIn('retired case', rebuilt)
+        self.assertEqual(rebuilt, refresh.rebuild_scenes(rebuilt, manifest))
+        styled = refresh.inject_model_failure_css(rebuilt)
+        self.assertEqual(styled, refresh.inject_model_failure_css(styled))
+
+
+if __name__ == "__main__":
+    unittest.main()

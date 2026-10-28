@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+.slide-container{width:1280px;min-height:720px;background:var(--bg,#f6f7f9);color:var(--ink,#152439);font-family:Inter,"Noto Sans SC",Arial,sans-serif}
+.failure-page{margin:42px 60px 28px;min-height:650px;display:flex;flex-direction:column;letter-spacing:0}
+.failure-page header{border-top:4px solid var(--accent,#007f86);padding-top:13px}
+.failure-page .kicker{font:700 12px/1.4 monospace;color:var(--accent,#007f86);letter-spacing:0!important}
+.failure-page h1{font-size:36px!important;line-height:1.2!important;margin:10px 0 12px!important;font-weight:750;letter-spacing:0!important}
+.failure-page .lead{font-size:18px!important;line-height:1.5!important;color:var(--muted,#52647b)!important;margin:0!important}
+.failure-page .failure-body{flex:1;padding-top:24px;min-width:0}
+.failure-page .sec{font-size:18px;line-height:1.3;font-weight:700;margin-bottom:14px}
+.failure-page .pano{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px;margin-bottom:24px}
+.failure-page .pano-step{border-top:2px solid var(--ink,#152439);padding-top:10px;min-width:0}
+.failure-page .ps-stage{font:700 14px/1.3 monospace;color:var(--accent,#007f86)}
+.failure-page .ps-exp{font-size:21px;line-height:1.3;font-weight:700;margin:8px 0}
+.failure-page .ps-act{font-size:17px;line-height:1.5;color:var(--muted,#52647b)}
+.failure-page .valid{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;border-top:1px solid var(--line,#d9e1e8);padding-top:12px}
+.failure-page .vr{display:grid;grid-template-columns:150px 1fr 45px;gap:12px;align-items:center;margin:12px 0;font-size:17px;line-height:1.4}
+.failure-page .vr-b{height:12px;background:var(--line,#d9e1e8)}
+.failure-page .vb{height:100%;background:var(--accent,#007f86)}
+.failure-page .bc-y{background:#bd8a3c}.failure-page .bc-r{background:#bb6767}.failure-page .bc-b{background:#8396a8}
+.failure-page .vr-p{font-weight:700;text-align:right}
+.failure-page .sample-note{font-size:13px;line-height:1.5;color:var(--muted,#52647b);margin-top:12px}
+.failure-page .vnote{border-left:1px solid var(--line,#d9e1e8);padding:4px 0 0 28px}
+.failure-page .finding-number{font-size:64px;font-weight:750;line-height:1.1;color:var(--accent,#007f86)}
+.failure-page .finding-label{font-size:21px;line-height:1.4;font-weight:700;margin:3px 0 14px}
+.failure-page .vn-r{font-size:17px;line-height:1.5;margin-top:9px}
+.failure-page .quad-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.failure-page .quad{border-top:2px solid var(--ink,#152439);padding-top:10px;min-width:0}
+.failure-page .quad-hdr{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:15px;gap:8px}
+.failure-page .qh-name{font-size:21px;font-weight:700;line-height:1.3}.failure-page .qh-count{font-size:13px;color:var(--muted,#52647b);white-space:nowrap}
+.failure-page .qi{display:grid;grid-template-columns:25px minmax(0,1fr);gap:6px;padding:7px 0;border-top:1px solid var(--line,#d9e1e8)}
+.failure-page .qi-badge{font:700 12px/1.3 monospace;color:var(--accent,#007f86);margin-bottom:4px}
+.failure-page .qi-title{font-size:17px;font-weight:700;line-height:1.4;margin-bottom:4px}
+.failure-page .qi-desc{font-size:14px;line-height:1.4;color:var(--muted,#52647b)}
+.failure-page .route-table{table-layout:fixed;border-collapse:collapse;width:100%;font-size:17px}
+.failure-page .route-table th{font-size:19px;padding:12px 16px!important;border-top:2px solid var(--ink,#152439);border-bottom:1px solid var(--line,#d9e1e8);text-align:left}
+.failure-page .route-table th:first-child{width:17%}.failure-page .route-table th:not(:first-child){width:41.5%}
+.failure-page .route-table td{vertical-align:top;padding:12px 16px!important;border-bottom:1px solid var(--line,#d9e1e8);font-size:17px;line-height:1.5}
+.failure-page .route-table th:last-child,.failure-page .route-table td:last-child{background:var(--soft,#eaf0f4)}
+.failure-page .route-table strong{display:block;font-size:17px;line-height:1.5;margin-bottom:3px}
+.failure-page .route-detail{display:block;font-size:15px;line-height:1.5;color:var(--muted,#52647b)}
+.failure-page .takeaway{margin-top:20px;padding:13px 17px;background:var(--soft,#eaf0f4);border-top:1px solid var(--line,#d9e1e8);font-size:17px;line-height:1.5}
+.failure-page .takeaway b{color:var(--accent,#007f86);margin-right:14px}
+.failure-page .foot{margin-top:18px;padding-top:12px;display:flex;justify-content:space-between;gap:20px;font-size:12px;color:var(--muted,#52647b);border-top:1px solid var(--line,#d9e1e8)}
+</style></head><body>
+<div class="slide-container"><div class="page-inner failure-page">
+<header><div class="kicker">DAY 1 / MD §D1.2.8.3 / <span class="zh">自建模型实验复盘</span><span class="en">Self-built model experiment review</span></div>
+<h1><span class="zh">自建模型实验：目标、过程与验证结果</span><span class="en">Private model experiment: process and results</span></h1><p class="lead">2024.08–2025.04，物流客服邮件自动化实验，目标是无需人工介入直接回复客户。</p></header>
+<main class="failure-body"><div class="pano">
+      <div class="pano-step">
+        <div class="ps-stage">Step 1</div>
+        <div class="ps-exp">收集邮件<br>专人标注</div>
+        <div class="ps-act pa-w">标注边界三方理解<br>不一致，有争议</div>
+      </div>
+      <div class="pano-step">
+        <div class="ps-stage">Step 2</div>
+        <div class="ps-exp">意图识别<br>模型训练</div>
+        <div class="ps-act pa-w">9/11 场景上线<br>2 个样本不足搁置</div>
+      </div>
+      <div class="pano-step">
+        <div class="ps-stage">Step 3</div>
+        <div class="ps-exp">执行处理<br>系统训练</div>
+        <div class="ps-act pa-f">需要另起一套架构<br>资源耗尽未启动</div>
+      </div>
+      <div class="pano-step">
+        <div class="ps-stage">Step 4</div>
+        <div class="ps-exp">接入业务<br>系统接口</div>
+        <div class="ps-act pa-f">接口仅支持<br>1 个场景可用</div>
+      </div>
+      <div class="pano-step">
+        <div class="ps-stage">Step 5</div>
+        <div class="ps-exp">AI 直接<br>回复客户</div>
+        <div class="ps-act pa-f">从未真正实现<br>目标未达成</div>
+      </div>
+    </div>
+
+    <div class="sec">CSR 人工核验：158 封随机邮件，逐一核查</div><div class="valid"><div class="vbars">
+        <div class="vr"><span class="vr-l pc-y">不需要回复</span><div class="vr-b"><div class="vb bc-y" style="width:53%"></div></div><span class="vr-p pc-y">53%</span></div>
+        <div class="vr"><span class="vr-l pc-r">回复内容有误</span><div class="vr-b"><div class="vb bc-r" style="width:34%"></div></div><span class="vr-p pc-r">34%</span></div>
+        <div class="vr"><span class="vr-l pc-b">识别错误+附件</span><div class="vr-b"><div class="vb bc-b" style="width:4%"></div></div><span class="vr-p pc-b">4%</span></div>
+        <div class="vr"><span class="vr-l pc-g">回复正确</span><div class="vr-b"><div class="vb bc-g" style="width:9%"></div></div><span class="vr-p pc-g">9%</span></div>
+        <div class="sample-note">模型共处理 9,600+ 封邮件，上述为 CSR 随机抽取 158 封的验证结果</div>
+      </div>
+      <section class="vnote"><div class="finding-number">9%</div><div class="finding-label">输出可直接使用</div><div class="vn-r">正确回复仅来自 <strong>Pickup</strong> 单一场景。</div><div class="vn-r"><strong>91%</strong> 的输出不可直接使用；<strong>53%</strong> 本不需要回复，却触发了模型回复。</div></section></div></main>
+<div class="takeaway"><b>复盘</b>意图识别、业务执行与回复质量，需要分别验收。</div>
+<footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>R5 · MD §D1.2.8.3</span></footer>
+</div></div></body></html>

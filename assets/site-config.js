@@ -13,7 +13,6 @@
       c04: { src: '', poster: '', title: 'ISS BO', captions: '' },
       c05: { src: '', poster: '', title: 'Record & Reply', captions: '' },
       c06: { src: '', poster: '', title: 'ISS CEC + Genesys', captions: '' },
-      c07: { src: '', poster: '', title: 'ISS CFS + Depot', captions: '' },
       c08: { src: '', poster: '', title: 'iCEO 失败案例', captions: '' },
       c09: { src: '', poster: '', title: '其他踩过的坑', captions: '' }
     }
