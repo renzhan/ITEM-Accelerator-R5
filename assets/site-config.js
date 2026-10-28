@@ -8,7 +8,7 @@
     formsEndpoint: 'https://iss-r5-collection-api.tommyyula.workers.dev/api/submissions', // 例如 https://你的收集服务/api/submissions；为空时不假装提交。
     media: {
       c01: { src: '', poster: '', title: 'UNIS 港口拖柜', captions: '' },
-      c02: { src: '', poster: '', title: 'ITEM WMS Dynamic Form', captions: '' },
+      c02: { src: '', poster: '', title: 'ITEM WMS Dynamic Form', captions: '', player: 'media/c02-dynamic-forms/index.html' },
       c03: { src: '', poster: '', title: 'UNIS Rate & Quote', captions: '' },
       c04: { src: '', poster: '', title: 'ISS BO', captions: '' },
       c05: { src: '', poster: '', title: 'Record & Reply', captions: '' },
@@ -18,6 +18,7 @@
     }
   };
   // src用根目录相对路径如 media/c01.mp4，或授权HTTPS链接；默认空字符串避免404。
+  // player指向HTML播放器（场景动画＋旁白，非录屏），以iframe嵌入视频区；同时填写时player优先。
 }());
 
 // 若需要在站点内提供工程包下载，填入实际可访问的地址；不填时由组织者另行分享。
