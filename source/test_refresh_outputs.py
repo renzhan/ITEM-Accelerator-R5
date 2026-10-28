@@ -31,7 +31,9 @@ class DeckAssemblyTests(unittest.TestCase):
             ('D1.2.8.1', '知识抽取与知识生成', ['r5_c09_01', 'r5_c09_02', 'r5_c09_02b']),
             ('D1.2.8.2', 'WMS Agent：业务本体连接规则与动作', ['r5_c09_wms']),
             ('D1.2.8.3', '自建模型实验复盘', ['r5_c09_08', 'r5_c09_09', 'r5_c09_10']),
-            ('D1.2.8.4', 'AI 招聘的跨国本地化', ['r5_c09_hiring']),
+            ('D1.2.8.4', '小模型训练复盘：样本、规则与可解释性的边界', ['r5_c09_small_models', 'r5_c09_model_selection']),
+            ('D1.2.8.5', 'AI 招聘的跨国本地化', ['r5_c09_hiring']),
+            ('D1.2.8.6', '可信 Agent：一套标准，三重验证', ['r5_agent_assurance']),
         )
         document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
         reader = html.fromstring((ROOT / 'docs/reader.html').read_text())
@@ -69,7 +71,7 @@ class DeckAssemblyTests(unittest.TestCase):
         self.assertFalse(any(page_id.startswith('r5_c07_') for page_id in ids))
         self.assertFalse({'r5_c01_06', 'r5_c01_07', 'r5_c09_03', 'r5_c09_04', 'r5_c09_05', 'r5_c09_06', 'r5_c09_07'} & ids)
         updated = [f'r5_c01_{i:02d}' for i in range(1, 6)] + [f'r5_c06_{i:02d}' for i in range(1, 8)]
-        updated += ['r5_c09_hiring', 'r5_c09_00', 'r5_c09_08', 'r5_c09_09', 'r5_c09_10']
+        updated += ['r5_c09_hiring', 'r5_c09_00', 'r5_c09_08', 'r5_c09_09', 'r5_c09_10', 'r5_c09_small_models', 'r5_c09_model_selection']
         for page_id in updated:
             with self.subTest(page_id=page_id):
                 self.assertIn(page_id, ids)
@@ -81,12 +83,13 @@ class DeckAssemblyTests(unittest.TestCase):
                 for button in scene.xpath('./div[@class="scene-tools"]//button'):
                     self.assertIsNotNone(document.get_element_by_id('md-' + button.get('data-md').replace('.', '-')))
         hiring = document.get_element_by_id('r5_c09_hiring')
-        self.assertEqual(hiring.get('data-md'), 'D1.2.8.4')
+        self.assertEqual(hiring.get('data-md'), 'D1.2.8.5')
         self.assertTrue(hiring.xpath('.//img')[0].get('src').startswith('data:image/png;base64,'))
 
     def test_new_failure_pages_localize_all_visible_chinese_content(self):
         document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
         page_ids = ('r5_c09_08', 'r5_c09_09', 'r5_c09_10', 'r5_c09_hiring', 'r5_agent_assurance')
+        page_ids += ('r5_c09_small_models', 'r5_c09_model_selection', 'r5_c09_00')
         page_ids += tuple(f'r5_c02_{i:02d}' for i in range(1, 8))
         page_ids += tuple(f'r5_c05_{i:02d}' for i in range(1, 7))
         for page_id in page_ids:
@@ -117,6 +120,13 @@ class DeckAssemblyTests(unittest.TestCase):
                     self.assertEqual(source.text_content(), built.text_content())
         self.assertFalse(document.xpath('//*[@id="r5_c05_07"]'))
         self.assertTrue(document.get_element_by_id('r5_c05_01').xpath('.//a[@href="https://youtu.be/5mhN76BEO8M"]'))
+        demo = document.get_element_by_id('r5_c05_01')
+        frame = demo.xpath('.//aside[@class="youtube-slot"]/iframe')[0]
+        self.assertEqual(frame.get('src'), 'https://www.youtube-nocookie.com/embed/5mhN76BEO8M?rel=0')
+        self.assertEqual(frame.get('referrerpolicy'), 'strict-origin-when-cross-origin')
+        self.assertIn('allowfullscreen', frame.attrib)
+        self.assertFalse(demo.xpath('.//*[@data-case-id="c05"]'))
+        self.assertFalse(demo.xpath('.//aside//p | .//aside//input'))
         config = (ROOT / 'assets/site-config.js').read_text()
         self.assertIn('media/c02-dynamic-forms/index.html', config)
         self.assertTrue((ROOT / 'media/c02-dynamic-forms/index.html').is_file())
@@ -125,10 +135,10 @@ class DeckAssemblyTests(unittest.TestCase):
         text = (ROOT / 'Item_ISS_Meeting_R5.html').read_text()
         document = html.fromstring(text)
         scene = document.get_element_by_id('r5_agent_assurance')
-        self.assertEqual(scene.getprevious().get('id'), 'r5_c09_00')
-        self.assertEqual(scene.getnext().get('id'), 'r5_c09_01')
+        self.assertEqual(scene.getprevious().get('id'), 'r5_c09_hiring')
+        self.assertEqual(scene.getnext().get('data-md'), 'D1.3.1')
         self.assertEqual(len(scene.xpath('.//*[@data-trust-step]')), 4)
-        self.assertEqual(scene.get('data-md'), 'D1.2.8.0')
+        self.assertEqual(scene.get('data-md'), 'D1.2.8.6')
         link = scene.xpath('.//a[@data-trust-attachment]')[0].get('href')
         self.assertTrue((ROOT / link).is_file())
         video = scene.xpath('.//video[@data-trust-video]')[0]
@@ -140,7 +150,21 @@ class DeckAssemblyTests(unittest.TestCase):
         reader = html.fromstring((ROOT / 'docs/reader.html').read_text())
         self.assertIn('Evaluation Agent', reader.text_content())
         self.assertIn('ItemGPT', reader.text_content())
-        self.assertEqual(len(document.xpath('//section[@class="scene"]')), 142)
+        self.assertEqual(len(document.xpath('//section[@class="scene"]')), 144)
+
+    def test_small_model_review_keeps_both_pages_and_all_examples(self):
+        document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
+        cases = document.get_element_by_id('r5_c09_small_models')
+        selection = document.get_element_by_id('r5_c09_model_selection')
+        self.assertEqual(cases.getprevious().get('id'), 'r5_c09_10')
+        self.assertEqual(cases.getnext(), selection)
+        self.assertEqual(len(cases.xpath('.//tbody/tr')), 4)
+        self.assertEqual(len(selection.xpath('.//li')), 12)
+        overview = document.get_element_by_id('r5_c09_00')
+        self.assertEqual(len(overview.xpath('.//*[@class="case-item"]')), 6)
+        for scene in (cases, selection):
+            self.assertEqual(scene.get('data-md'), 'D1.2.8.4')
+            self.assertIn(f'#{scene.get("id")} .small-model-page', document.get_element_by_id('model-failure-css').text)
 
     def test_reader_refresh_preserves_assurance_and_is_repeatable(self):
         reader = (ROOT / 'docs/reader.html').read_text()
@@ -148,6 +172,30 @@ class DeckAssemblyTests(unittest.TestCase):
         self.assertEqual(updated, refresh.append_model_failure_reader_sections(updated))
         self.assertIn('Evaluation Agent', updated)
         self.assertIn('ItemGPT', updated)
+
+    def test_failure_chapter_builds_toward_customer_acceptance(self):
+        document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
+        scenes = document.xpath('//section[@class="scene"][starts-with(@data-md, "D1.2.8.")]')
+        refs = [scene.get('data-md') for scene in scenes]
+        self.assertEqual(refs, sorted(refs))
+        overview = document.get_element_by_id('r5_c09_00')
+        self.assertNotIn('经历这些失败之后', overview.text_content())
+        self.assertIn('先选一个可验收任务：什么输入、谁负责、什么证据才算完成？', overview.text_content())
+        assurance = document.get_element_by_id('r5_agent_assurance')
+        expected = ['trust-overview', 'trust-knowledge', 'trust-testing', 'trust-evaluation']
+        panels = assurance.xpath('.//article[contains(@class, "trust-panel")]')
+        self.assertEqual([panel.get('id') for panel in panels], expected)
+        buttons = assurance.xpath('.//button[@data-trust-step]')
+        self.assertEqual([button.get('aria-controls') for button in buttons], expected)
+        self.assertEqual([button.get('data-trust-step') for button in buttons], ['0', '1', '2', '3'])
+        self.assertEqual([panel.get('aria-label') for panel in panels], ['1 / 4', '2 / 4', '3 / 4', '4 / 4'])
+        self.assertIn('从哪个真实任务开始？', panels[-1].text_content())
+        for filename in ('Item_ISS_AI_Native_Workshop_R5.md', 'docs/reader.html'):
+            notes = (ROOT / filename).read_text()
+            headings = [f'D1.2.8.{n} ' for n in range(1, 7)]
+            positions = [notes.index(heading) for heading in headings]
+            self.assertEqual(positions, sorted(positions))
+            self.assertLess(notes.index('横向画面 2｜人工审核'), notes.index('横向画面 3｜自动化测试'))
 
     def test_css_injection_handles_explicit_and_omitted_head_end(self):
         for head_end in ("</head>", "", "</HEAD>"):

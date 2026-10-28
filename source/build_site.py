@@ -1,4 +1,5 @@
 from pathlib import Path
+from urllib.parse import urlsplit
 import json,re,html,shutil,zipfile,argparse
 from bs4 import BeautifulSoup
 import markdown,tinycss2
@@ -88,7 +89,12 @@ def build(kind):
         f=deck/(p['id']+'.html')
         if not f.is_file():raise ValueError('Missing native page: '+str(f))
         doc=BeautifulSoup(f.read_text(),'html.parser');slide=doc.select_one('.slide-container')
-        if not slide or slide.select('script,iframe'):raise ValueError('Invalid native slide: '+p['id'])
+        if not slide or slide.select('script'):raise ValueError('Invalid native slide: '+p['id'])
+        for frame in slide.select('iframe'):
+            url=urlsplit(frame.get('src',''))
+            if (url.scheme!='https' or url.netloc!='www.youtube-nocookie.com'
+                    or not re.fullmatch(r'/embed/[A-Za-z0-9_-]{11}',url.path)):
+                raise ValueError('Invalid native iframe: '+p['id'])
         for link in slide.select('a[data-trust-attachment]'):
             link['href']=link['href'].removeprefix('../../')
         zh=doc.select_one('h1 .zh');en=doc.select_one('h1 .en')

@@ -16,9 +16,9 @@
 <div class="slide-container" data-assurance>
   <div class="page-inner">
     <header class="title-zone">
-      <div class="kicker">DAY 1 · MD §D1.2.8.0 · <span class="zh">可信 Agent</span><span class="en">Agent assurance</span></div>
+      <div class="kicker">DAY 1 / MD §D1.2.8.6 / <span class="zh">可信 Agent：一套标准，三重验证</span><span class="en">Trustworthy agents: one set of standards, three checks</span></div>
       <h1><span class="zh">可信 Agent：<span class="title-note">一套标准，三重验证</span></span><span class="en">Trustworthy agents: <span class="title-note">one set of standards, three checks</span></span></h1>
-      <p class="lead"><span class="zh">把安全要求变成可执行的检查，把可信交付建立在可核验的证据上。</span><span class="en">Turn safety requirements into testable checks, and trust into verifiable evidence.</span></p>
+      <p class="lead"><span class="zh">人工审核知识、自动化测试任务、第三方交叉评估，以同一套标准回答“如何证明可靠”。</span><span class="en">Human-reviewed knowledge, automated task tests and third-party evaluation provide evidence against one set of standards.</span></p>
     </header>
 
     <main class="content">
@@ -26,9 +26,9 @@
       <span class="trust-video-duration" hidden><span class="zh">开场短片 · 1分42秒</span><span class="en">Opening film · 1:42</span></span>
     <nav class="trust-steps" aria-label="Assurance slides">
       <button type="button" data-trust-step="0" aria-current="step" aria-controls="trust-overview"><span class="trust-step-no">01</span><span class="zh">统一标准</span><span class="en">Clear standards</span></button>
-      <button type="button" data-trust-step="1" aria-controls="trust-testing"><span class="trust-step-no">02</span><span class="zh">严谨测试</span><span class="en">Rigorous testing</span></button>
-      <button type="button" data-trust-step="2" aria-controls="trust-knowledge"><span class="trust-step-no">03</span><span class="zh">精准知识</span><span class="en">Grounded knowledge</span></button>
-      <button type="button" data-trust-step="3" aria-controls="trust-evaluation"><span class="trust-step-no">04</span><span class="zh">可靠验收</span><span class="en">Reliable acceptance</span></button>
+      <button type="button" data-trust-step="1" aria-controls="trust-knowledge"><span class="trust-step-no">02</span><span class="zh">精准知识</span><span class="en">Grounded knowledge</span></button>
+      <button type="button" data-trust-step="2" aria-controls="trust-testing"><span class="trust-step-no">03</span><span class="zh">严谨测试</span><span class="en">Rigorous testing</span></button>
+      <button type="button" data-trust-step="3" aria-controls="trust-evaluation"><span class="trust-step-no">04</span><span class="zh">可靠验收</span><span class="en">Final checks</span></button>
     </nav>
       <div class="trust-controls">
         <button class="ctrl" type="button" data-trust-return aria-label="返回视频 / Return to video" title="返回视频 / Return to video" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6"/></svg></button>
@@ -48,7 +48,7 @@
     <div class="trust-deck">
     <div class="trust-viewport" tabindex="0" role="region" aria-label="Agent assurance presentation" aria-roledescription="carousel">
       <article class="trust-panel is-active" id="trust-overview" role="group" aria-roledescription="slide" aria-label="1 / 4">
-        <!-- 本画面为 PDF 验收要求的归纳，不代表项目已通过验收。逐条页码与条款见本节 MD §D1.2.8.0「画面 1 来源对照」。 -->
+        <!-- 本画面为 PDF 验收要求的归纳，不代表项目已通过验收。逐条页码与条款见本节 MD §D1.2.8.6「画面 1 来源对照」。 -->
         <h2><span class="zh">安全有边界，可信有标准</span><span class="en">Clear boundaries. Explicit standards for trust.</span></h2>
         <p class="trust-body-lead"><span class="zh">验收前由业务负责人明确：开放给谁、使用哪些数据与工具、允许执行哪些动作。</span><span class="en">Before acceptance testing, the business owner defines the users, data, tools and permitted actions.</span></p>
         <div class="trust-standards">
@@ -59,33 +59,7 @@
         <div class="trust-panel-footer"><div class="discussion trust-reveal"><b class="zh">验收通过条件</b><b class="en">Acceptance pass criteria</b><span class="zh">红线事件为 0 · 必须项全通过 · 适用核心指标达标</span><span class="en">Zero red-line events · All mandatory checks pass · Applicable core targets met</span></div></div>
       </article>
 
-      <article class="trust-panel" id="trust-testing" role="group" aria-roledescription="slide" aria-label="2 / 4">
-        <!-- LLM 对照 Gold Set 自动核对由项目方确认；参考门槛来自 PDF P9 A1、A5 与 P10 A12，不代表实测成绩。 -->
-        <h2><span class="zh">自动化测试，让验证持续、高效、可复用</span><span class="en">Automated testing: continuous, efficient and reusable.</span></h2>
-        <p class="trust-body-lead"><span class="zh">固定测试用例与被测版本，形成可量化、可复验的测试记录。</span><span class="en">Fix the test cases and tested version to produce measurable, repeatable test records.</span></p>
-        <div class="trust-testing-layout">
-          <section class="trust-test-lane trust-reveal">
-            <h3><span class="zh">自动化执行与核对</span><span class="en">Automated execution and checks</span></h3>
-            <ul>
-              <li><span class="zh">脚本批量执行，留存输入与输出</span><span class="en">Run scripts in batches; retain inputs and outputs</span></li>
-              <li><span class="zh">LLM 对照标准答案集（Gold Set）核对答案</span><span class="en">Use an LLM to check answers against the Gold Set</span></li>
-              <li><span class="zh">复用用例与评估口径，变更后回归复验</span><span class="en">Reuse cases and evaluation criteria; rerun after changes</span></li>
-              <li><span class="zh">业务人员介入评估</span><span class="en">Business users participate in evaluation</span></li>
-            </ul>
-          </section>
-          <section class="trust-test-thresholds trust-reveal">
-            <h3><span class="zh">验收参考门槛</span><span class="en">Reference acceptance thresholds</span></h3>
-            <table aria-label="Reference acceptance thresholds"><tbody>
-              <tr><th scope="row"><span class="zh">端到端任务成功率</span><span class="en">End-to-end task success</span></th><td>≥85%<small><span class="zh">关键流程 ≥90%</span><span class="en">Critical workflows ≥90%</span></small></td></tr>
-              <tr><th scope="row"><span class="zh">工具参数正确且外部状态符合预期</span><span class="en">Correct tool parameters and expected external state</span></th><td>≥90%</td></tr>
-              <tr><th scope="row"><span class="zh">高影响动作预览与有效确认</span><span class="en">Preview and valid confirmation for high-impact actions</span></th><td>100%</td></tr>
-            </tbody></table>
-          </section>
-        </div>
-        <div class="trust-panel-footer"><div class="discussion trust-reveal"><b class="zh">人工把关</b><b class="en">Human oversight</b><span class="zh">人工定义预期结果，复核结论与业务系统状态，确认问题整改。</span><span class="en">People define expected results, review answers and business-system state, and confirm corrections.</span></div></div>
-      </article>
-
-      <article class="trust-panel" id="trust-knowledge" role="group" aria-roledescription="slide" aria-label="3 / 4">
+      <article class="trust-panel" id="trust-knowledge" role="group" aria-roledescription="slide" aria-label="2 / 4">
         <!-- 项目方确认人工参与前期构建；共建路径与知识状态归纳自 MD §D1.3.4 及其三张原生页。 -->
         <h2><span class="zh">人工把关，构建可信的知识基础</span><span class="en">Human review builds a trusted knowledge foundation.</span></h2>
         <p class="trust-body-lead"><span class="zh">业务专家与实施团队共同确认业务知识，为 Agent 回答与第三方评估提供依据。</span><span class="en">Business experts and the delivery team validate the knowledge used to ground agent answers and third-party evaluation.</span></p>
@@ -159,10 +133,36 @@
         <div class="trust-panel-footer"><div class="discussion trust-reveal"><b class="zh">知识沉淀</b><b class="en">Knowledge foundation</b><span class="zh">经人工审核与场景验证，业务数据沉淀为语义确定性底座（Ontology）。</span><span class="en">Reviewed and scenario-validated business data forms an Ontology — a foundation of well-defined business semantics.</span></div></div>
       </article>
 
+      <article class="trust-panel" id="trust-testing" role="group" aria-roledescription="slide" aria-label="3 / 4">
+        <!-- LLM 对照 Gold Set 自动核对由项目方确认；参考门槛来自 PDF P9 A1、A5 与 P10 A12，不代表实测成绩。 -->
+        <h2><span class="zh">自动化测试，让验证持续、高效、可复用</span><span class="en">Automated testing: continuous, efficient and reusable.</span></h2>
+        <p class="trust-body-lead"><span class="zh">固定测试用例与被测版本，形成可量化、可复验的测试记录。</span><span class="en">Fix the test cases and tested version to produce measurable, repeatable test records.</span></p>
+        <div class="trust-testing-layout">
+          <section class="trust-test-lane trust-reveal">
+            <h3><span class="zh">自动化执行与核对</span><span class="en">Automated execution and checks</span></h3>
+            <ul>
+              <li><span class="zh">脚本批量执行，留存输入与输出</span><span class="en">Run scripts in batches; retain inputs and outputs</span></li>
+              <li><span class="zh">LLM 对照标准答案集（Gold Set）核对答案</span><span class="en">Use an LLM to check answers against the Gold Set</span></li>
+              <li><span class="zh">复用用例与评估口径，变更后回归复验</span><span class="en">Reuse cases and evaluation criteria; rerun after changes</span></li>
+              <li><span class="zh">业务人员介入评估</span><span class="en">Business users participate in evaluation</span></li>
+            </ul>
+          </section>
+          <section class="trust-test-thresholds trust-reveal">
+            <h3><span class="zh">验收参考门槛</span><span class="en">Reference acceptance thresholds</span></h3>
+            <table aria-label="Reference acceptance thresholds"><tbody>
+              <tr><th scope="row"><span class="zh">端到端任务成功率</span><span class="en">End-to-end task success</span></th><td>≥85%<small><span class="zh">关键流程 ≥90%</span><span class="en">Critical workflows ≥90%</span></small></td></tr>
+              <tr><th scope="row"><span class="zh">工具参数正确且外部状态符合预期</span><span class="en">Correct tool parameters and expected external state</span></th><td>≥90%</td></tr>
+              <tr><th scope="row"><span class="zh">高影响动作预览与有效确认</span><span class="en">Preview and valid confirmation for high-impact actions</span></th><td>100%</td></tr>
+            </tbody></table>
+          </section>
+        </div>
+        <div class="trust-panel-footer"><div class="discussion trust-reveal"><b class="zh">人工把关</b><b class="en">Human oversight</b><span class="zh">人工定义预期结果，复核结论与业务系统状态，确认问题整改。</span><span class="en">People define expected results, review answers and business-system state, and confirm corrections.</span></div></div>
+      </article>
+
       <article class="trust-panel" id="trust-evaluation" role="group" aria-roledescription="slide" aria-label="4 / 4">
         <!-- 已使用第三方 Evaluation Agent 的事实由项目方确认；保留人工复核与基于证据的验收。 -->
         <h2><span class="zh">第三方交叉评估，多一重可信保障</span><span class="en">Third-party evaluation adds another layer of assurance.</span></h2>
-        <p class="trust-body-lead"><span class="zh">已使用第三方 Evaluation Agent，对 Agent 的输出与执行过程进行评估。</span><span class="en">A third-party Evaluation Agent has been used to evaluate the agent’s outputs and execution.</span></p>
+        <p class="trust-body-lead"><span class="zh">已使用第三方 Evaluation Agent 评估输出与执行过程；争议与高风险结果由人工复核，业务负责人依据证据验收。</span><span class="en">A third-party Evaluation Agent has assessed outputs and execution. People review disputed or high-risk results; the business owner accepts the work based on evidence.</span></p>
         <div class="trust-eval-pipeline" role="group" aria-label="Evidence, third-party evaluation and findings">
               <div class="trust-eval-stage"><h3><span class="zh">评估依据</span><span class="en">Evaluation evidence</span></h3><p><span class="zh">已审核知识与预期结果<br>输出内容与执行记录</span><span class="en">Reviewed knowledge and expected results<br>Outputs and execution records</span></p></div>
               <div class="trust-eval-line" aria-hidden="true"></div>
@@ -179,7 +179,7 @@
             <div style="--threshold:100%"><dt><span class="zh">Agent 回执与外部系统结果一致</span><span class="en">Agent receipts match external system results</span></dt><dd>100%<span class="trust-benchmark-scale" aria-hidden="true"><span class="trust-benchmark-marker"></span></span></dd></div>
           </dl>
         </section>
-        <div class="trust-panel-footer"><div class="discussion trust-reveal"><b class="zh">人工把关</b><b class="en">Human oversight</b><span class="zh">争议与高风险结果由人工复核，业务负责人依据证据确认验收。</span><span class="en">People review disputed and high-risk results; the business owner decides acceptance from the evidence.</span></div></div>
+        <div class="trust-panel-footer"><div class="discussion trust-reveal"><b class="zh">客户讨论</b><b class="en">Customer discussion</b><span class="zh">从哪个真实任务开始？输入和权限是什么、谁负责验收、什么证据算完成、异常时由谁接管？</span><span class="en">Which real task comes first? What inputs and permissions are needed, who accepts the result, what evidence proves completion, and who handles exceptions?</span></div></div>
       </article>
     </div>
     <div class="trust-eval-summary">
@@ -189,7 +189,7 @@
     </div>
     </div>
     </main>
-    <footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>MD §D1.2.8.0 · R5</span></footer>
+    <footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>MD §D1.2.8.6 · R5</span></footer>
   </div>
 </div>
 <script src="../../assets/assurance.js"></script>

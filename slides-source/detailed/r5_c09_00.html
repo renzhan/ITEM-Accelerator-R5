@@ -9,6 +9,8 @@
 .case-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px 16px!important}
 .case-item{padding:10px 0 11px}
 .case-item h3{font-size:17px}
+.case-item p{font-size:14px!important;line-height:1.4!important}
+.lead{font-size:17px!important;line-height:1.45!important}
 @media(max-width:520px){.content{grid-template-columns:1fr!important}.case-list{grid-template-columns:1fr!important}.title-zone h1{font-size:30px}.title-zone h1 .title-note{display:block;margin:7px 0 0;font-size:21px}.lead{font-size:16px}.case-item h3{font-size:17px}}
 </style>
 </head>
@@ -17,7 +19,7 @@
   <header class="title-zone">
     <div class="kicker">DAY 1 · MD §D1.2.8.0 · <span class="zh">其他踩过的坑 / 总览</span><span class="en">OTHER FAILURE PATTERNS / OVERVIEW</span></div>
     <h1><span class="zh">其他踩过的坑：</span><span class="en">Other failure patterns:</span><span class="title-note zh">先定义可验收的业务结果</span><span class="title-note en">define the business result before choosing the model</span></h1>
-    <p class="lead"><span class="zh">当前 2.8 聚焦四个主题：知识抽取与生成、WMS Agent 业务本体、自建模型实验复盘、AI 招聘本地化。</span><span class="en">Section 2.8 covers four themes: knowledge extraction, WMS Agent ontology, the self-built model experiment, and AI recruitment localisation.</span></p>
+    <p class="lead"><span class="zh">先看知识、业务执行、模型与本地化的教训，再回答：如何验证 Agent 在真实业务中可靠工作？</span><span class="en">Review lessons in knowledge, execution, models and localisation, then ask how to verify reliability in real business tasks.</span></p>
   </header>
   <main class="content">
     <section class="case-column">
@@ -26,7 +28,9 @@
         <article class="case-item"><div class="case-no">01</div><div><h3><span class="zh">知识抽取与知识生成</span><span class="en">Knowledge extraction and generation</span></h3><p><span class="zh">从复杂资料识别信息、过滤噪音，再形成可检索、可复用的知识结构。</span><span class="en">Identify information in complex materials, filter noise, and form reusable knowledge structures.</span></p></div></article>
         <article class="case-item"><div class="case-no">02</div><div><h3><span class="zh">WMS Agent：业务本体连接规则与动作</span><span class="en">WMS Agent: ontology connects rules to actions</span></h3><p><span class="zh">从“找得到 API”走到理解业务规则、页面、对象和执行路径。</span><span class="en">Move from finding APIs to understanding rules, screens, objects and execution paths.</span></p></div></article>
         <article class="case-item"><div class="case-no">03</div><div><h3><span class="zh">自建模型实验复盘</span><span class="en">Self-built model experiment review</span></h3><p><span class="zh">用验证结果、14 个技术限制和路线差异，判断何时自建、何时采用 LLM。</span><span class="en">Use validation results, 14 technical limits and route differences to choose between building and adopting an LLM.</span></p></div></article>
-        <article class="case-item"><div class="case-no">04</div><div><h3><span class="zh">AI 招聘的跨国本地化</span><span class="en">AI recruitment localisation</span></h3><p><span class="zh">系统出海需重新审核招聘问法、当地法规、文化习惯与数据使用。</span><span class="en">Review interview questions, local rules, cultural practices and data use for each market.</span></p></div></article>
+        <article class="case-item"><div class="case-no">04</div><div><h3><span class="zh">小模型训练复盘</span><span class="en">Small-model training review</span></h3><p><span class="zh">BOL 与退货质检的教训：样本、规则与可解释性的边界，以及大小模型如何分工。</span><span class="en">Lessons from BOLs and returns: limits of samples, rules and explainability, and how to divide model tasks.</span></p></div></article>
+        <article class="case-item"><div class="case-no">05</div><div><h3><span class="zh">AI 招聘的跨国本地化</span><span class="en">AI recruitment localisation</span></h3><p><span class="zh">系统出海需重新审核招聘问法、当地法规、文化习惯与数据使用。</span><span class="en">Review interview questions, local rules, cultural practices and data use for each market.</span></p></div></article>
+        <article class="case-item"><div class="case-no">06</div><div><h3><span class="zh">可信 Agent：一套标准，三重验证</span><span class="en">Agent assurance: one standard, three checks</span></h3><p><span class="zh">以知识审核、任务测试和第三方评估，回答如何证明可靠。</span><span class="en">Verify reliability through reviewed knowledge, task tests and third-party evaluation.</span></p></div></article>
       </div>
     </section>
     <section class="root-column">

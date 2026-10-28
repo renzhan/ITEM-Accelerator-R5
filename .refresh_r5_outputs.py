@@ -10,7 +10,9 @@ C09_GROUPS = (
     ("D1.2.8.1", "知识抽取与知识生成", "Knowledge extraction and generation", ("r5_c09_01", "r5_c09_02", "r5_c09_02b")),
     ("D1.2.8.2", "WMS Agent：业务本体连接规则与动作", "WMS Agent: ontology connects rules to actions", ("r5_c09_wms",)),
     ("D1.2.8.3", "自建模型实验复盘", "Self-built model experiment review", ("r5_c09_08", "r5_c09_09", "r5_c09_10")),
-    ("D1.2.8.4", "AI 招聘的跨国本地化", "AI recruitment localisation", ("r5_c09_hiring",)),
+    ("D1.2.8.4", "小模型训练复盘：样本、规则与可解释性的边界", "Small-model training review: limits of samples, rules and explainability", ("r5_c09_small_models", "r5_c09_model_selection")),
+    ("D1.2.8.5", "AI 招聘的跨国本地化", "AI recruitment localisation", ("r5_c09_hiring",)),
+    ("D1.2.8.6", "可信 Agent：一套标准，三重验证", "Trustworthy agents: one set of standards, three checks", ("r5_agent_assurance",)),
 )
 
 
@@ -92,11 +94,15 @@ def merge_detailed_manifest():
     manifest = git_json("source/detailed_manifest.json")
     pages = []
     hiring = None
+    assurance = None
     for page in manifest["pages"]:
-        if page["id"] in {"r5_c09_00", "r5_c09_08", "r5_c09_09", "r5_c09_10"}:
+        if page["id"] in {"r5_c09_00", "r5_c09_08", "r5_c09_09", "r5_c09_10", "r5_c09_small_models", "r5_c09_model_selection"}:
             continue
         if page["id"] == "r5_c09_hiring":
             hiring = copy.deepcopy(page)
+            continue
+        if page["id"] == "r5_agent_assurance":
+            assurance = copy.deepcopy(page)
             continue
         if page.get("case") == "c07" or page["id"].startswith("r5_c07_"):
             continue
@@ -136,8 +142,17 @@ def merge_detailed_manifest():
         page = copy.deepcopy(c09_base)
         page.update({"id": page_id, "title": title, "en": english, "case": "c09"})
         extra_pages.append(page)
+    for page_id, title, english in (
+        ("r5_c09_small_models", "BOL 识别与退货质检：样本不足，标签不够用", "BOL recognition and returns inspection: beyond samples and labels"),
+        ("r5_c09_model_selection", "如何选型：小模型、大模型，还是两者配合", "Choosing small models, large models or both"),
+    ):
+        page = copy.deepcopy(c09_base)
+        page.update(id=page_id, title=title, en=english, case="c09")
+        extra_pages.append(page)
     if hiring:
         extra_pages.append(hiring)
+    if assurance:
+        extra_pages.append(assurance)
     pages[c09_head:c09_head] = [overview]
     c09_tail += 1
     pages[c09_tail:c09_tail] = extra_pages
@@ -251,10 +266,11 @@ def model_failure_css():
     overview = (ROOT / "slides-source/detailed/r5_c09_00.html").read_text(encoding="utf-8")
     overview_css = "\n".join(re.findall(r"<style>(.*?)</style>", overview, flags=re.S))
     scoped.append(re.sub(r"([^{}]+)\{([^{}]*)\}", lambda m: scope_rule(m, "r5_c09_00"), overview_css))
-    hiring = ROOT / "slides-source/detailed/r5_c09_hiring.html"
-    if hiring.is_file():
-        hiring_css = re.search(r"<style>(.*?)</style>", hiring.read_text(encoding="utf-8"), flags=re.S).group(1)
-        scoped.append(re.sub(r"([^{}]+)\{([^{}]*)\}", lambda m: scope_rule(m, "r5_c09_hiring"), hiring_css))
+    for page_id in ("r5_c09_hiring", "r5_c09_small_models", "r5_c09_model_selection"):
+        source_path = ROOT / f"slides-source/detailed/{page_id}.html"
+        if source_path.is_file():
+            page_css = re.search(r"<style>(.*?)</style>", source_path.read_text(encoding="utf-8"), flags=re.S).group(1)
+            scoped.append(re.sub(r"([^{}]+)\{([^{}]*)\}", lambda m: scope_rule(m, page_id), page_css))
     for page_id in ("r5_c09_08", "r5_c09_09", "r5_c09_10"):
         scoped.append(f'@media(max-width:700px){{#{page_id} .content,#{page_id} .case-list,#{page_id} .quad-grid,#{page_id} .pano,#{page_id} .valid{{grid-template-columns:1fr!important}}#{page_id} .vnote{{border-left:0;padding-left:0}}#{page_id} .route-table{{display:table;table-layout:fixed}}#{page_id} .route-table td,#{page_id} .route-table th{{padding:8px 5px!important;font-size:14px}}#{page_id} .route-table strong{{font-size:14px}}#{page_id} .route-detail{{font-size:13px}}#{page_id} h1{{font-size:29px!important}}#{page_id} .title-note{{display:block;margin:8px 0 0;font-size:21px}}}}')
     scoped.append('@media(max-width:520px){#r5_c09_00 .content{grid-template-columns:1fr!important}#r5_c09_00 .case-list{grid-template-columns:1fr!important}#r5_c09_00 .title-zone h1{font-size:30px!important}#r5_c09_00 .title-zone h1 .title-note{display:block;margin:7px 0 0;font-size:21px}#r5_c09_00 .lead{font-size:16px!important}#r5_c09_00 .case-item h3{font-size:17px!important}}')
@@ -277,13 +293,14 @@ MODEL_FAILURE_READER = """
 
 MODEL_FAILURE_OVERVIEW_READER = """
 <h5 id="md-D1-2-8-0">D1.2.8.0 其他踩过的坑：先定义可验收的业务结果</h5>
-<p>当前 2.8 聚焦四个主题：复杂资料的知识抽取与知识生成、WMS Agent 的业务本体与执行动作、自建模型实验复盘，以及 AI 招聘的跨国本地化教训。</p>
+<p>当前 2.8 依次复盘知识抽取与生成、WMS Agent 业务本体、自建模型实验、小模型训练与选型、AI 招聘本地化，最后以“可信 Agent：一套标准，三重验证”收束。</p>
+<p><strong>讨论：</strong>先选一个可验收任务：什么输入、谁负责、什么证据才算完成？</p>
 <p><strong>验收链：</strong>先选一个可验证的小范围问题，补齐来源、权限、样本和分母，明确 Owner、人工接管与停止条件，再把结果回写业务状态后决定是否扩展。</p>
 """
 
 
 HIRING_READER = """
-<h5 id="md-D1-2-8-4">D1.2.8.4 AI 招聘的跨国本地化</h5>
+<h5 id="md-D1-2-8-5">D1.2.8.5 AI 招聘的跨国本地化</h5>
 <h6 id="md-D1-2-8-hiring">AI 招聘踩过的坑：系统出海，规则不能照搬</h6>
 <p>AI 招聘与面试系统按中国招聘习惯设计，用于美国招聘后收到候选人投诉。系统出海需要同步检查当地文化、法律和招聘习惯。</p>
 <p>薪资历史、婚育、年龄及家庭安排的问法需要重新审核。围绕薪酬预期、岗位技能、出差和明确的工作时间提出问题，由当地 HR 与法律顾问按联邦、州及地方规则确认适用范围。</p>
@@ -291,9 +308,39 @@ HIRING_READER = """
 """
 
 
+SMALL_MODEL_READER = """
+<h5 id="md-D1-2-8-4">D1.2.8.4 小模型训练复盘：样本、规则与可解释性的边界</h5>
+<h6>BOL 识别与退货质检：样本不足，标签不够用</h6>
+<p>Carrier BOL 识别原先按承运商建立 OCR 模板或训练字段抽取模型，提取 BOL 号、PRO 号、件数、重量与封签号。头部承运商很快覆盖，但长尾格式持续增加、每家每月只有少量单据，样本始终不足；少件与破损等关键信息常是手写批注。复盘认识是：先攒样本再训练追不上格式变化，自由文本也不能只按固定字段处理。</p>
+<p>退货质检原先训练良品 / 次品分类模型，判断能否二次销售。但模型只给标签，无法解释吊牌已剪、使用痕迹或配件缺失；各货主标准不同，质检员仍需重写说明。质检需要看懂实物、套用对应货主规则，再说明依据。</p>
+<p>大模型的承接方向：读取新承运商提单并映射标准字段，与 ASN、PO 核对，将手写异常提取到差异流程；读取货主退货政策，输出能否二次销售的结论、依据条款与问题描述。</p>
+<h6>如何选型：小模型、大模型，还是两者配合</h6>
+<ul><li>小模型：目标固定、实时、高调用量。适合车牌识别、月台停靠、安全帽与反光衣检测、卡车轮挡检测；对象稳定、样本易采集。</li><li>大模型：低频、开放、需解释。适合读取多承运商提单、解释退货可否再售、按货主要求检查装柜打托、检查危险品标签；规则在文档中，样本难积累。</li><li>两者配合：小模型持续检测，大模型结合上下文判断。适合人车距离报警、丢货录像追溯、巡检照片库位盘点、装卸抛扔货物检测；兼顾实时成本与误报解释。</li></ul>
+<p>一句话判断：需要反复标注、反复改规则，或最终总要人看一眼时，不应让小模型独自承接全部任务。以上为所提供案例的复盘与选型经验。</p>
+"""
+
+
 def append_model_failure_reader_sections(text):
     """Keep the new slide notes addressable without colliding with legacy D1.2.8.x IDs."""
     overview_details = re.search(r'<h5 id="md-D1-2-8-0">.*?(<h6\b.*?)(?=<h5 id="md-D1-2-8-1">)', text, flags=re.S)
+    assurance = re.search(r'<h5 id="md-D1-2-8-6">.*?</h5>(.*?)(?=<h5\b|<h3 id="md-D1-3")', text, flags=re.S)
+    assurance_body = assurance.group(1) if assurance else (overview_details.group(1) if overview_details else "")
+    if not assurance_body:
+        raise ValueError("Missing Agent assurance reader notes")
+    assurance_body = re.sub(r'^\s*<h6>可信 Agent：一套标准，三重验证</h6>\s*', '', assurance_body)
+    testing_marker = '<p><strong>横向画面 2｜自动化测试与人工把关。</strong>'
+    if testing_marker in assurance_body:
+        testing_start = assurance_body.index(testing_marker)
+        knowledge_start = assurance_body.index('<p><strong>横向画面 3｜人工审核的可信知识基础。</strong>')
+        evaluation_start = assurance_body.index('<p><strong>横向画面 4｜第三方评估与统一验收。</strong>')
+        testing = assurance_body[testing_start:knowledge_start].replace('横向画面 2｜', '横向画面 3｜')
+        knowledge = assurance_body[knowledge_start:evaluation_start].replace('横向画面 3｜', '横向画面 2｜')
+        assurance_body = assurance_body[:testing_start] + knowledge + testing + assurance_body[evaluation_start:]
+    assurance_body = assurance_body.replace('后三个画面依次展开自动化测试、可信知识基础与第三方交叉评估', '后三个画面依次展开可信知识基础、自动化测试与第三方交叉评估')
+    closing = '<p><strong>客户讨论：</strong>从哪个真实任务开始？输入和权限是什么、谁负责验收、什么证据算完成、异常时由谁接管？</p>'
+    if closing not in assurance_body:
+        assurance_body = assurance_body.rstrip() + '\n' + closing
+    assurance_section = '\n<h5 id="md-D1-2-8-6">D1.2.8.6 可信 Agent：一套标准，三重验证</h5>\n' + assurance_body.strip() + '\n'
     text = re.sub(r'<h5 id="md-D1-2-8-0">.*?(?=<h5 id="md-D1-2-8-1">)', "", text, flags=re.S)
     text = re.sub(
         r'<h5 id="md-D1-2-8-model-(?:experiment|limitations|architecture)">.*?(?=<h3 id="md-D1-3")',
@@ -329,9 +376,9 @@ def append_model_failure_reader_sections(text):
     marker = '<h3 id="md-D1-3">'
     if marker not in text:
         raise ValueError("Missing D1.3 reader marker")
-    overview = MODEL_FAILURE_OVERVIEW_READER + (overview_details.group(1) if overview_details else "")
+    overview = MODEL_FAILURE_OVERVIEW_READER
     text = text.replace('<h5 id="md-D1-2-8-1">', overview + '<h5 id="md-D1-2-8-1">', 1)
-    text = text.replace(marker, MODEL_FAILURE_READER + HIRING_READER + marker, 1)
+    text = text.replace(marker, MODEL_FAILURE_READER + SMALL_MODEL_READER + HIRING_READER + assurance_section + marker, 1)
     return re.sub(r'\n+(?=<h5 id="md-D1-2-8-(?:0|3)">)', '\n\n', text)
 
 
