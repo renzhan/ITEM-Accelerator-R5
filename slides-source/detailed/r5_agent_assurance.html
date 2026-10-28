@@ -4,18 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>可信 Agent · 测试与验收 · R5</title>
-  <style>*{margin:0;padding:0;box-sizing:border-box}.rule{height:1px;background:var(--ink)}.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}</style>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}.en{display:none!important}html[data-lang=en] .zh{display:none!important}html[data-lang=en] .en{display:revert!important}
+    .title-zone{border-top:4px solid var(--accent);padding-top:13px}
+    .title-zone h1 .title-note{font-size:25px;font-weight:600;color:var(--muted)!important;margin-left:14px}
+    .lead{max-width:1030px;color:var(--muted)!important}
+  </style>
   <link rel="stylesheet" href="../../assets/assurance.css">
 </head>
 <body>
 <div class="slide-container" data-assurance>
   <div class="page-inner">
     <header class="title-zone">
-      <div class="kicker"><span class="zh">MD §D1.3.6 · 可信 Agent</span><span class="en">MD §D1.3.6 · Agent assurance</span></div>
-      <h1><span class="zh">可信 Agent：一套标准，三重验证</span><span class="en">Trustworthy agents: one set of standards, three checks</span></h1>
+      <div class="kicker">DAY 1 · MD §D1.2.8.0 · <span class="zh">可信 Agent</span><span class="en">Agent assurance</span></div>
+      <h1><span class="zh">可信 Agent：<span class="title-note">一套标准，三重验证</span></span><span class="en">Trustworthy agents: <span class="title-note">one set of standards, three checks</span></span></h1>
+      <p class="lead"><span class="zh">把安全要求变成可执行的检查，把可信交付建立在可核验的证据上。</span><span class="en">Turn safety requirements into testable checks, and trust into verifiable evidence.</span></p>
     </header>
-    <div class="rule"></div>
-    <p class="lead"><span class="zh">把安全要求变成可执行的检查，把可信交付建立在可核验的证据上。</span><span class="en">Turn safety requirements into testable checks, and trust into verifiable evidence.</span></p>
 
     <main class="content">
     <div class="trust-toolbar">
@@ -27,12 +31,13 @@
       <button type="button" data-trust-step="3" aria-controls="trust-evaluation"><span class="trust-step-no">04</span><span class="zh">可靠验收</span><span class="en">Reliable acceptance</span></button>
     </nav>
       <div class="trust-controls">
-        <button class="ctrl" type="button" data-trust-replay aria-label="重播视频 / Replay video" title="重播视频 / Replay video" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6"/></svg></button>
+        <button class="ctrl" type="button" data-trust-return aria-label="返回视频 / Return to video" title="返回视频 / Return to video" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6"/></svg></button>
       <div class="trust-pager"><button class="ctrl" type="button" data-trust-prev aria-label="Previous assurance slide" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><span class="trust-count" aria-live="polite" aria-atomic="true">01 / 04</span><button class="ctrl accent-button" type="button" data-trust-next aria-label="Next assurance slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>
         <button class="ctrl trust-mode-button" type="button" data-trust-enter hidden><span class="zh">进入讲解</span><span class="en">View slides</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></button>
       </div>
     </div>
 
+    <div class="trust-stage">
     <section class="trust-opening" hidden aria-label="Agent assurance opening video">
       <div class="trust-video-frame">
         <video data-trust-video data-video-file="agent-assuranc.mp4" data-poster-file="agent-assuranc-poster.jpg" controls playsinline preload="none" aria-label="可信 Agent 开场视频 / Agent assurance opening video"></video>
@@ -43,7 +48,7 @@
     <div class="trust-deck">
     <div class="trust-viewport" tabindex="0" role="region" aria-label="Agent assurance presentation" aria-roledescription="carousel">
       <article class="trust-panel is-active" id="trust-overview" role="group" aria-roledescription="slide" aria-label="1 / 4">
-        <!-- 本画面为 PDF 验收要求的归纳，不代表项目已通过验收。逐条页码与条款见本节 MD §D1.3.6「画面 1 来源对照」。 -->
+        <!-- 本画面为 PDF 验收要求的归纳，不代表项目已通过验收。逐条页码与条款见本节 MD §D1.2.8.0「画面 1 来源对照」。 -->
         <h2><span class="zh">安全有边界，可信有标准</span><span class="en">Clear boundaries. Explicit standards for trust.</span></h2>
         <p class="trust-body-lead"><span class="zh">验收前由业务负责人明确：开放给谁、使用哪些数据与工具、允许执行哪些动作。</span><span class="en">Before acceptance testing, the business owner defines the users, data, tools and permitted actions.</span></p>
         <div class="trust-standards">
@@ -182,8 +187,9 @@
     </div>
 
     </div>
+    </div>
     </main>
-    <footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>MD §D1.3.6 · R5</span></footer>
+    <footer class="foot"><span>ITEM × COO AI Team × ISS Biz (team)</span><span>MD §D1.2.8.0 · R5</span></footer>
   </div>
 </div>
 <script src="../../assets/assurance.js"></script>

@@ -16,7 +16,7 @@
     const deck = host.querySelector('.trust-deck');
     const video = host.querySelector('[data-trust-video]');
     const play = host.querySelector('[data-trust-play]');
-    const replay = host.querySelector('[data-trust-replay]');
+    const returnButton = host.querySelector('[data-trust-return]');
     const enter = host.querySelector('[data-trust-enter]');
     const duration = host.querySelector('.trust-video-duration');
     const pager = host.querySelector('.trust-pager');
@@ -102,19 +102,20 @@
     function setVideoMode(showVideo) {
       pauseVideo();
       opening.hidden = !showVideo;
+      opening.inert = !showVideo;
       deck.hidden = showVideo;
+      deck.inert = showVideo;
       navigation.hidden = showVideo;
       pager.hidden = showVideo;
       duration.hidden = !showVideo;
       enter.hidden = !showVideo;
-      replay.hidden = showVideo;
+      returnButton.hidden = showVideo;
     }
     function showSlides() {
       if (document.fullscreenElement === video) document.exitFullscreen().catch(() => {});
       setVideoMode(false);
-      go(0, true);
-      reveal(panels[0]);
-      steps[0].focus({ preventScroll: true });
+      go(index, true);
+      steps[index].focus({ preventScroll: true });
     }
     async function playVideo() {
       const request = ++playRequest;
@@ -140,13 +141,9 @@
       }
     }
     function showOpening() {
-      cancelMotion();
+      go(index, true);
       setVideoMode(true);
-      if (video.readyState) video.currentTime = 0;
-      video.controls = false;
-      videoError.hidden = true;
-      play.hidden = false;
-      play.focus({ preventScroll: true });
+      (play.hidden ? video : play).focus({ preventScroll: true });
     }
     function reveal(panel, delay = 0) {
       if (motionPreference.matches) {
@@ -156,8 +153,8 @@
       // A short group reveal supports the argument without animating every line of copy.
       [...panel.querySelectorAll('.trust-reveal')].filter(element => !element.closest('.trust-panel-footer')).forEach((element, i) => {
         animate(element, [
-          { opacity: .55, transform: 'translateY(6px)' },
-          { opacity: 1, transform: 'translateY(0)' }
+          { opacity: .55 },
+          { opacity: 1 }
         ], { duration: 420, delay: delay + Math.min(i * 70, 140), easing: 'cubic-bezier(.16,1,.3,1)', fill: 'backwards' });
       });
       // Keep the shared callout baseline still while the new content settles.
@@ -225,10 +222,9 @@
     video.controls = false;
     setVideoMode(true);
     play.addEventListener('click', playVideo);
-    replay.addEventListener('click', showOpening);
+    returnButton.addEventListener('click', showOpening);
     enter.addEventListener('click', showSlides);
     video.addEventListener('play', () => { play.hidden = true; videoError.hidden = true; });
-    video.addEventListener('ended', showSlides);
     video.addEventListener('error', () => { videoError.hidden = false; play.hidden = false; });
     viewport.addEventListener('scroll', () => {
       if (scrollFrame) return;

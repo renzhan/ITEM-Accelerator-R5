@@ -943,6 +943,23 @@
       "total": 143
     },
     {
+      "id": "r5_agent_assurance",
+      "title": "可信 Agent：一套标准，三重验证",
+      "en": "Trustworthy agents: one set of standards, three checks",
+      "summary": "四个横向画面按统一标准、严谨测试、精准知识、可靠验收展开：以脚本与 LLM 对照 Gold Set 自动核对、人工审核的知识基础和第三方交叉评估形成验收证据。测试页展示 PDF A1、A5、A12 参考门槛，评估页标记 K4、K5、A7 核验门槛，均不作为实测结果。",
+      "md": "D1.2.8.0",
+      "refs": [
+        "D1.2.8.0"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "notes": false,
+      "case": "c09",
+      "index": 53,
+      "number": 54,
+      "total": 143
+    },
+    {
       "id": "r5_c09_01",
       "title": "复杂资料的知识抽取",
       "en": "Knowledge extraction from complex materials",
@@ -954,8 +971,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 53,
-      "number": 54,
+      "index": 54,
+      "number": 55,
       "total": 143,
       "topic": "知识抽取与知识生成",
       "topic_en": "Knowledge extraction and generation"
@@ -972,8 +989,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 54,
-      "number": 55,
+      "index": 55,
+      "number": 56,
       "total": 143,
       "topic": "知识抽取与知识生成",
       "topic_en": "Knowledge extraction and generation"
@@ -990,8 +1007,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 55,
-      "number": 56,
+      "index": 56,
+      "number": 57,
       "total": 143,
       "topic": "知识抽取与知识生成",
       "topic_en": "Knowledge extraction and generation"
@@ -1008,8 +1025,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 56,
-      "number": 57,
+      "index": 57,
+      "number": 58,
       "total": 143,
       "topic": "WMS Agent：业务本体连接规则与动作",
       "topic_en": "WMS Agent: ontology connects rules to actions"
@@ -1026,8 +1043,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 57,
-      "number": 58,
+      "index": 58,
+      "number": 59,
       "total": 143,
       "topic": "自建模型实验复盘",
       "topic_en": "Self-built model experiment review"
@@ -1044,8 +1061,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 58,
-      "number": 59,
+      "index": 59,
+      "number": 60,
       "total": 143,
       "topic": "自建模型实验复盘",
       "topic_en": "Self-built model experiment review"
@@ -1062,8 +1079,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 59,
-      "number": 60,
+      "index": 60,
+      "number": 61,
       "total": 143,
       "topic": "自建模型实验复盘",
       "topic_en": "Self-built model experiment review"
@@ -1080,8 +1097,8 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 60,
-      "number": 61,
+      "index": 61,
+      "number": 62,
       "total": 143,
       "topic": "AI 招聘的跨国本地化",
       "topic_en": "AI recruitment localisation"
@@ -1095,13 +1112,13 @@
         "D1.3.1"
       ],
       "chapter": 3,
-      "number": 62,
+      "number": 63,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "After the cases: one entry is not one chat window",
-      "index": 61
+      "index": 62
     },
     {
       "id": "d34_writeback",
@@ -1112,13 +1129,13 @@
         "D1.3.1"
       ],
       "chapter": 3,
-      "number": 63,
+      "number": 64,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Two writebacks: business facts and capability knowledge",
-      "index": 62
+      "index": 63
     },
     {
       "id": "d35_action_control",
@@ -1129,13 +1146,13 @@
         "D1.3.1"
       ],
       "chapter": 3,
-      "number": 64,
+      "number": 65,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "The accountability boundary from suggestion to action",
-      "index": 63
+      "index": 64
     },
     {
       "id": "d36_data_hub",
@@ -1146,13 +1163,13 @@
         "D1.3.2"
       ],
       "chapter": 3,
-      "number": 65,
+      "number": 66,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Data Hub: trusted facts and traceable context",
-      "index": 64
+      "index": 65
     },
     {
       "id": "d37_model_hub",
@@ -1163,13 +1180,13 @@
         "D1.3.2"
       ],
       "chapter": 3,
-      "number": 66,
+      "number": 67,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Hybrid AI: understanding, prediction and optimization each have a role",
-      "index": 65
+      "index": 66
     },
     {
       "id": "d38_marketplace",
@@ -1180,13 +1197,13 @@
         "D1.3.2"
       ],
       "chapter": 3,
-      "number": 67,
+      "number": 68,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Connector, Tools, Skill and the technical Marketplace",
-      "index": 66
+      "index": 67
     },
     {
       "id": "d39_dashboard_cost",
@@ -1197,13 +1214,13 @@
         "D1.3.2"
       ],
       "chapter": 3,
-      "number": 68,
+      "number": 69,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Dashboard connects adoption, quality and cost",
-      "index": 67
+      "index": 68
     },
     {
       "id": "d40_runtime",
@@ -1214,13 +1231,13 @@
         "D1.3.3"
       ],
       "chapter": 3,
-      "number": 69,
+      "number": 70,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Runtime: use, standardization and background execution",
-      "index": 68
+      "index": 69
     },
     {
       "id": "d41_factory",
@@ -1231,13 +1248,13 @@
         "D1.3.3"
       ],
       "chapter": 3,
-      "number": 70,
+      "number": 71,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Factory: let specialists build, evaluate and govern",
-      "index": 69
+      "index": 70
     },
     {
       "id": "d42_qualification",
@@ -1248,13 +1265,13 @@
         "D1.3.3"
       ],
       "chapter": 3,
-      "number": 71,
+      "number": 72,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Qualification and Internal Logging",
-      "index": 70
+      "index": 71
     },
     {
       "id": "d43_skill_modes",
@@ -1265,13 +1282,13 @@
         "D1.3.3"
       ],
       "chapter": 3,
-      "number": 72,
+      "number": 73,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Skill A/B: validate first, then service by maturity",
-      "index": 71
+      "index": 72
     },
     {
       "id": "d44_hollis_governance",
@@ -1282,13 +1299,13 @@
         "D1.3.3"
       ],
       "chapter": 3,
-      "number": 73,
+      "number": 74,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Open → Transform → Engineer: staged governance",
-      "index": 72
+      "index": 73
     },
     {
       "id": "d45_knowledge_inputs",
@@ -1299,13 +1316,13 @@
         "D1.3.4"
       ],
       "chapter": 3,
-      "number": 74,
+      "number": 75,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Four starting points for knowledge mining",
-      "index": 73
+      "index": 74
     },
     {
       "id": "d46_ontology_cycle",
@@ -1316,13 +1333,13 @@
         "D1.3.4"
       ],
       "chapter": 3,
-      "number": 75,
+      "number": 76,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Co-build ontology at the right task scale",
-      "index": 74
+      "index": 75
     },
     {
       "id": "d47_knowledge_states",
@@ -1333,13 +1350,13 @@
         "D1.3.4"
       ],
       "chapter": 3,
-      "number": 76,
+      "number": 77,
       "day": 1,
       "total": 143,
       "notes": false,
       "case": null,
       "en": "Raw records, drafts, review and release must stay separate",
-      "index": 75
+      "index": 76
     },
     {
       "id": "r5_platform_evolution",
@@ -1353,23 +1370,6 @@
       "day": 1,
       "case": null,
       "notes": false,
-      "index": 76,
-      "number": 77,
-      "total": 143
-    },
-    {
-      "id": "r5_agent_assurance",
-      "title": "可信 Agent：一套标准，三重验证",
-      "en": "Trustworthy agents: one set of standards, three checks",
-      "summary": "四个横向画面按统一标准、严谨测试、精准知识、可靠验收展开：以脚本与 LLM 对照 Gold Set 自动核对、人工审核的知识基础和第三方交叉评估形成验收证据。测试页展示 PDF A1、A5、A12 参考门槛，评估页标记 K4、K5、A7 核验门槛，均不作为实测结果。",
-      "md": "D1.3.6",
-      "refs": [
-        "D1.3.6"
-      ],
-      "chapter": 3,
-      "day": 1,
-      "notes": false,
-      "case": null,
       "index": 77,
       "number": 78,
       "total": 143

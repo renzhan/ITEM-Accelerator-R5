@@ -1,5 +1,9 @@
-/* The native slide owns its frame and typography; only carousel/diagram layout lives here. */
-#r5_agent_assurance .trust-opening[hidden],#r5_agent_assurance .trust-deck[hidden],#r5_agent_assurance .trust-video-start[hidden],#r5_agent_assurance .trust-video-error[hidden],#r5_agent_assurance .trust-toolbar [hidden]{display:none!important}
+/* Shared frame and base typography; slide-local layout and responsive header details. */
+#r5_agent_assurance .trust-video-start[hidden],#r5_agent_assurance .trust-video-error[hidden],#r5_agent_assurance .trust-toolbar [hidden]{display:none!important}
+/* Both views size the same grid cell, keeping navigation and the footer still during switches. */
+#r5_agent_assurance .trust-stage{display:grid;grid-template-columns:minmax(0,1fr);min-width:0}
+#r5_agent_assurance .trust-stage>.trust-opening,#r5_agent_assurance .trust-stage>.trust-deck{grid-area:1/1;min-width:0;align-self:start}
+#r5_agent_assurance .trust-stage>[hidden]{display:block!important;visibility:hidden;pointer-events:none}
 #r5_agent_assurance .trust-opening{margin-top:16px}
 #r5_agent_assurance .trust-video-frame{width:min(100%,calc(clamp(180px,100svh - 470px,420px)*16/9));margin-inline:auto}
 #r5_agent_assurance .trust-video-frame{position:relative;aspect-ratio:16/9;background:var(--soft);overflow:hidden}
@@ -14,12 +18,12 @@ html[data-theme=night] #r5_agent_assurance .trust-video-start{background-color:v
 #r5_agent_assurance .trust-controls .ctrl{height:28px;justify-content:center}
 #r5_agent_assurance .trust-mode-button{padding:0 10px;gap:6px;white-space:nowrap}
 #r5_agent_assurance .trust-steps{position:relative;display:flex;flex:1;min-width:0;gap:24px}
-#r5_agent_assurance .trust-steps button{flex:1;display:flex;align-items:center;gap:8px;text-align:left;border:0;background:transparent;padding:8px 0 12px;font-size:16px;color:var(--muted)}
+#r5_agent_assurance .trust-steps button{flex:1;min-width:0;display:flex;align-items:center;gap:8px;text-align:left;border:0;background:transparent;padding:8px 0 12px;font-size:16px;color:var(--muted)}
 #r5_agent_assurance .trust-steps button[aria-current=step]{color:var(--ink);font-weight:700}
 #r5_agent_assurance .trust-step-no{font:12px monospace;color:var(--muted)}
 #r5_agent_assurance .trust-steps::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:var(--trust-step-width,25%);background:var(--accent);transform:translateX(var(--trust-step-offset,0px));transition:transform 420ms cubic-bezier(.16,1,.3,1);pointer-events:none}
 #r5_agent_assurance .trust-pager{display:flex;align-items:center;gap:8px;flex-shrink:0}
-#r5_agent_assurance .trust-pager .ctrl,#r5_agent_assurance [data-trust-replay]{width:36px;height:28px;padding:0;justify-content:center}
+#r5_agent_assurance .trust-pager .ctrl,#r5_agent_assurance [data-trust-return]{width:36px;height:28px;padding:0;justify-content:center}
 #r5_agent_assurance .trust-pager button:disabled{cursor:default;opacity:.35}
 #r5_agent_assurance .trust-count{font:12px monospace;min-width:48px;text-align:center;color:var(--muted)}
 #r5_agent_assurance .trust-controls svg,#r5_agent_assurance .trust-pdf-link svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
@@ -71,6 +75,7 @@ html[data-theme=night] #r5_agent_assurance .trust-benchmark-marker{background-co
 #r5_agent_assurance .trust-steps{gap:12px}
 #r5_agent_assurance .trust-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:28px auto;gap:8px;padding-top:8px}
 #r5_agent_assurance .trust-steps{grid-column:1/-1;grid-row:2}
+#r5_agent_assurance .trust-toolbar .trust-steps[hidden]{display:flex!important;visibility:hidden;pointer-events:none}
 #r5_agent_assurance .trust-video-duration{grid-column:1;grid-row:1}
 #r5_agent_assurance .trust-controls{grid-column:2;grid-row:1}
 }
@@ -85,12 +90,18 @@ html[data-theme=night] #r5_agent_assurance .trust-benchmark-marker{background-co
 #r5_agent_assurance .trust-benchmarks{grid-template-columns:1fr;gap:16px}
 #r5_agent_assurance .trust-benchmark-heading{flex-wrap:wrap;gap:4px}
 }
+@media(max-width:520px){
+#r5_agent_assurance .title-zone h1{font-size:30px!important}
+#r5_agent_assurance .title-zone h1 .title-note{display:block;margin:7px 0 0;font-size:21px}
+#r5_agent_assurance .lead{font-size:16px!important}
+}
 @media(prefers-reduced-motion:reduce){
 #r5_agent_assurance .trust-steps::after{transition:none}
 }
 @media print{
-#r5_agent_assurance .trust-opening{display:none!important}
-#r5_agent_assurance .trust-deck[hidden]{display:block!important}
+#r5_agent_assurance .trust-stage{display:block}
+#r5_agent_assurance .trust-stage>.trust-opening{display:none!important}
+#r5_agent_assurance .trust-stage>.trust-deck[hidden]{display:block!important;visibility:visible}
 #r5_agent_assurance .trust-toolbar,#r5_agent_assurance .trust-attachment{display:none}
 #r5_agent_assurance .trust-viewport{display:block;overflow:visible}
 #r5_agent_assurance .trust-panel{break-inside:avoid;break-before:page}
