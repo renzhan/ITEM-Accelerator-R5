@@ -87,6 +87,8 @@ class DeckAssemblyTests(unittest.TestCase):
     def test_new_failure_pages_localize_all_visible_chinese_content(self):
         document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
         page_ids = ('r5_c09_08', 'r5_c09_09', 'r5_c09_10', 'r5_c09_hiring')
+        page_ids += tuple(f'r5_c02_{i:02d}' for i in range(1, 8))
+        page_ids += tuple(f'r5_c05_{i:02d}' for i in range(1, 7))
         for page_id in page_ids:
             with self.subTest(page_id=page_id):
                 scene = document.get_element_by_id(page_id)
@@ -95,11 +97,29 @@ class DeckAssemblyTests(unittest.TestCase):
                 unlocalized = []
                 for node in scene.xpath('.//text()[normalize-space()]'):
                     if re.search(r'[\u4e00-\u9fff]', node):
-                        ancestors = node.getparent().xpath('ancestor-or-self::*[@class]')
+                        parent = node.getparent().getparent() if node.is_tail else node.getparent()
+                        ancestors = parent.xpath('ancestor-or-self::*[@class]')
                         classes = {' '.join((ancestor.get('class') or '').split()) for ancestor in ancestors}
                         if not any('zh' in class_names.split() or 'en' in class_names.split() for class_names in classes):
                             unlocalized.append(node.strip())
                 self.assertEqual(unlocalized, [], f'unlocalized Chinese text: {unlocalized}')
+
+    def test_integrated_case_sources_and_media_are_preserved(self):
+        document = html.fromstring((ROOT / 'Item_ISS_Meeting_R5.html').read_text())
+        for case, count in [('c02', 7), ('c05', 6)]:
+            for number in range(1, count + 1):
+                page_id = f'r5_{case}_{number:02d}'
+                with self.subTest(page_id=page_id):
+                    native = html.fromstring((ROOT / f'slides-source/detailed/{page_id}.html').read_text())
+                    source = native.xpath('//div[@class="slide-container"]')[0]
+                    scene = document.get_element_by_id(page_id)
+                    built = scene.xpath('./div[@class="slide-container"]')[0]
+                    self.assertEqual(source.text_content(), built.text_content())
+        self.assertFalse(document.xpath('//*[@id="r5_c05_07"]'))
+        self.assertTrue(document.get_element_by_id('r5_c05_01').xpath('.//a[@href="https://youtu.be/5mhN76BEO8M"]'))
+        config = (ROOT / 'assets/site-config.js').read_text()
+        self.assertIn('media/c02-dynamic-forms/index.html', config)
+        self.assertTrue((ROOT / 'media/c02-dynamic-forms/index.html').is_file())
 
     def test_css_injection_handles_explicit_and_omitted_head_end(self):
         for head_end in ("</head>", "", "</HEAD>"):
