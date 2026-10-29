@@ -125,7 +125,7 @@
     },
     {
       "id": "b5_02_day1",
-      "title": "Day 1：八案例与流程组织对标",
+      "title": "Day 1：八案例、平台演进与 ISS 对标",
       "en": "Day 1: Eight cases, platform evolution and ISS benchmarking",
       "md": "D1.2",
       "refs": [
@@ -206,7 +206,7 @@
     {
       "id": "b5_07_observe_act",
       "title": "从观察到执行：Record、CEC",
-      "en": "From observation to execution: Record and CEC",
+      "en": "From observation to execution: Record, CEC",
       "md": "D1.2.0",
       "refs": [
         "D1.2.0"

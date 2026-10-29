@@ -912,8 +912,8 @@
     },
     {
       "id": "r5_c09_00",
-      "title": "其他踩过的坑：先定义可验收的业务结果",
-      "en": "Other failure patterns: define the business result first",
+      "title": "其他踩过的坑：",
+      "en": "Other failure patterns:",
       "md": "D1.2.8.0",
       "refs": [
         "D1.2.8.0"
@@ -1000,8 +1000,8 @@
     },
     {
       "id": "r5_c09_08",
-      "title": "自建模型实验全景：目标、过程与验证结果",
-      "en": "Self-built model experiment: target, process and validation",
+      "title": "自建模型实验：目标、过程与验证结果",
+      "en": "Private model experiment: process and results",
       "md": "D1.2.8.3",
       "refs": [
         "D1.2.8.3"
@@ -1018,8 +1018,8 @@
     },
     {
       "id": "r5_c09_09",
-      "title": "自建私有模型训练的 14 个技术限制",
-      "en": "14 technical limits of a self-built private model",
+      "title": "自建私有模型的 14 个技术限制",
+      "en": "14 technical limits of the private model",
       "md": "D1.2.8.3",
       "refs": [
         "D1.2.8.3"
@@ -1036,8 +1036,8 @@
     },
     {
       "id": "r5_c09_10",
-      "title": "两种技术路线的本质差异",
-      "en": "The architectural difference between the two routes",
+      "title": "自建模型与 LLM：两种路线的能力边界",
+      "en": "Private NLP and LLM: capability boundaries",
       "md": "D1.2.8.3",
       "refs": [
         "D1.2.8.3"
@@ -1264,7 +1264,7 @@
     {
       "id": "d41_factory",
       "title": "Factory：让专业人员构建、评测和治理",
-      "summary": "3.3；FDE SeniorDev COOAI DT按需，草案GroupAgent接能力测试发布版本日志。",
+      "summary": "3.3；FDE SeniorDev COOAI COO AI Team按需，草案GroupAgent接能力测试发布版本日志。",
       "md": "D1.3.3",
       "refs": [
         "D1.3.3"
@@ -1349,7 +1349,7 @@
     {
       "id": "d46_ontology_cycle",
       "title": "Ontology 共建：按任务复杂度选择规模",
-      "summary": "3.4；采集审核对象关系规则行动验证发布反馈，OwnerFDE COOITEM DT按需。",
+      "summary": "3.4；采集审核对象关系规则行动验证发布反馈，OwnerFDE COOITEM COO AI Team按需。",
       "md": "D1.3.4",
       "refs": [
         "D1.3.4"
@@ -1601,7 +1601,7 @@
     },
     {
       "id": "d51_joint_roles",
-      "title": "三部门共建，DT 按需支撑",
+      "title": "三部门共建，COO AI Team 按需支撑",
       "summary": "4.1D；ISS业务Owner COOAI直接能力团队ITEM工程FDE专家审批运营，不绕权。",
       "md": "D1.5.1",
       "refs": [
@@ -1613,7 +1613,7 @@
       "total": 144,
       "notes": false,
       "case": null,
-      "en": "Three-Way Build, DT as Needed",
+      "en": "Three-Way Build, COO AI Team as Needed",
       "index": 91
     },
     {
