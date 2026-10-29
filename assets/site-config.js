@@ -13,7 +13,8 @@
       c04: { src: '', poster: '', title: 'ISS BO', captions: '' },
       c05: { src: '', poster: '', title: 'Record & Reply · FMS 客服工单演示', captions: '' }, // The c05 source slide uses the local MP4 player.
       c06: { src: '', poster: '', title: 'ISS CEC + Genesys', captions: '' },
-      c08: { src: '', poster: '', title: 'iCEO 失败案例', captions: '' },
+      c08: { youtube: '', src: '', poster: '', title: 'iCEO 功能介绍', captions: '' }, // 功能介绍：填 YouTube 分享链接或 watch 链接。
+      c08_cases: { youtube: '', src: '', poster: '', title: 'iCEO 成功案例与决策边界', captions: '' }, // 案例对照：独立更新第二段 YouTube 链接。
       c09: { src: '', poster: '', title: '其他踩过的坑', captions: '' }
     }
   };

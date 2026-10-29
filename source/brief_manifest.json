@@ -221,8 +221,8 @@
     },
     {
       "id": "b5_08_failures",
-      "title": "失败与边界：知道何时缩小、停止或转交",
-      "en": "Failures and boundaries: when to narrow, stop or hand off",
+      "title": "iCEO 与其他实践：成功条件和失败教训",
+      "en": "iCEO and other practices: success conditions and lessons",
       "md": "D1.2.0",
       "refs": [
         "D1.2.0"

@@ -102,7 +102,7 @@
       ],
       "md": "overview",
       "number": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "index": 0
@@ -118,7 +118,7 @@
       ],
       "md": "day1",
       "number": 2,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "index": 1
@@ -135,7 +135,7 @@
       "chapter": 1,
       "number": 3,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "ITEM: three working surfaces",
@@ -153,7 +153,7 @@
       ],
       "md": "D1.1.3",
       "number": 4,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "index": 3
@@ -172,7 +172,7 @@
       "notes": false,
       "index": 4,
       "number": 5,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c01_01",
@@ -188,7 +188,7 @@
       "notes": true,
       "index": 5,
       "number": 6,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c01_02",
@@ -204,7 +204,7 @@
       "notes": true,
       "index": 6,
       "number": 7,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c01_03",
@@ -220,7 +220,7 @@
       "notes": true,
       "index": 7,
       "number": 8,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c01_04",
@@ -236,7 +236,7 @@
       "notes": true,
       "index": 8,
       "number": 9,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c01_05",
@@ -252,7 +252,7 @@
       "notes": true,
       "index": 9,
       "number": 10,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c02_01",
@@ -268,7 +268,7 @@
       "notes": true,
       "index": 10,
       "number": 11,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c02_02",
@@ -284,7 +284,7 @@
       "notes": true,
       "index": 11,
       "number": 12,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c02_03",
@@ -300,7 +300,7 @@
       "notes": true,
       "index": 12,
       "number": 13,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c02_04",
@@ -316,7 +316,7 @@
       "notes": true,
       "index": 13,
       "number": 14,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c02_05",
@@ -332,7 +332,7 @@
       "notes": true,
       "index": 14,
       "number": 15,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c02_06",
@@ -348,7 +348,7 @@
       "notes": true,
       "index": 15,
       "number": 16,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c02_07",
@@ -364,7 +364,7 @@
       "notes": true,
       "index": 16,
       "number": 17,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c03_01",
@@ -380,7 +380,7 @@
       "notes": true,
       "index": 17,
       "number": 18,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c03_02",
@@ -396,7 +396,7 @@
       "notes": true,
       "index": 18,
       "number": 19,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c03_03",
@@ -412,7 +412,7 @@
       "notes": true,
       "index": 19,
       "number": 20,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c03_04",
@@ -428,7 +428,7 @@
       "notes": true,
       "index": 20,
       "number": 21,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c03_05",
@@ -444,7 +444,7 @@
       "notes": true,
       "index": 21,
       "number": 22,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c03_06",
@@ -460,7 +460,7 @@
       "notes": true,
       "index": 22,
       "number": 23,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c03_07",
@@ -476,7 +476,7 @@
       "notes": true,
       "index": 23,
       "number": 24,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c04_01",
@@ -492,7 +492,7 @@
       "notes": true,
       "index": 24,
       "number": 25,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c04_02",
@@ -508,7 +508,7 @@
       "notes": true,
       "index": 25,
       "number": 26,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c04_03",
@@ -524,7 +524,7 @@
       "notes": true,
       "index": 26,
       "number": 27,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c04_04",
@@ -540,7 +540,7 @@
       "notes": true,
       "index": 27,
       "number": 28,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c04_05",
@@ -556,7 +556,7 @@
       "notes": true,
       "index": 28,
       "number": 29,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c04_06",
@@ -572,7 +572,7 @@
       "notes": true,
       "index": 29,
       "number": 30,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c04_07",
@@ -588,7 +588,7 @@
       "notes": true,
       "index": 30,
       "number": 31,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c05_01",
@@ -604,7 +604,7 @@
       "notes": true,
       "index": 31,
       "number": 32,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c05_02",
@@ -620,7 +620,7 @@
       "notes": true,
       "index": 32,
       "number": 33,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c05_03",
@@ -636,7 +636,7 @@
       "notes": true,
       "index": 33,
       "number": 34,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c05_04",
@@ -652,7 +652,7 @@
       "notes": true,
       "index": 34,
       "number": 35,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c05_05",
@@ -668,7 +668,7 @@
       "notes": true,
       "index": 35,
       "number": 36,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c05_06",
@@ -684,7 +684,7 @@
       "notes": true,
       "index": 36,
       "number": 37,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c06_01",
@@ -700,7 +700,7 @@
       "notes": true,
       "index": 37,
       "number": 38,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c06_02",
@@ -716,7 +716,7 @@
       "notes": true,
       "index": 38,
       "number": 39,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c06_03",
@@ -732,7 +732,7 @@
       "notes": true,
       "index": 39,
       "number": 40,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c06_04",
@@ -748,7 +748,7 @@
       "notes": true,
       "index": 40,
       "number": 41,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c06_05",
@@ -764,7 +764,7 @@
       "notes": true,
       "index": 41,
       "number": 42,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c06_06",
@@ -780,7 +780,7 @@
       "notes": true,
       "index": 42,
       "number": 43,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c06_07",
@@ -796,12 +796,12 @@
       "notes": true,
       "index": 43,
       "number": 44,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c08_01",
-      "title": "iCEO：先把业务边界说清",
-      "en": "iCEO: make the business boundary explicit first",
+      "title": "iCEO：功能、成功案例与失败教训",
+      "en": "iCEO: capabilities, success cases and failure lessons",
       "md": "D1.2.7.1",
       "refs": [
         "D1.2.7.1"
@@ -812,12 +812,12 @@
       "notes": true,
       "index": 44,
       "number": 45,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c08_02",
-      "title": "受控闭环：答复、拒答、接管、回写",
-      "en": "A controlled loop: answer, refuse, hand off, write back",
+      "title": "查事：从一句问题找到相关记录",
+      "en": "Lookup: find relevant records from one question",
       "md": "D1.2.7.2",
       "refs": [
         "D1.2.7.2"
@@ -828,12 +828,12 @@
       "notes": true,
       "index": 45,
       "number": 46,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c08_03",
-      "title": "实施：把失败条件变成可回归机制",
-      "en": "Implementation: turn failure conditions into regression mechanisms",
+      "title": "办事：从查到信息，到确认后执行",
+      "en": "Action: from information to confirmed execution",
       "md": "D1.2.7.3",
       "refs": [
         "D1.2.7.3"
@@ -844,12 +844,12 @@
       "notes": true,
       "index": 46,
       "number": 47,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c08_04",
-      "title": "组织与价值：先定义证据，再谈验收",
-      "en": "Organization and value: define evidence before acceptance",
+      "title": "可控：身份、知识与动作都有边界",
+      "en": "Control: identity, knowledge and action boundaries",
       "md": "D1.2.7.4",
       "refs": [
         "D1.2.7.4"
@@ -860,12 +860,12 @@
       "notes": true,
       "index": 47,
       "number": 48,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c08_05",
-      "title": "ISS 对标：把未知项带进会中",
-      "en": "ISS benchmark: bring unknowns into the room",
+      "title": "成功案例：三家供应商，如何选出一家？",
+      "en": "Success case: choosing among three suppliers",
       "md": "D1.2.7.5",
       "refs": [
         "D1.2.7.5"
@@ -876,12 +876,12 @@
       "notes": true,
       "index": 48,
       "number": 49,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c08_06",
-      "title": "思考：把业务变更做成可审计链",
-      "en": "Reflection: make business change an auditable chain",
+      "title": "为什么选对：先筛约束，再比较价格",
+      "en": "Why it worked: constraints before price",
       "md": "D1.2.7.6",
       "refs": [
         "D1.2.7.6"
@@ -892,12 +892,12 @@
       "notes": true,
       "index": 49,
       "number": 50,
-      "total": 144
+      "total": 148
     },
     {
       "id": "r5_c08_07",
-      "title": "可重复交付：小范围能力卡与停止机制",
-      "en": "Repeatable delivery: a small capability card and stop rule",
+      "title": "失败教训：能回答，为什么仍做不好复杂决策？",
+      "en": "Failure lesson: answers do not establish decision quality",
       "md": "D1.2.7.7",
       "refs": [
         "D1.2.7.7"
@@ -908,7 +908,71 @@
       "notes": true,
       "index": 50,
       "number": 51,
-      "total": 144
+      "total": 148
+    },
+    {
+      "id": "r5_c08_08",
+      "title": "复杂案例：现在能批准新泽西自营仓吗？",
+      "en": "Complex case: approve a New Jersey warehouse now?",
+      "md": "D1.2.7.8",
+      "refs": [
+        "D1.2.7.8"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "c08",
+      "notes": true,
+      "index": 51,
+      "number": 52,
+      "total": 148
+    },
+    {
+      "id": "r5_c08_09",
+      "title": "容易失败的地方：把需求线索推成投资结论",
+      "en": "Decision risk: jumping from demand to investment",
+      "md": "D1.2.7.9",
+      "refs": [
+        "D1.2.7.9"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "c08",
+      "notes": true,
+      "index": 52,
+      "number": 53,
+      "total": 148
+    },
+    {
+      "id": "r5_c08_10",
+      "title": "当前改进：先识别缺口，再给出下一步",
+      "en": "Current improvement: identify gaps and next steps",
+      "md": "D1.2.7.10",
+      "refs": [
+        "D1.2.7.10"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "c08",
+      "notes": true,
+      "index": 53,
+      "number": 54,
+      "total": 148
+    },
+    {
+      "id": "r5_c08_11",
+      "title": "如何用好 iCEO：让输出与证据相匹配",
+      "en": "Using iCEO: match output to evidence",
+      "md": "D1.2.7.11",
+      "refs": [
+        "D1.2.7.11"
+      ],
+      "chapter": 2,
+      "day": 1,
+      "case": "c08",
+      "notes": true,
+      "index": 54,
+      "number": 55,
+      "total": 148
     },
     {
       "id": "r5_c09_00",
@@ -922,9 +986,9 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 51,
-      "number": 52,
-      "total": 144
+      "index": 55,
+      "number": 56,
+      "total": 148
     },
     {
       "id": "r5_c09_01",
@@ -938,9 +1002,9 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 52,
-      "number": 53,
-      "total": 144,
+      "index": 56,
+      "number": 57,
+      "total": 148,
       "topic": "知识抽取与知识生成",
       "topic_en": "Knowledge extraction and generation"
     },
@@ -956,9 +1020,9 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 53,
-      "number": 54,
-      "total": 144,
+      "index": 57,
+      "number": 58,
+      "total": 148,
       "topic": "知识抽取与知识生成",
       "topic_en": "Knowledge extraction and generation"
     },
@@ -974,9 +1038,9 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 54,
-      "number": 55,
-      "total": 144,
+      "index": 58,
+      "number": 59,
+      "total": 148,
       "topic": "知识抽取与知识生成",
       "topic_en": "Knowledge extraction and generation"
     },
@@ -992,9 +1056,9 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 55,
-      "number": 56,
-      "total": 144,
+      "index": 59,
+      "number": 60,
+      "total": 148,
       "topic": "WMS Agent：业务本体连接规则与动作",
       "topic_en": "WMS Agent: ontology connects rules to actions"
     },
@@ -1010,9 +1074,9 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 56,
-      "number": 57,
-      "total": 144,
+      "index": 60,
+      "number": 61,
+      "total": 148,
       "topic": "自建模型实验复盘",
       "topic_en": "Self-built model experiment review"
     },
@@ -1028,9 +1092,9 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 57,
-      "number": 58,
-      "total": 144,
+      "index": 61,
+      "number": 62,
+      "total": 148,
       "topic": "自建模型实验复盘",
       "topic_en": "Self-built model experiment review"
     },
@@ -1046,9 +1110,9 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 58,
-      "number": 59,
-      "total": 144,
+      "index": 62,
+      "number": 63,
+      "total": 148,
       "topic": "自建模型实验复盘",
       "topic_en": "Self-built model experiment review"
     },
@@ -1064,9 +1128,9 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 59,
-      "number": 60,
-      "total": 144,
+      "index": 63,
+      "number": 64,
+      "total": 148,
       "topic": "小模型训练复盘：样本、规则与可解释性的边界",
       "topic_en": "Small-model training review: limits of samples, rules and explainability"
     },
@@ -1082,9 +1146,9 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 60,
-      "number": 61,
-      "total": 144,
+      "index": 64,
+      "number": 65,
+      "total": 148,
       "topic": "小模型训练复盘：样本、规则与可解释性的边界",
       "topic_en": "Small-model training review: limits of samples, rules and explainability"
     },
@@ -1100,9 +1164,9 @@
       "day": 1,
       "case": "c09",
       "notes": true,
-      "index": 61,
-      "number": 62,
-      "total": 144,
+      "index": 65,
+      "number": 66,
+      "total": 148,
       "topic": "AI 招聘的跨国本地化",
       "topic_en": "AI recruitment localisation"
     },
@@ -1119,9 +1183,9 @@
       "day": 1,
       "notes": true,
       "case": "c09",
-      "index": 62,
-      "number": 63,
-      "total": 144,
+      "index": 66,
+      "number": 67,
+      "total": 148,
       "topic": "可信 Agent：一套标准，三重保障",
       "topic_en": "Trustworthy agents: one set of standards, three safeguards"
     },
@@ -1134,13 +1198,13 @@
         "D1.3.1"
       ],
       "chapter": 3,
-      "number": 64,
+      "number": 68,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "After the cases: one entry is not one chat window",
-      "index": 63
+      "index": 67
     },
     {
       "id": "d34_writeback",
@@ -1151,13 +1215,13 @@
         "D1.3.1"
       ],
       "chapter": 3,
-      "number": 65,
+      "number": 69,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Two writebacks: business facts and capability knowledge",
-      "index": 64
+      "index": 68
     },
     {
       "id": "d35_action_control",
@@ -1168,13 +1232,13 @@
         "D1.3.1"
       ],
       "chapter": 3,
-      "number": 66,
+      "number": 70,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "The accountability boundary from suggestion to action",
-      "index": 65
+      "index": 69
     },
     {
       "id": "d36_data_hub",
@@ -1185,13 +1249,13 @@
         "D1.3.2"
       ],
       "chapter": 3,
-      "number": 67,
+      "number": 71,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Data Hub: trusted facts and traceable context",
-      "index": 66
+      "index": 70
     },
     {
       "id": "d37_model_hub",
@@ -1202,13 +1266,13 @@
         "D1.3.2"
       ],
       "chapter": 3,
-      "number": 68,
+      "number": 72,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Hybrid AI: understanding, prediction and optimization each have a role",
-      "index": 67
+      "index": 71
     },
     {
       "id": "d38_marketplace",
@@ -1219,13 +1283,13 @@
         "D1.3.2"
       ],
       "chapter": 3,
-      "number": 69,
+      "number": 73,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Connector, Tools, Skill and the technical Marketplace",
-      "index": 68
+      "index": 72
     },
     {
       "id": "d39_dashboard_cost",
@@ -1236,13 +1300,13 @@
         "D1.3.2"
       ],
       "chapter": 3,
-      "number": 70,
+      "number": 74,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Dashboard connects adoption, quality and cost",
-      "index": 69
+      "index": 73
     },
     {
       "id": "d40_runtime",
@@ -1253,13 +1317,13 @@
         "D1.3.3"
       ],
       "chapter": 3,
-      "number": 71,
+      "number": 75,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Runtime: use, standardization and background execution",
-      "index": 70
+      "index": 74
     },
     {
       "id": "d41_factory",
@@ -1270,13 +1334,13 @@
         "D1.3.3"
       ],
       "chapter": 3,
-      "number": 72,
+      "number": 76,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Factory: let specialists build, evaluate and govern",
-      "index": 71
+      "index": 75
     },
     {
       "id": "d42_qualification",
@@ -1287,13 +1351,13 @@
         "D1.3.3"
       ],
       "chapter": 3,
-      "number": 73,
+      "number": 77,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Qualification and Internal Logging",
-      "index": 72
+      "index": 76
     },
     {
       "id": "d43_skill_modes",
@@ -1304,13 +1368,13 @@
         "D1.3.3"
       ],
       "chapter": 3,
-      "number": 74,
+      "number": 78,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Skill A/B: validate first, then service by maturity",
-      "index": 73
+      "index": 77
     },
     {
       "id": "d44_hollis_governance",
@@ -1321,13 +1385,13 @@
         "D1.3.3"
       ],
       "chapter": 3,
-      "number": 75,
+      "number": 79,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Open → Transform → Engineer: staged governance",
-      "index": 74
+      "index": 78
     },
     {
       "id": "d45_knowledge_inputs",
@@ -1338,13 +1402,13 @@
         "D1.3.4"
       ],
       "chapter": 3,
-      "number": 76,
+      "number": 80,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Four starting points for knowledge mining",
-      "index": 75
+      "index": 79
     },
     {
       "id": "d46_ontology_cycle",
@@ -1355,13 +1419,13 @@
         "D1.3.4"
       ],
       "chapter": 3,
-      "number": 77,
+      "number": 81,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Co-build ontology at the right task scale",
-      "index": 76
+      "index": 80
     },
     {
       "id": "d47_knowledge_states",
@@ -1372,13 +1436,13 @@
         "D1.3.4"
       ],
       "chapter": 3,
-      "number": 78,
+      "number": 82,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Raw records, drafts, review and release must stay separate",
-      "index": 77
+      "index": 81
     },
     {
       "id": "r5_platform_evolution",
@@ -1392,9 +1456,9 @@
       "day": 1,
       "case": null,
       "notes": false,
-      "index": 78,
-      "number": 79,
-      "total": 144
+      "index": 82,
+      "number": 83,
+      "total": 148
     },
     {
       "id": "d61_accuracy",
@@ -1405,13 +1469,13 @@
         "D1.4.1"
       ],
       "chapter": 4,
-      "number": 80,
+      "number": 84,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Accuracy: define the gate by task, risk and evidence",
-      "index": 79
+      "index": 83
     },
     {
       "id": "d62_super_agent",
@@ -1422,13 +1486,13 @@
         "D1.4.2"
       ],
       "chapter": 4,
-      "number": 81,
+      "number": 85,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Super Agent: orchestration, not unlimited access",
-      "index": 80
+      "index": 84
     },
     {
       "id": "d63_supplyx",
@@ -1439,13 +1503,13 @@
         "D1.4.3"
       ],
       "chapter": 4,
-      "number": 82,
+      "number": 86,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "SupplyX: Confirm Scope Before Comparing Reuse",
-      "index": 81
+      "index": 85
     },
     {
       "id": "d64_copilot",
@@ -1456,13 +1520,13 @@
         "D1.4.4"
       ],
       "chapter": 4,
-      "number": 83,
+      "number": 87,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Copilot: Keep the Entry, Verify the Integration",
-      "index": 82
+      "index": 86
     },
     {
       "id": "d65_activity",
@@ -1473,13 +1537,13 @@
         "D1.4.5"
       ],
       "chapter": 4,
-      "number": 84,
+      "number": 88,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Agent Activity: Adoption and Effective Tasks",
-      "index": 83
+      "index": 87
     },
     {
       "id": "d66_business_value",
@@ -1490,13 +1554,13 @@
         "D1.4.5"
       ],
       "chapter": 4,
-      "number": 85,
+      "number": 89,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Business Value: Baseline, Cost and Outcomes",
-      "index": 84
+      "index": 88
     },
     {
       "id": "d67_ap_inventory",
@@ -1507,13 +1571,13 @@
         "D1.4.6"
       ],
       "chapter": 4,
-      "number": 86,
+      "number": 90,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "AP Agents: Build the Reuse Inventory",
-      "index": 85
+      "index": 89
     },
     {
       "id": "d68_ap_reuse",
@@ -1524,13 +1588,13 @@
         "D1.4.6"
       ],
       "chapter": 4,
-      "number": 87,
+      "number": 91,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "AP Reuse: Classify, Integrate, Don’t Rewrite All",
-      "index": 86
+      "index": 90
     },
     {
       "id": "r4_risk_to_implementation",
@@ -1542,11 +1606,11 @@
         "D1.4.7"
       ],
       "md": "D1.4.7",
-      "number": 88,
-      "total": 144,
+      "number": 92,
+      "total": 148,
       "notes": false,
       "case": null,
-      "index": 87
+      "index": 91
     },
     {
       "id": "d48_best_practice",
@@ -1557,13 +1621,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 89,
+      "number": 93,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "ISS Best Practice: Two Axes",
-      "index": 88
+      "index": 92
     },
     {
       "id": "d49_reform_process",
@@ -1574,13 +1638,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 90,
+      "number": 94,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Reform the Process, Not Just the Chat Entry",
-      "index": 89
+      "index": 93
     },
     {
       "id": "d50_accelerator",
@@ -1591,13 +1655,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 91,
+      "number": 95,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Align Existing Accelerator Capabilities",
-      "index": 90
+      "index": 94
     },
     {
       "id": "d51_joint_roles",
@@ -1608,13 +1672,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 92,
+      "number": 96,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Three-Way Build, COO AI Team as Needed",
-      "index": 91
+      "index": 95
     },
     {
       "id": "d52_phase1",
@@ -1625,13 +1689,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 93,
+      "number": 97,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Phase 1: Discover Knowledge & Practice",
-      "index": 92
+      "index": 96
     },
     {
       "id": "d53_phase2",
@@ -1642,13 +1706,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 94,
+      "number": 98,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Phase 2: Prepare the Capability Base",
-      "index": 93
+      "index": 97
     },
     {
       "id": "d54_phase3",
@@ -1659,13 +1723,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 95,
+      "number": 99,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Phase 3: Co-build Agent & Flow",
-      "index": 94
+      "index": 98
     },
     {
       "id": "d55_phase4",
@@ -1676,13 +1740,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 96,
+      "number": 100,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Phase 4: Training & Adoption",
-      "index": 95
+      "index": 99
     },
     {
       "id": "d56_phase5",
@@ -1693,13 +1757,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 97,
+      "number": 101,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Phase 5: Optimize & Deepen",
-      "index": 96
+      "index": 100
     },
     {
       "id": "d57_phase6",
@@ -1710,13 +1774,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 98,
+      "number": 102,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Phase 6: Productize",
-      "index": 97
+      "index": 101
     },
     {
       "id": "d58_phase7",
@@ -1727,13 +1791,13 @@
         "D1.5.1"
       ],
       "chapter": 5,
-      "number": 99,
+      "number": 103,
       "day": 1,
-      "total": 144,
+      "total": 148,
       "notes": false,
       "case": null,
       "en": "Phase 7: Replicate & Promote",
-      "index": 98
+      "index": 102
     },
     {
       "id": "r4_day1_inputs",
@@ -1745,11 +1809,11 @@
         "D1.5.1"
       ],
       "md": "D1.5.1",
-      "number": 100,
-      "total": 144,
+      "number": 104,
+      "total": 148,
       "notes": false,
       "case": null,
-      "index": 99
+      "index": 103
     },
     {
       "id": "r4_moat",
@@ -1761,11 +1825,11 @@
         "D1.5.1"
       ],
       "md": "D1.5.1",
-      "number": 101,
-      "total": 144,
+      "number": 105,
+      "total": 148,
       "notes": false,
       "case": null,
-      "index": 100
+      "index": 104
     },
     {
       "id": "r4_day1_fields",
@@ -1777,11 +1841,11 @@
         "D1.5.2"
       ],
       "md": "D1.5.2",
-      "number": 102,
-      "total": 144,
+      "number": 106,
+      "total": 148,
       "notes": false,
       "case": null,
-      "index": 101
+      "index": 105
     },
     {
       "id": "r4_d2_cover",
@@ -1793,11 +1857,11 @@
         "day2"
       ],
       "md": "day2",
-      "number": 103,
-      "total": 144,
+      "number": 107,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 102
+      "index": 106
     },
     {
       "id": "r4_d2_agenda",
@@ -1809,11 +1873,11 @@
         "day2"
       ],
       "md": "day2",
-      "number": 104,
-      "total": 144,
+      "number": 108,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 103
+      "index": 107
     },
     {
       "id": "r5_d2_blueprint",
@@ -1827,9 +1891,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 104,
-      "number": 105,
-      "total": 144
+      "index": 108,
+      "number": 109,
+      "total": 148
     },
     {
       "id": "r5_d2_future_work",
@@ -1843,9 +1907,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 105,
-      "number": 106,
-      "total": 144
+      "index": 109,
+      "number": 110,
+      "total": 148
     },
     {
       "id": "r4_hollis_elements",
@@ -1858,11 +1922,11 @@
         "D2.1.12"
       ],
       "md": "D2.1.11",
-      "number": 107,
-      "total": 144,
+      "number": 111,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 106
+      "index": 110
     },
     {
       "id": "r4_hollis_evolution",
@@ -1875,11 +1939,11 @@
         "D2.1.14"
       ],
       "md": "D2.1.12",
-      "number": 108,
-      "total": 144,
+      "number": 112,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 107
+      "index": 111
     },
     {
       "id": "r4_hollis_cooperation",
@@ -1892,11 +1956,11 @@
         "D2.1.15"
       ],
       "md": "D2.1.13",
-      "number": 109,
-      "total": 144,
+      "number": 113,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 108
+      "index": 112
     },
     {
       "id": "r4_domain_template",
@@ -1908,11 +1972,11 @@
         "D2.2.2"
       ],
       "md": "D2.2.2",
-      "number": 110,
-      "total": 144,
+      "number": 114,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 109
+      "index": 113
     },
     {
       "id": "r4_domain_cec",
@@ -1925,11 +1989,11 @@
         "D1.2.6"
       ],
       "md": "D2.2.3",
-      "number": 111,
-      "total": 144,
+      "number": 115,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 110
+      "index": 114
     },
     {
       "id": "r4_domain_eservice",
@@ -1942,11 +2006,11 @@
         "D1.2.7"
       ],
       "md": "D2.2.3",
-      "number": 112,
-      "total": 144,
+      "number": 116,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 111
+      "index": 115
     },
     {
       "id": "r4_domain_bo",
@@ -1959,11 +2023,11 @@
         "D1.2.4"
       ],
       "md": "D2.2.3",
-      "number": 113,
-      "total": 144,
+      "number": 117,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 112
+      "index": 116
     },
     {
       "id": "r4_domain_procurement",
@@ -1975,11 +2039,11 @@
         "D2.2.3"
       ],
       "md": "D2.2.3",
-      "number": 114,
-      "total": 144,
+      "number": 118,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 113
+      "index": 117
     },
     {
       "id": "r4_domain_parts",
@@ -1991,11 +2055,11 @@
         "D2.2.3"
       ],
       "md": "D2.2.3",
-      "number": 115,
-      "total": 144,
+      "number": 119,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 114
+      "index": 118
     },
     {
       "id": "r4_domain_ukm",
@@ -2008,11 +2072,11 @@
         "D1.3.4"
       ],
       "md": "D2.2.3",
-      "number": 116,
-      "total": 144,
+      "number": 120,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 115
+      "index": 119
     },
     {
       "id": "r4_domain_synthesis",
@@ -2026,11 +2090,11 @@
         "D2.2.6"
       ],
       "md": "D2.2.4",
-      "number": 117,
-      "total": 144,
+      "number": 121,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 116
+      "index": 120
     },
     {
       "id": "r5_d2_gap_map",
@@ -2044,9 +2108,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 117,
-      "number": 118,
-      "total": 144
+      "index": 121,
+      "number": 122,
+      "total": 148
     },
     {
       "id": "r5_d2_breakthroughs",
@@ -2060,9 +2124,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 118,
-      "number": 119,
-      "total": 144
+      "index": 122,
+      "number": 123,
+      "total": 148
     },
     {
       "id": "r5_d2_four_lanes",
@@ -2076,9 +2140,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 119,
-      "number": 120,
-      "total": 144
+      "index": 123,
+      "number": 124,
+      "total": 148
     },
     {
       "id": "r5_d2_hands_on",
@@ -2092,9 +2156,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 120,
-      "number": 121,
-      "total": 144
+      "index": 124,
+      "number": 125,
+      "total": 148
     },
     {
       "id": "r4_assets_types",
@@ -2106,11 +2170,11 @@
         "D2.3.11"
       ],
       "md": "D2.3.11",
-      "number": 122,
-      "total": 144,
+      "number": 126,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 121
+      "index": 125
     },
     {
       "id": "r4_assets_before_release",
@@ -2122,11 +2186,11 @@
         "D2.3.12"
       ],
       "md": "D2.3.12",
-      "number": 123,
-      "total": 144,
+      "number": 127,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 122
+      "index": 126
     },
     {
       "id": "r4_assets_after_release",
@@ -2138,11 +2202,11 @@
         "D2.3.12"
       ],
       "md": "D2.3.12",
-      "number": 124,
-      "total": 144,
+      "number": 128,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 123
+      "index": 127
     },
     {
       "id": "r4_asset_card",
@@ -2154,11 +2218,11 @@
         "D2.3.13"
       ],
       "md": "D2.3.13",
-      "number": 125,
-      "total": 144,
+      "number": 129,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 124
+      "index": 128
     },
     {
       "id": "r4_asset_evolution",
@@ -2171,11 +2235,11 @@
         "D2.3.14"
       ],
       "md": "D2.3.13",
-      "number": 126,
-      "total": 144,
+      "number": 130,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 125
+      "index": 129
     },
     {
       "id": "r4_org_native",
@@ -2187,11 +2251,11 @@
         "D2.3.21"
       ],
       "md": "D2.3.21",
-      "number": 127,
-      "total": 144,
+      "number": 131,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 126
+      "index": 130
     },
     {
       "id": "r4_org_roles",
@@ -2203,11 +2267,11 @@
         "D2.3.22"
       ],
       "md": "D2.3.22",
-      "number": 128,
-      "total": 144,
+      "number": 132,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 127
+      "index": 131
     },
     {
       "id": "r4_org_operation",
@@ -2219,11 +2283,11 @@
         "D2.3.23"
       ],
       "md": "D2.3.23",
-      "number": 129,
-      "total": 144,
+      "number": 133,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 128
+      "index": 132
     },
     {
       "id": "r4_org_human",
@@ -2236,11 +2300,11 @@
         "D2.3.24"
       ],
       "md": "D2.3.23",
-      "number": 130,
-      "total": 144,
+      "number": 134,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 129
+      "index": 133
     },
     {
       "id": "r4_unified_roadmap",
@@ -2252,11 +2316,11 @@
         "D2.5.12"
       ],
       "md": "D2.5.12",
-      "number": 131,
-      "total": 144,
+      "number": 135,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 130
+      "index": 134
     },
     {
       "id": "r5_d2_ip",
@@ -2270,9 +2334,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 131,
-      "number": 132,
-      "total": 144
+      "index": 135,
+      "number": 136,
+      "total": 148
     },
     {
       "id": "r5_d2_product",
@@ -2286,9 +2350,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 132,
-      "number": 133,
-      "total": 144
+      "index": 136,
+      "number": 137,
+      "total": 148
     },
     {
       "id": "r5_d2_december",
@@ -2302,9 +2366,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 133,
-      "number": 134,
-      "total": 144
+      "index": 137,
+      "number": 138,
+      "total": 148
     },
     {
       "id": "r5_d2_outputs",
@@ -2318,9 +2382,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 134,
-      "number": 135,
-      "total": 144
+      "index": 138,
+      "number": 139,
+      "total": 148
     },
     {
       "id": "r4_unified_fields",
@@ -2333,11 +2397,11 @@
         "D2.5.13"
       ],
       "md": "D2.5.11",
-      "number": 136,
-      "total": 144,
+      "number": 140,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 135
+      "index": 139
     },
     {
       "id": "r4_unified_dependencies",
@@ -2349,11 +2413,11 @@
         "D2.5.14"
       ],
       "md": "D2.5.14",
-      "number": 137,
-      "total": 144,
+      "number": 141,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 136
+      "index": 140
     },
     {
       "id": "r4_gate_states",
@@ -2366,11 +2430,11 @@
         "D2.5.22"
       ],
       "md": "D2.5.21",
-      "number": 138,
-      "total": 144,
+      "number": 142,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 137
+      "index": 141
     },
     {
       "id": "r4_gate_actions",
@@ -2383,11 +2447,11 @@
         "D2.5.25"
       ],
       "md": "D2.5.23",
-      "number": 139,
-      "total": 144,
+      "number": 143,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 138
+      "index": 142
     },
     {
       "id": "r4_gate_authority",
@@ -2400,11 +2464,11 @@
         "D2.5.26"
       ],
       "md": "D2.5.24",
-      "number": 140,
-      "total": 144,
+      "number": 144,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 139
+      "index": 143
     },
     {
       "id": "r4_closing",
@@ -2417,11 +2481,11 @@
         "decisions"
       ],
       "md": "D2.5.26",
-      "number": 141,
-      "total": 144,
+      "number": 145,
+      "total": 148,
       "notes": true,
       "case": null,
-      "index": 140
+      "index": 144
     },
     {
       "id": "r5_convergence_form",
@@ -2435,9 +2499,9 @@
       "day": 2,
       "case": null,
       "notes": true,
-      "index": 141,
-      "number": 142,
-      "total": 144
+      "index": 145,
+      "number": 146,
+      "total": 148
     },
     {
       "id": "r4_preparation",
@@ -2449,11 +2513,11 @@
         "appendix-a"
       ],
       "md": "appendix-a",
-      "number": 143,
-      "total": 144,
+      "number": 147,
+      "total": 148,
       "notes": false,
       "case": null,
-      "index": 142
+      "index": 146
     },
     {
       "id": "r4_source_map",
@@ -2466,11 +2530,11 @@
         "appendix-c"
       ],
       "md": "overview",
-      "number": 144,
-      "total": 144,
+      "number": 148,
+      "total": 148,
       "notes": false,
       "case": null,
-      "index": 143
+      "index": 147
     }
   ],
   "schedule": {
