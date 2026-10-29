@@ -824,20 +824,28 @@ html[data-lang=en] #r5_c05_01 .en{display:revert!important}
 #r5_c05_01 .kicker{font-size:14px;letter-spacing:1.5px;color:#007f86;font-weight:700;margin-bottom:10px}
 #r5_c05_01 h1{font-size:32px;line-height:1.15;font-weight:750;letter-spacing:-.3px}
 #r5_c05_01 .lead{font-size:18px;line-height:1.45;color:#52647b;padding-top:16px;max-width:1110px}
-#r5_c05_01 .content{flex:1;display:grid;grid-template-columns:1.12fr .88fr;gap:24px;padding-top:18px}
-#r5_c05_01 .block{border-top:2px solid #d5dce4;padding-top:10px}
+#r5_c05_01 .content{flex:1;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(360px,.94fr);gap:28px;padding-top:22px;align-items:stretch}
+#r5_c05_01 .block{border:1px solid #d9e2e9;border-radius:16px;padding:18px 20px;background:#fff;box-shadow:0 10px 24px rgba(29,55,76,.06)}
 #r5_c05_01 h2{font-size:22px;line-height:1.3;color:#007f86;margin-bottom:6px}
 #r5_c05_01 p,#r5_c05_01 li,#r5_c05_01 td,#r5_c05_01 th{font-size:18px;line-height:1.38;color:#152439}
 #r5_c05_01 table{width:100%;border-collapse:collapse}
-#r5_c05_01 th{font-size:15px;letter-spacing:.4px;color:#007f86;text-align:left;padding:4px 8px 6px 0}
-#r5_c05_01 td{padding:6px 10px 6px 0;border-bottom:1px solid #dfe5ea;vertical-align:top}
+#r5_c05_01 th{font-size:13px;letter-spacing:.9px;color:#007f86;text-align:left;padding:0 10px 10px 0}
+#r5_c05_01 td{padding:10px 10px 10px 0;border-bottom:1px solid #e6edf1;vertical-align:top}
+#r5_c05_01 tr:last-child td{border-bottom:0}
 #r5_c05_01 td.pain{width:44%;color:#52647b}
 #r5_c05_01 .note{color:#52647b}
-#r5_c05_01 .video-slot{border:2px dashed #007f86;min-height:318px;padding:22px;display:flex;flex-direction:column;justify-content:center;gap:12px;background:#eef7f7}
+#r5_c05_01 .video-slot{min-height:318px;padding:12px;display:flex;flex-direction:column;justify-content:center;gap:10px;background:linear-gradient(145deg,#10152a 0%,#171d3d 100%);border:1px solid #343b62;border-radius:18px;box-shadow:0 16px 30px rgba(18,24,52,.18);overflow:hidden}
+#r5_c05_01 .video-head,#r5_c05_01 .video-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#a8b0d3;font-size:12px;line-height:1.2}
+#r5_c05_01 .video-head{padding:2px 4px 4px;letter-spacing:.08em;text-transform:uppercase}
+#r5_c05_01 .video-head .video-label{display:inline-flex;align-items:center;gap:7px;color:#d7dcff;font-weight:700}
+#r5_c05_01 .video-head .video-label::before{content:"";width:7px;height:7px;border-radius:50%;background:#55d5c4;box-shadow:0 0 0 4px rgba(85,213,196,.14)}
+#r5_c05_01 .video-foot{padding:2px 4px 0;color:#8d96bc}
+#r5_c05_01 .video-foot span:last-child{color:#c5caff;text-align:right}
+#r5_c05_01 .video-slot video{display:block;width:100%;max-width:100%;height:auto;background:#07101c;border-radius:11px;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
 #r5_c05_01 .video-slot .slot-title{font-size:24px;font-weight:750;color:#007f86}
 #r5_c05_01 .video-slot p{font-size:18px;line-height:1.45}
 #r5_c05_01 .video-slot a{color:#007f86;font-weight:700}
-#r5_c05_01 .discussion{border-top:1px solid #c9d2dc;padding-top:11px;margin-top:16px;font-size:18px;line-height:1.45;color:#152439}
+#r5_c05_01 .discussion{border-top:1px solid #c9d2dc;padding-top:11px;margin-top:18px;font-size:18px;line-height:1.45;color:#152439}
 #r5_c05_01 .discussion b{color:#007f86;margin-right:8px}
 #r5_c05_01 .foot{display:flex;justify-content:space-between;font-size:14px;color:#52647b;padding-top:14px}
 #r5_c05_02 *{margin:0;padding:0;box-sizing:border-box}
@@ -4273,10 +4281,12 @@ html[data-theme=night] #r5_agent_assurance .trust-benchmark-marker{background-co
       </table>
     </section>
     <aside class="video-slot" data-video-id="record-reply">
+      <div class="video-head"><span class="video-label"><span class="zh">现场演示</span><span class="en">FIELD DEMO</span></span><span>06:01 · FMS</span></div>
       <video controls playsinline preload="metadata" poster="media/record-reply/fms-service-ticket-poster.jpg" aria-label="FMS 客服工单演示 / FMS service ticket demo">
         <source src="media/record-reply/fms-service-ticket.mp4" type="video/mp4">
         <span class="zh">当前浏览器无法播放此视频。</span><span class="en">This browser cannot play the video.</span>
       </video>
+      <div class="video-foot"><span><span class="zh">真实系统录屏 · 已脱敏</span><span class="en">Real system · anonymized</span></span><span><span class="zh">录制 → 学习 → 回放</span><span class="en">Record → learn → replay</span></span></div>
     </aside>
   </main>
   <div class="discussion"><b><span class="zh">讨论</span><span class="en">Discussion</span></b><span class="zh">ISS 哪些流程每天在做，却很难写清楚？</span><span class="en">Which ISS flows are done every day but are hard to write down?</span></div>
