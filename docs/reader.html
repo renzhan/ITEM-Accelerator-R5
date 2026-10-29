@@ -770,7 +770,7 @@
 <p><strong>本节结论：</strong>本轮先覆盖哪些规则？哪位 FDE 与业务专家共同交付？90%具体衡量什么？扩展范围后怎样重新验收？</p>
 <hr/>
 <h4 id="md-D1-2-5">D1.2.5 General：Record &amp; Reply｜20 分钟</h4>
-<p><strong>演示视频：c05。</strong> FMS 客服工单的 Record &amp; Reply 演示，约 6 分钟，真实系统录屏、已脱敏。观看链接（YouTube）：<a href="https://youtu.be/5mhN76BEO8M">https://youtu.be/5mhN76BEO8M</a>。</p>
+<p><strong>演示视频：c05。</strong> FMS 客服工单的 Record &amp; Reply 演示，约 6 分钟，真实系统录屏、已脱敏。会中页面内直接播放本地 MP4。</p>
 <blockquote>
 <p>本节介绍 ItemGPT Record &amp; Reply 的理念和实现方式，配一段真实系统的演示视频；现场演示视时间而定。</p>
 </blockquote>
@@ -806,7 +806,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>演示视频（FMS 客服工单）。</strong> 客户在工单里询问提货进度；客服到 FMS 按单号查订单和行程，打开 Trip ETA 地图截图，再回到工单附图回复。视频依次展示录制、学习、新对话回放、一句话生成 SOP 和数据留存。真实系统录屏，个人信息与网址已脱敏，部分等待已快进；约 6 分钟，中文配音和字幕。观看链接（YouTube）：<a href="https://youtu.be/5mhN76BEO8M">https://youtu.be/5mhN76BEO8M</a></p>
+<p><strong>演示视频（FMS 客服工单）。</strong> 客户在工单里询问提货进度；客服到 FMS 按单号查订单和行程，打开 Trip ETA 地图截图，再回到工单附图回复。视频依次展示录制、学习、新对话回放、一句话生成 SOP 和数据留存。真实系统录屏，个人信息与网址已脱敏，部分等待已快进；约 6 分钟，中文配音和字幕。会中页面内直接播放本地 MP4。</p>
 <h5 id="md-D1-2-5-2">D1.2.5.2 怎么实现（一）：采集与理解</h5>
 <ol>
 <li><strong>用户发起。</strong> 在 ItemGPT 对话里说明要演示的任务，对话中出现录制卡片，用户点开始。录制只发生在用户主动开始和结束之间。</li>
@@ -821,7 +821,8 @@
 <h5 id="md-D1-2-5-3">D1.2.5.3 怎么实现（二）：沉淀与执行</h5>
 <p><strong>两份产出。</strong>
 - 技能：给 Agent 执行。默认只有本人可用；确认好用后，可以发布给同一租户的同事。
-- SOP：在学习时的对话里发一句话即可生成，包含适用场景、需要的系统和权限、每一步在哪个系统做什么和怎么判断、异常处理，以及录制中发现的待确认事项。</p>
+- SOP：在学习时的对话里发一句话即可生成。格式由一个 SOP 规范技能统一约定：适用范围、角色与权限、步骤表、异常处理、人工确认环节和待确认事项；规范要改，只改这个技能。
+- SOP 管理站点：UNIS 用它统一管理生成的 SOP，<a href="https://sop.item.pub/index.html">https://sop.item.pub/index.html</a>。</p>
 <p><strong>回放执行。</strong>
 - 新开对话，用自然语言提出需求；ItemGPT 加载技能，读取当前页面再操作，不是机械重复鼠标点击。例如 WMS 装车照片任务，换一个新的 Load No 也能完成。
 - 网页里的步骤由浏览器扩展执行；桌面应用和本地文件由 Companion 执行；两边可以交接，例如照片从 WMS 存到本地，再作为附件加进 Mail。FMS 案例中，网页里做不了的粘贴截图也由 Companion 在桌面完成。
