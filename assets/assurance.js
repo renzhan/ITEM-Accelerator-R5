@@ -12,14 +12,8 @@
     const next = host.querySelector('[data-trust-next]');
     const count = host.querySelector('.trust-count');
     const attachment = host.querySelector('.trust-attachment');
-    const opening = host.querySelector('.trust-opening');
-    const deck = host.querySelector('.trust-deck');
     const video = host.querySelector('[data-trust-video]');
     const play = host.querySelector('[data-trust-play]');
-    const returnButton = host.querySelector('[data-trust-return]');
-    const enter = host.querySelector('[data-trust-enter]');
-    const duration = host.querySelector('.trust-video-duration');
-    const pager = host.querySelector('.trust-pager');
     const videoError = host.querySelector('.trust-video-error');
     const videoFile = host.querySelector('[data-trust-video-file]');
     const animations = new Set();
@@ -39,6 +33,8 @@
         panel.setAttribute('aria-hidden', String(i !== index));
       });
       steps.forEach((step, i) => {
+        step.setAttribute('aria-selected', String(i === index));
+        step.tabIndex = i === index ? 0 : -1;
         if (i === index) step.setAttribute('aria-current', 'step');
         else step.removeAttribute('aria-current');
       });
@@ -99,24 +95,6 @@
       play.disabled = false;
       play.removeAttribute('aria-busy');
     }
-    function setVideoMode(showVideo) {
-      pauseVideo();
-      opening.hidden = !showVideo;
-      opening.inert = !showVideo;
-      deck.hidden = showVideo;
-      deck.inert = showVideo;
-      navigation.hidden = showVideo;
-      pager.hidden = showVideo;
-      duration.hidden = !showVideo;
-      enter.hidden = !showVideo;
-      returnButton.hidden = showVideo;
-    }
-    function showSlides() {
-      if (document.fullscreenElement === video) document.exitFullscreen().catch(() => {});
-      setVideoMode(false);
-      go(index, true);
-      steps[index].focus({ preventScroll: true });
-    }
     async function playVideo() {
       const request = ++playRequest;
       videoError.hidden = true;
@@ -124,7 +102,7 @@
       play.setAttribute('aria-busy', 'true');
       try {
         await prepareVideo();
-        if (request !== playRequest || opening.hidden || document.hidden) return;
+        if (request !== playRequest || document.hidden) return;
         const meeting = window.ISS_MEETING;
         if (meeting && meeting.pages[meeting.current]?.id !== host.closest('.scene')?.id) return;
         video.controls = true;
@@ -139,11 +117,6 @@
           play.removeAttribute('aria-busy');
         }
       }
-    }
-    function showOpening() {
-      go(index, true);
-      setVideoMode(true);
-      (play.hidden ? video : play).focus({ preventScroll: true });
     }
     function reveal(panel, delay = 0) {
       if (motionPreference.matches) {
@@ -220,10 +193,7 @@
     if (!video.poster) video.poster = mediaUrl(video.dataset.posterFile);
     if (!document.getElementById('assurance-video-data')) videoFile.href = mediaUrl(video.dataset.videoFile);
     video.controls = false;
-    setVideoMode(true);
     play.addEventListener('click', playVideo);
-    returnButton.addEventListener('click', showOpening);
-    enter.addEventListener('click', showSlides);
     video.addEventListener('play', () => { play.hidden = true; videoError.hidden = true; });
     video.addEventListener('error', () => { videoError.hidden = false; play.hidden = false; });
     viewport.addEventListener('scroll', () => {
@@ -249,7 +219,6 @@
     if ('IntersectionObserver' in window) {
       const entrance = new IntersectionObserver(entries => {
         if (!entries.some(entry => entry.isIntersecting)) return;
-        if (deck.hidden) return;
         if (!sliding) reveal(panels[index]);
         entrance.disconnect();
       }, { threshold: .15 });
@@ -263,7 +232,7 @@
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden) return;
       pauseVideo();
-      if (!deck.hidden) go(index, true);
+      go(index, true);
     });
     window.addEventListener('beforeprint', () => { pauseVideo(); go(index, true); });
     activate(0);
@@ -273,14 +242,14 @@
       if (document.querySelector('dialog[open]') || event.target.isContentEditable || event.target.closest?.('input,textarea,select')) return;
       const meeting = window.ISS_MEETING;
       if (!meeting || meeting.pages[meeting.current]?.id !== host.closest('.scene')?.id) return;
-      if (!opening.hidden) {
-        // Preserve native seek controls without letting the meeting shell turn the page.
-        if (event.target.closest?.('video')) { event.stopPropagation(); return; }
-        if (event.key === 'ArrowRight') {
-          showSlides();
-          event.preventDefault();
-          event.stopPropagation();
-        }
+      // Video keeps native seeking; tab navigation never resets or pauses playback.
+      if (event.target.closest?.('video')) { event.stopPropagation(); return; }
+      if (navigation.contains(event.target)) {
+        const target = (index + (event.key === 'ArrowRight' ? 1 : -1) + panels.length) % panels.length;
+        go(target);
+        steps[target].focus({ preventScroll: true });
+        event.preventDefault();
+        event.stopPropagation();
         return;
       }
       if (step(event.key === 'ArrowRight' ? 1 : -1)) {
