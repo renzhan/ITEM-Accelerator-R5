@@ -77,16 +77,3 @@ python3 source/build_site.py --kind all
 - [GitHub Pages自定义Actions工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
 
 发布工作流采用官方示例当前列出的checkout v6、configure-pages v5、upload-pages-artifact v4、deploy-pages v4。版本验证于2026-10-26。
-
-## 7. Agent 可信保障内嵌页
-
-在会中版 `Item_ISS_Meeting_R5.html#r5_agent_assurance` 查看。该页紧接 D1.2.8.0 总览“其他踩过的坑：先定义可验收的业务结果”，位于 D1.2.8.1 之前，共用 MD §D1.2.8.0 编号，正文与本节 MD 链接同步对应。其余章节编号不变；会中版共 143 页。
-
-页首、正文和页脚直接采用原生 `slide-container`、`page-inner`、`title-zone`、`kicker`、`lead`、`content`、`discussion`、`foot` 结构。正文的段落、列表与标题字号由公共 shell 控制；本页不覆盖外层高度、居中、页眉或页脚，不修改公共框架。矮屏沿用原生页面的纵向滚动行为。
-
-进入本页先展示 102 秒开场视频，点击播放图标，结束后保留播放器、最后一帧和进度条，方便拖回回顾；点击右上角“进入讲解”再进入“01 统一标准”。讲解页的返回视频图标位于翻页按钮左侧，沿用相同矩形样式。首次进入默认暂停；返回视频时保留原进度并暂停，再次进入讲解保留所选 Tab。播放器沿用浏览器的暂停、进度、音量及全屏控制；离开本页或切到后台时暂停。视频原文件为 `media/attachments/agent-assuranc.mp4`，与 PDF 同目录；封面 `agent-assuranc-poster.jpg` 截自视频第 3 秒，视频保持 1440p、60fps 和原配音。页面加载时仅展示封面，点击后再加载视频。
-
-四个画面依次为“统一标准 → 严谨测试 → 精准知识 → 可靠验收”。顶部步骤与公共 `.ctrl` 矩形翻页按钮共用一行，保持正常文档布局，不吸附、不悬浮。顶部步骤、按钮和横向滑动可切换；仅当前页使用左右方向键切换内部画面，在首尾边界沿用整套演示翻页，PageUp/PageDown 仍翻整套演示。视频和讲解区共用稳定的占位尺寸，窄屏工具栏保留相同的行高；四个画面等高；四页的底部说明条按同一基线对齐，沿用公共说明条的标签加粗、正文常规字重；采用约 420ms 的横向转场与内容淡入，正文不做上下位移，支持减少动态效果偏好。评估连线与门槛刻度按阅读顺序显现，百分比保持静态，底部说明条只淡入。局部 CSS 仅负责内部导航、轮播及图示布局。
-原生页在 `slides-source/detailed/r5_agent_assurance.html`，局部样式和交互在 `assets/assurance.css`、`assets/assurance.js`。构建仅向包含该页的演示注入这些资源，不生成独立预览页。按第 6 节统一构建即可。
-
-最后一个画面右下角的 PDF 小标打开 `media/attachments/industry-acceptance-standard-knowledge-and-agent.pdf`。附件沿用项目既有的 media 分发与打包流程；单独发送会中 HTML 时需同时保留该相对路径下的 PDF、视频与封面。独立审阅 HTML 内嵌视频、封面和 PDF，可离线单文件打开；审阅 ZIP 不再重复存放已内嵌的视频。会中画面保留人工与自动化量化测试、人工审核知识、第三方 Evaluation Agent 评估三项保障。测试页突出脚本批量执行、LLM 对照 Gold Set 核对及用例复用与持续回归，展示 PDF A1、A5、A12 的验收参考门槛；知识页放在第三个画面，为回答与评估提供依据；右侧为内联 SVG 细线网络示意图，末尾点出数据经审核与验证沉淀为语义确定性底座（Ontology）。图示不代表实际业务数据或系统拓扑，不依赖外部图片。评估页保留评估流程和人工复核，并用刻度标记 K4、K5、A7 的核验参考门槛；刻度不表示已测成绩。PDF 小标使用轮播下方共用的正常文档流位置，仅最后一个画面可见。PDF 中的建议门槛不是项目实测成绩。
