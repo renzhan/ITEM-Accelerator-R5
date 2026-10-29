@@ -119,14 +119,15 @@ class DeckAssemblyTests(unittest.TestCase):
                     built = scene.xpath('./div[@class="slide-container"]')[0]
                     self.assertEqual(source.text_content(), built.text_content())
         self.assertFalse(document.xpath('//*[@id="r5_c05_07"]'))
-        self.assertTrue(document.get_element_by_id('r5_c05_01').xpath('.//a[@href="https://youtu.be/5mhN76BEO8M"]'))
         demo = document.get_element_by_id('r5_c05_01')
-        frame = demo.xpath('.//aside[@class="youtube-slot"]/iframe')[0]
-        self.assertEqual(frame.get('src'), 'https://www.youtube-nocookie.com/embed/5mhN76BEO8M?rel=0')
-        self.assertEqual(frame.get('referrerpolicy'), 'strict-origin-when-cross-origin')
-        self.assertIn('allowfullscreen', frame.attrib)
+        video = demo.xpath('.//aside[@class="video-slot"]//video')[0]
+        self.assertEqual(video.get('poster'), 'media/record-reply/fms-service-ticket-poster.jpg')
+        self.assertEqual(video.xpath('./source/@src'), ['media/record-reply/fms-service-ticket.mp4'])
+        self.assertEqual(video.xpath('./source/@type'), ['video/mp4'])
+        self.assertTrue((ROOT / 'media/record-reply/fms-service-ticket.mp4').is_file())
+        self.assertTrue((ROOT / 'media/record-reply/fms-service-ticket-poster.jpg').is_file())
         self.assertFalse(demo.xpath('.//*[@data-case-id="c05"]'))
-        self.assertFalse(demo.xpath('.//aside//p | .//aside//input'))
+        self.assertFalse(demo.xpath('.//aside//iframe | .//aside//input'))
         config = (ROOT / 'assets/site-config.js').read_text()
         self.assertIn('media/c02-dynamic-forms/index.html', config)
         self.assertTrue((ROOT / 'media/c02-dynamic-forms/index.html').is_file())

@@ -20,10 +20,8 @@
     td{padding:6px 10px 6px 0;border-bottom:1px solid #dfe5ea;vertical-align:top}
     td.pain{width:44%;color:#52647b}
     .note{color:#52647b}
-    .video-slot{border:2px dashed #007f86;min-height:318px;padding:22px;display:flex;flex-direction:column;justify-content:center;gap:12px;background:#eef7f7}
-    .video-slot .slot-title{font-size:24px;font-weight:750;color:#007f86}
-    .video-slot p{font-size:18px;line-height:1.45}
-    .video-slot a{color:#007f86;font-weight:700}
+    .video-slot{border:2px dashed #007f86;min-height:318px;padding:14px;display:flex;flex-direction:column;justify-content:center;gap:12px;background:#eef7f7}
+    .video-slot video{display:block;width:100%;max-width:100%;height:auto;background:#07101c}
     .discussion{border-top:1px solid #c9d2dc;padding-top:11px;margin-top:16px;font-size:18px;line-height:1.45;color:#152439}
     .discussion b{color:#007f86;margin-right:8px}
     .foot{display:flex;justify-content:space-between;font-size:14px;color:#52647b;padding-top:14px}
@@ -44,9 +42,11 @@
         <tr><td class="pain"><span class="zh">流程变了，没人更新文档</span><span class="en">Processes change; documents do not</span></td><td><span class="zh">再演示一遍，技能和 SOP 一起更新</span><span class="en">Demonstrate again; skill and SOP update together</span></td></tr>
       </table>
     </section>
-    <aside class="youtube-slot" style="position:relative;align-self:center;width:100%;aspect-ratio:16/9;min-width:0;border:2px dashed var(--accent,#007f86);background:#000;overflow:hidden">
-      <iframe src="https://www.youtube-nocookie.com/embed/5mhN76BEO8M?rel=0" title="FMS 客服工单演示 / FMS service ticket demo" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
-      <a href="https://youtu.be/5mhN76BEO8M" target="_blank" rel="noopener" aria-label="在 YouTube 打开 / Open on YouTube" title="在 YouTube 打开 / Open on YouTube" style="position:absolute;top:8px;right:8px;width:28px;height:28px;display:grid;place-items:center;background:#fff;color:#152439;border-radius:4px;text-decoration:none;font-size:20px;line-height:1">↗</a>
+    <aside class="video-slot" data-video-id="record-reply">
+      <video controls playsinline preload="metadata" poster="media/record-reply/fms-service-ticket-poster.jpg" aria-label="FMS 客服工单演示 / FMS service ticket demo">
+        <source src="media/record-reply/fms-service-ticket.mp4" type="video/mp4">
+        <span class="zh">当前浏览器无法播放此视频。</span><span class="en">This browser cannot play the video.</span>
+      </video>
     </aside>
   </main>
   <div class="discussion"><b><span class="zh">讨论</span><span class="en">Discussion</span></b><span class="zh">ISS 哪些流程每天在做，却很难写清楚？</span><span class="en">Which ISS flows are done every day but are hard to write down?</span></div>

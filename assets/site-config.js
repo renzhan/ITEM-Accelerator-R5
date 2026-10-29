@@ -11,7 +11,7 @@
       c02: { src: '', poster: '', title: 'ITEM WMS Dynamic Form', captions: '', player: 'media/c02-dynamic-forms/index.html' },
       c03: { src: '', poster: '', title: 'UNIS Rate & Quote', captions: '' },
       c04: { src: '', poster: '', title: 'ISS BO', captions: '' },
-      c05: { src: '', poster: '', title: 'Record & Reply · FMS 客服工单演示', captions: '' }, // The c05 source slide embeds the YouTube player directly.
+      c05: { src: '', poster: '', title: 'Record & Reply · FMS 客服工单演示', captions: '' }, // The c05 source slide uses the local MP4 player.
       c06: { src: '', poster: '', title: 'ISS CEC + Genesys', captions: '' },
       c08: { src: '', poster: '', title: 'iCEO 失败案例', captions: '' },
       c09: { src: '', poster: '', title: '其他踩过的坑', captions: '' }
