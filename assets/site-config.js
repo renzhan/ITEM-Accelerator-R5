@@ -13,7 +13,8 @@
       c04: { src: '', poster: '', title: 'ISS BO', captions: '' },
       c05: { src: '', poster: '', title: 'Record & Reply · FMS 客服工单演示', captions: '' }, // The c05 source slide uses the local MP4 player.
       c06: { src: '', poster: '', title: 'ISS CEC + Genesys', captions: '' },
-      c08: { src: '', poster: '', title: 'iCEO 失败案例', captions: '' },
+      c08: { youtube: '', src: 'media/iceo/itembot-intro.mp4', poster: 'media/iceo/itembot-intro.jpg', title: 'ItemBot 功能介绍', captions: '' }, // 直接播放介绍视频；后续填写 youtube 可切换来源。
+      c08_cases: { youtube: '', src: 'media/iceo/itembot-cases.mp4', poster: 'media/iceo/itembot-cases.jpg', title: 'ItemBot 案例', captions: '' }, // 直接播放案例视频；后续填写 youtube 可切换来源。
       c09: { src: '', poster: '', title: '其他踩过的坑', captions: '' }
     }
   };

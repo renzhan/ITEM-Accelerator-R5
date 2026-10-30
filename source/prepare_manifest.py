@@ -39,7 +39,10 @@ new.append(p('r5_case_overview','八组案例：从切入点到组织、流程�
 case_items=json.loads((S/'case_items.json').read_text())
 stages=['结果、改造前与视频','改造后业务闭环','实施过程与采用','组织与价值证据','ISS对标','变更与长期资产','重复交付与动手']
 for item in case_items:
-    for i,label in enumerate(stages,1):
+    case_stages = stages
+    if item['id'] == 'c08':
+        case_stages = ['功能介绍与视频', '查事与相关记录', '确认后执行', '身份知识与动作边界', '供应商选择与案例视频', '选择理由与执行状态', '复杂决策失败教训', '新泽西设仓问题', '从需求到投资的证据', '当前改进与补证', 'ISS 使用边界']
+    for i,label in enumerate(case_stages,1):
         new.append(p('r5_'+item['id']+'_'+str(i).zfill(2),item['name']+'｜'+label,item['md']+'.'+str(i),2,1,case=item['id']))
         if item['id']=='c09' and i==2:
             new.append(p('r5_c09_02b',item['name']+'｜知识生成流程',item['md']+'.2',2,1,case=item['id']))

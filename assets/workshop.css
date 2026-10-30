@@ -13,3 +13,6 @@ html[data-theme="night"] .scene .slide-container .story-no,
 html[data-theme="night"] .scene .slide-container .slot-title { color:var(--accent)!important; }
 html[data-theme="night"] .scene .collection-shell input,
 html[data-theme="night"] .scene .collection-shell textarea { background:var(--bg)!important; }
+
+/* YouTube has its own controls inside the standard 16:9 video frame. */
+.video-slot .player-frame.youtube-frame{padding:0!important;box-sizing:border-box!important}
