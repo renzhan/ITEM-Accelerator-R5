@@ -66,6 +66,16 @@
       const youtubeUrl = youtubeEmbed(cfg.youtube); if (youtubeUrl) { mountYoutube(slot, id, cfg, youtubeUrl); continue; }
       const playerUrl = safeMediaUrl(cfg.player); if (playerUrl) { mountPlayer(slot, id, cfg, playerUrl); continue; }
       const player = document.createElement('video'); player.controls = true; player.preload = 'metadata'; player.playsInline = true; player.hidden = true; player.dataset.caseVideo = id; slot.appendChild(player);
+      const configuredSrc = safeMediaUrl(cfg.src);
+      if (configuredSrc) {
+        slot.classList.add('has-player');
+        player.src = configuredSrc; player.hidden = false;
+        player.setAttribute('aria-label', cfg.title || id);
+        const poster = safeMediaUrl(cfg.poster); if (poster) player.poster = poster;
+        const captions = safeMediaUrl(cfg.captions); if (captions) { const track = document.createElement('track'); track.kind = 'captions'; track.src = captions; track.srclang = 'zh'; track.label = '中文字幕'; player.appendChild(track); }
+        player.addEventListener('error', () => { slot.appendChild(bi('p', '视频加载失败，请检查文件路径或浏览器支持。', 'Video failed to load. Check the file path or browser support.', 'video-status')); });
+        continue;
+      }
       const isYoutubeSlot = Object.prototype.hasOwnProperty.call(cfg, 'youtube');
       const status = bi('p', cfg.youtube ? 'YouTube 链接无效，请检查视频地址。' : isYoutubeSlot ? 'YouTube 链接待更新，可先选择本机视频预览。' : '尚未配置预录视频。可选择本机文件预览；部署视频请编辑 assets/site-config.js。', cfg.youtube ? 'Invalid YouTube link. Check the video URL.' : isYoutubeSlot ? 'YouTube link coming soon. A local recording can be previewed.' : 'No recording configured. Preview a local file, or configure assets/site-config.js for deployment.', 'video-status'); slot.appendChild(status);
       let blobUrl = '';
@@ -75,7 +85,6 @@
       const actions = document.createElement('div'); actions.className = 'video-actions'; const fileLabel = bi('label', '选择本机预录视频', 'Preview a local recording', 'ctrl'); const input = document.createElement('input'); input.type = 'file'; input.accept = 'video/*'; input.hidden = true; input.dataset.localVideo = id; fileLabel.appendChild(input); actions.appendChild(fileLabel);
       input.onchange = () => { const file = input.files && input.files[0]; if (!file) return; if (blobUrl) URL.revokeObjectURL(blobUrl); blobUrl = URL.createObjectURL(file); load(blobUrl, true); };
       const clear = bi('button', '停止／移除本次预览', 'Stop / clear preview', 'ctrl'); clear.type = 'button'; clear.onclick = () => { player.pause(); player.removeAttribute('src'); player.load(); player.hidden = true; if (blobUrl) { URL.revokeObjectURL(blobUrl); blobUrl = ''; } input.value = ''; setStatus('已移除当前预览；原视频文件没有被删除。', 'Preview cleared; the original recording was not deleted.'); }; actions.appendChild(clear); slot.appendChild(actions);
-      const src = safeMediaUrl(cfg.src); if (src) { const poster = safeMediaUrl(cfg.poster); if (poster) player.poster = poster; const captions = safeMediaUrl(cfg.captions); if (captions) { const track = document.createElement('track'); track.kind = 'captions'; track.src = captions; track.srclang = 'zh'; track.label = '中文字幕'; player.appendChild(track); } load(src, false); }
     }
   }
   function mountKnowledgeComparisons() {

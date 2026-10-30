@@ -816,8 +816,8 @@
     },
     {
       "id": "r5_c08_02",
-      "title": "查事：查邮件与项目进展",
-      "en": "Lookup: email replies and project progress",
+      "title": "跨平台使用：在熟悉的入口调用 ItemBot",
+      "en": "Across platforms: use ItemBot in familiar tools",
       "md": "D1.2.7.2",
       "refs": [
         "D1.2.7.2"
@@ -832,8 +832,8 @@
     },
     {
       "id": "r5_c08_03",
-      "title": "办事：邮件回复与 Jira 变更建议",
-      "en": "Action: email drafts and Jira change proposals",
+      "title": "办事：以邮件回复展示任务承接",
+      "en": "Action: email replies illustrate task handling",
       "md": "D1.2.7.3",
       "refs": [
         "D1.2.7.3"
@@ -848,8 +848,8 @@
     },
     {
       "id": "r5_c08_04",
-      "title": "可控：企业身份、知识范围与动作授权",
-      "en": "Control: identity, knowledge scope and action permissions",
+      "title": "可控：数字分身的开放范围与动作边界",
+      "en": "Control: sharing scope and action boundaries",
       "md": "D1.2.7.4",
       "refs": [
         "D1.2.7.4"
@@ -864,8 +864,8 @@
     },
     {
       "id": "r5_c08_05",
-      "title": "成功案例：三家供应商，如何选出一家？",
-      "en": "Success case: choosing among three suppliers",
+      "title": "任务定义：做什么、交付什么、谁验收",
+      "en": "Task definition: scope, deliverables and acceptance owner",
       "md": "D1.2.7.5",
       "refs": [
         "D1.2.7.5"
@@ -880,8 +880,8 @@
     },
     {
       "id": "r5_c08_06",
-      "title": "为什么选对：先筛约束，再比较价格",
-      "en": "Why it worked: constraints before price",
+      "title": "成功案例：三家供应商，如何选出一家？",
+      "en": "Success case: choosing among three suppliers",
       "md": "D1.2.7.6",
       "refs": [
         "D1.2.7.6"
@@ -896,8 +896,8 @@
     },
     {
       "id": "r5_c08_07",
-      "title": "失败教训：能回答，为什么仍做不好复杂决策？",
-      "en": "Failure lesson: answers do not establish decision quality",
+      "title": "成功条件：规则明确，结果可核对",
+      "en": "Success conditions: clear rules and checkable results",
       "md": "D1.2.7.7",
       "refs": [
         "D1.2.7.7"
@@ -913,7 +913,7 @@
     {
       "id": "r5_c08_08",
       "title": "复杂案例：现在能批准新泽西自营仓吗？",
-      "en": "Complex case: approve a New Jersey warehouse now?",
+      "en": "Complex case: can a New Jersey warehouse be approved now?",
       "md": "D1.2.7.8",
       "refs": [
         "D1.2.7.8"
@@ -928,8 +928,8 @@
     },
     {
       "id": "r5_c08_09",
-      "title": "容易失败的地方：把需求线索推成投资结论",
-      "en": "Decision risk: jumping from demand to investment",
+      "title": "复杂案例分析：历史教训与当前改进",
+      "en": "Complex case analysis: historical lessons and current progress",
       "md": "D1.2.7.9",
       "refs": [
         "D1.2.7.9"
@@ -944,8 +944,8 @@
     },
     {
       "id": "r5_c08_10",
-      "title": "当前改进：先识别缺口，再给出下一步",
-      "en": "Current improvement: identify gaps and next steps",
+      "title": "案例对照：不同任务的验收标准",
+      "en": "Case comparison: acceptance criteria by task",
       "md": "D1.2.7.10",
       "refs": [
         "D1.2.7.10"
@@ -960,8 +960,8 @@
     },
     {
       "id": "r5_c08_11",
-      "title": "如何用好 iCEO：让输出与证据相匹配",
-      "en": "Using iCEO: match output to evidence",
+      "title": "ISS 试点：先验证，再决定推广范围",
+      "en": "ISS pilot: validate before expanding scope",
       "md": "D1.2.7.11",
       "refs": [
         "D1.2.7.11"
