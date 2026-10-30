@@ -816,8 +816,8 @@
     },
     {
       "id": "r5_c08_02",
-      "title": "查事：从一句问题找到相关记录",
-      "en": "Lookup: find relevant records from one question",
+      "title": "查事：查邮件与项目进展",
+      "en": "Lookup: email replies and project progress",
       "md": "D1.2.7.2",
       "refs": [
         "D1.2.7.2"
@@ -832,8 +832,8 @@
     },
     {
       "id": "r5_c08_03",
-      "title": "办事：从查到信息，到确认后执行",
-      "en": "Action: from information to confirmed execution",
+      "title": "办事：邮件回复与 Jira 变更建议",
+      "en": "Action: email drafts and Jira change proposals",
       "md": "D1.2.7.3",
       "refs": [
         "D1.2.7.3"
@@ -848,8 +848,8 @@
     },
     {
       "id": "r5_c08_04",
-      "title": "可控：身份、知识与动作都有边界",
-      "en": "Control: identity, knowledge and action boundaries",
+      "title": "可控：企业身份、知识范围与动作授权",
+      "en": "Control: identity, knowledge scope and action permissions",
       "md": "D1.2.7.4",
       "refs": [
         "D1.2.7.4"
