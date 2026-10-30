@@ -125,7 +125,7 @@
     },
     {
       "id": "b5_02_day1",
-      "title": "Day 1：八案例与流程组织对标",
+      "title": "Day 1：八案例、平台演进与 ISS 对标",
       "en": "Day 1: Eight cases, platform evolution and ISS benchmarking",
       "md": "D1.2",
       "refs": [
@@ -206,7 +206,7 @@
     {
       "id": "b5_07_observe_act",
       "title": "从观察到执行：Record、CEC",
-      "en": "From observation to execution: Record and CEC",
+      "en": "From observation to execution: Record, CEC",
       "md": "D1.2.0",
       "refs": [
         "D1.2.0"
@@ -221,8 +221,8 @@
     },
     {
       "id": "b5_08_failures",
-      "title": "失败与边界：知道何时缩小、停止或转交",
-      "en": "Failures and boundaries: when to narrow, stop or hand off",
+      "title": "iCEO 与其他实践：成功条件和失败教训",
+      "en": "iCEO and other practices: success conditions and lessons",
       "md": "D1.2.0",
       "refs": [
         "D1.2.0"

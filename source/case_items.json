@@ -37,7 +37,7 @@
   },
   {
     "id": "c08",
-    "name": "D1.2.7 失败案例：iCEO｜10 分钟",
+    "name": "D1.2.7 iCEO：功能、成功案例与失败教训｜10 分钟",
     "input": "/home/ubuntu/iss_r5_package/source/case_inputs/c08.md",
     "md": "D1.2.7"
   },
