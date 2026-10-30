@@ -496,8 +496,8 @@
     },
     {
       "id": "r5_c04_02",
-      "title": "改造后闭环：回答、判断、接管、回写",
-      "en": "Future loop: answer, decide, hand over, write back",
+      "title": "FDE 介入后的提升",
+      "en": "Improvement after FDE intervention",
       "md": "D1.2.4.2",
       "refs": [
         "D1.2.4.2"
@@ -512,8 +512,8 @@
     },
     {
       "id": "r5_c04_03",
-      "title": "实施不是“接一个模型”：FDE 把知识变成可运行闭环",
-      "en": "Implementation is more than calling a model: FDE makes knowledge runnable",
+      "title": "FDE 现场实施：从业务需求到可运行能力",
+      "en": "FDE in the field: from business requirements to runnable capability",
       "md": "D1.2.4.3",
       "refs": [
         "D1.2.4.3"
@@ -528,8 +528,8 @@
     },
     {
       "id": "r5_c04_04",
-      "title": "组织与价值证据：把 90% 放回正确分母",
-      "en": "Organization and value evidence: put 90% on the right denominator",
+      "title": "从交付到信任：共同验收，证据说话",
+      "en": "From delivery to trust: shared acceptance, evidence first",
       "md": "D1.2.4.4",
       "refs": [
         "D1.2.4.4"
@@ -544,8 +544,8 @@
     },
     {
       "id": "r5_c04_05",
-      "title": "ISS 对标：把未知差距变成会中可填的问题",
-      "en": "ISS benchmark: turn unknown gaps into questions to fill live",
+      "title": "进入新场景前：先确认能否复用",
+      "en": "Before entering a new scenario: confirm what can be reused",
       "md": "D1.2.4.5",
       "refs": [
         "D1.2.4.5"
@@ -560,8 +560,8 @@
     },
     {
       "id": "r5_c04_06",
-      "title": "思考：业务变更链，才是可持续泛化的边界",
-      "en": "Reflection: the change chain defines sustainable generalization",
+      "title": "从自由探索到稳定可靠，再到智能平衡",
+      "en": "From free exploration to reliable stability, then intelligent balance",
       "md": "D1.2.4.6",
       "refs": [
         "D1.2.4.6"
@@ -576,8 +576,8 @@
     },
     {
       "id": "r5_c04_07",
-      "title": "可重复交付＋动手：从一条规则产出能力卡",
-      "en": "Repeatable delivery + hands-on: turn one rule into a capability card",
+      "title": "从任务自动化走向自主智能运营",
+      "en": "From task automation to autonomous intelligent operations",
       "md": "D1.2.4.7",
       "refs": [
         "D1.2.4.7"
@@ -912,8 +912,8 @@
     },
     {
       "id": "r5_c09_00",
-      "title": "其他踩过的坑：先定义可验收的业务结果",
-      "en": "Other failure patterns: define the business result first",
+      "title": "其他踩过的坑：",
+      "en": "Other failure patterns:",
       "md": "D1.2.8.0",
       "refs": [
         "D1.2.8.0"
@@ -1000,8 +1000,8 @@
     },
     {
       "id": "r5_c09_08",
-      "title": "自建模型实验全景：目标、过程与验证结果",
-      "en": "Self-built model experiment: target, process and validation",
+      "title": "自建模型实验：目标、过程与验证结果",
+      "en": "Private model experiment: process and results",
       "md": "D1.2.8.3",
       "refs": [
         "D1.2.8.3"
@@ -1018,8 +1018,8 @@
     },
     {
       "id": "r5_c09_09",
-      "title": "自建私有模型训练的 14 个技术限制",
-      "en": "14 technical limits of a self-built private model",
+      "title": "自建私有模型的 14 个技术限制",
+      "en": "14 technical limits of the private model",
       "md": "D1.2.8.3",
       "refs": [
         "D1.2.8.3"
@@ -1036,8 +1036,8 @@
     },
     {
       "id": "r5_c09_10",
-      "title": "两种技术路线的本质差异",
-      "en": "The architectural difference between the two routes",
+      "title": "自建模型与 LLM：两种路线的能力边界",
+      "en": "Private NLP and LLM: capability boundaries",
       "md": "D1.2.8.3",
       "refs": [
         "D1.2.8.3"
